@@ -106,14 +106,14 @@ export default function AtkPaivat() {
             <tr><td>C51</td><td><Link to="../bcb-medical">BCB Medical</Link></td></tr>
             <tr><td>D30</td><td><Link to="../duodecim">Duodecim</Link></td></tr>
             <tr><td>D40</td><td><Link to="../kela">Kela</Link></td></tr>
-            {/*
             <tr><td>D42</td><td><Link to="../vitec">Vitec</Link></td></tr>
-            */}
             <tr><td>D50</td><td><Link to="../buddy">Buddy Healthcare</Link></td></tr>
             <tr><td>D60</td><td><Link to="../sensotrend">Sensotrend</Link></td></tr>
             {/*
             <tr><td>E10</td><td><Link to="../digifinland">DigiFinland</Link></td></tr>
+            */}
             <tr><td>E12</td><td><Link to="../hus">HUS</Link></td></tr>
+            {/*
             <tr><td>E17</td><td><Link to="../microsoft">Microsoft</Link></td></tr>
             */}
             <tr><td>E76</td><td><Link to="../esko">Esko Systems</Link></td></tr>
