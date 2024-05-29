@@ -102,6 +102,7 @@ export default function AtkPaivat() {
         <table className="participants">
           <tbody>
             <tr><td>C32</td><td><Link to="../fujitsu">Fujitsu</Link></td></tr>
+            <tr><td>C30</td><td><Link to="../oracle">Oracle Finland</Link></td></tr>
             <tr><td>C50</td><td><Link to="../atostek">Atostek</Link></td></tr>
             <tr><td>C51</td><td><Link to="../bcb-medical">BCB Medical</Link></td></tr>
             <tr><td>D30</td><td><Link to="../duodecim">Duodecim</Link></td></tr>
@@ -115,8 +116,8 @@ export default function AtkPaivat() {
             <tr><td>E12</td><td><Link to="../hus">HUS</Link></td></tr>
             {/*
             <tr><td>E17</td><td><Link to="../microsoft">Microsoft</Link></td></tr>
-            */}
             <tr><td>E76</td><td><Link to="../esko">Esko Systems</Link></td></tr>
+            */}
             {/*
             <tr><td>F15</td><td><Link to="../axel">Axel Health</Link></td></tr>
             <tr><td>F20</td><td><Link to="../medanets">Medanets</Link></td></tr>
@@ -132,7 +133,6 @@ export default function AtkPaivat() {
             */}
             <tr><td>G16</td><td><Link to="../una">Una</Link></td></tr>
             <tr><td>Startup-alue SU7</td><td><Link to="../sensotrend">Sensotrend</Link></td></tr>
-            <tr><td>Startup-alue SU?</td><td><Link to="../wellmo">Wellmo</Link></td></tr>
           </tbody>
         </table>
       </section>
