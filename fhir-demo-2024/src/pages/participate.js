@@ -230,7 +230,7 @@ export default function Participate({ location = {} }) {
         </div>
         <p className="channel">
           <img className="inline decoration" src={slackLogo} alt="" /> You can also <a
-          href="https://join.slack.com/t/fhirfinland/shared_invite/zt-1j143ocuu-Ax4SfnlQt~iDKt5Xrb6Uwg"
+          href="https://join.slack.com/t/fhirfinland/shared_invite/zt-2rzs5dgx2-3oJl04bk_25WQ0jcTC529A"
           >join the <strong>FHIR Finland Slack</strong></a> workspace and discuss on
           the <strong>#fhir-demo-2024</strong> channel.
         </p>
