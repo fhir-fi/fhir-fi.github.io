@@ -28,7 +28,7 @@ export default function Vitec({ location }) {
           need, without having to worry about installation, backup, and data security.
         </p>
       </section>
-      <img className="decoration no-scale" src={acute} />
+      <img className="decoration no-scale" src={acute} alt="" />
       <section className="description">
         <h2>Peace of mind and well-being</h2>
         <h3>The dream tool for your daily work</h3>
