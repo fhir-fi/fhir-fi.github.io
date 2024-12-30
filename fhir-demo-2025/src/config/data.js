@@ -1,6 +1,7 @@
 import * as RoleList from '../components/RoleList';
 
 export const demos = {
+  /*
   apotti: {
     name: 'Apotti',
     roles: [
@@ -14,10 +15,6 @@ export const demos = {
       RoleList.System,
     ],
   },
-  /*
-  Minäpä laitan tietoa meidän sovellus / integraatio porukalle ja palataan tähän
-  Yt Marko
-  */
   'bcb-medical': {
     hidden: true,
     name: 'BCB Medical',
@@ -49,12 +46,14 @@ export const demos = {
       RoleList.App,
     ],
   },
+  */
   epic: {
     name: 'Epic',
     roles: [
       RoleList.System,
     ],
   },
+  /*
   esko: {
     hidden: true,
     name: 'Esko Systems',
@@ -76,7 +75,6 @@ export const demos = {
       RoleList.System
     ],
   },
-  /* Joni Hirviniemi, 16.4.2024 */
   fujitsu: {
     hidden: true,
     name: 'Fujitsu',
@@ -91,12 +89,14 @@ export const demos = {
       RoleList.Institution,
     ],
   },
+  */
   'hl7-finland': {
     name: 'HL7 Finland',
     roles: [
       RoleList.Institution,
     ],
   },
+  /*
   'hl7-norway': {
     name: 'HL7 Norway',
     roles: [
@@ -194,6 +194,7 @@ export const demos = {
       RoleList.App,
     ],
   },
+  */
   sensotrend: {
     name: 'Sensotrend',
     roles: [
@@ -201,6 +202,7 @@ export const demos = {
       RoleList.Consultancy,
     ],
   },
+  /*
   solita: {
     hidden: true,
     name: 'Solita',
@@ -217,6 +219,7 @@ export const demos = {
       RoleList.System,
     ],
   },
+  */
   trifork: {
     name: 'Trifork',
     roles: [
@@ -224,6 +227,7 @@ export const demos = {
       RoleList.System,
     ],
   },
+  /*
   una: {
     hidden: true,
     name: 'Una',
@@ -244,5 +248,6 @@ export const demos = {
       RoleList.App,
     ],
   },
+  */
 };
 

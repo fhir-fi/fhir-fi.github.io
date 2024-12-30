@@ -43,10 +43,10 @@ export default function IndexPage({ location = {} }) {
       </section>
       <section
         id="participants"
-        className={(!hash || hash === '#participants') ? 'callout' : undefined}
+        className={hash === '#participants' ? 'callout' : undefined}
       >
         <h1>Participants</h1>
-        <RoleFilter />
+        <p>These are the confirmed participants at the moment. There will be many more!</p>
         <ul>
           {
             Object.keys(demos).filter((k) => (!demos[k].hidden) &&
@@ -89,7 +89,10 @@ export default function IndexPage({ location = {} }) {
         </p>
         <p>The showcase will also remain online on this website until the end of the year.</p>
       </section>
-      <section id="participate" className={hash === '#participate' ? 'callout' : undefined}>
+      <section
+        id="participate"
+        className={!hash || (hash === '#participate') ? 'callout' : undefined}
+      >
         <h1>Get Listed!</h1>
         <p>
           If you are an organization utilizing the HL7 FHIR standard or advocating for it, or if

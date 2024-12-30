@@ -26,6 +26,11 @@ const Article = ({ children, ...rest }) => {
             </Link>
           </li>
           <li>
+            <Link to="/#participate">
+              Get Listed!
+            </Link>
+          </li>
+          <li>
             <Link to="/#participants">
               Participants
             </Link>
