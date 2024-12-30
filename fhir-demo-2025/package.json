@@ -1,0 +1,33 @@
+{
+  "name": "fhir-demo-2025",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Source for the FL7 Finland's FHIR Demo 2025 site",
+  "author": "Mikael Rinnetmäki",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build --prefix-paths",
+    "clear": "rimraf public/* ../en/demo2025/*",
+    "copy": "copyfiles -E -V -u 3 './src/images/static/*' './public/images/' && copyfiles -E -V -u 1 './public/**/*' ../en/demo2025/",
+    "deploy": "npm run clean && npm run clear && npm run build --prefix-paths && npm run copy",
+    "serve": "gatsby serve --prefix-paths",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@fontsource-variable/commissioner": "^5.0.19",
+    "@fontsource-variable/tourney": "^5.0.19",
+    "gatsby": "^5.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.58.3"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "file-saver": "^2.0.5",
+    "rimraf": "^5.0.1"
+  }
+}

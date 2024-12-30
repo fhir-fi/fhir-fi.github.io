@@ -1,0 +1,13 @@
+main.demo > h1.nhip {
+    font-size: 300%;
+}
+
+p.nhip-company-logos {
+    margin-top: 2em;
+    text-align: center;
+}
+
+img.nhip-company-logo {
+    margin: .5em 0;
+    max-height: 2.5em;
+}
