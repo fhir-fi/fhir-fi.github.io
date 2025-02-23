@@ -5,7 +5,7 @@ const Background = React.forwardRef((props, ref) => {
     animated: animatedParam = true,
     children,
     dimmed,
-    height: heightParam = 15000,
+    height: heightParam = 1200,
     location = {},
     pageContext,
     pageResources,
@@ -46,13 +46,28 @@ const Background = React.forwardRef((props, ref) => {
     return null;
   }
 
-  const lineLength = 300;
-  const strokeWidth = 14;
-  const lineCount = width * height / 1000 / lineLength;
+  const lineLength = height / 10;
+  const strokeWidth = 3;
+  // const lineCount = width * height / 1000 / lineLength;
+  const lineCount = width * height / 10000 / lineLength;
+
+  function getRandomDirection(oldDirection = 0) {
+    function getOppositeDirection(d) {
+      if (d >= 4) {
+        return d - 4;
+      }
+      return d + 4;
+    }
+    let direction = oldDirection;
+    while (direction === oldDirection || direction === getOppositeDirection(oldDirection)) {
+      direction = (Math.floor(Math.random() * 4) + 6) % 8;
+
+    }
+    return direction;
+  }
   
   function getRandomCoord({ x, y, direction }) {
     let distance;
-    let newDirection;
     let x1 = -1;
     let y1 = -1;
     let counter = 0;
@@ -64,11 +79,9 @@ const Background = React.forwardRef((props, ref) => {
         // Too difficult, we're in a tough corner...
         return { x, y, direction};
       }
-      distance = (Math.floor(Math.random() * lineLength)) + 20;
+      distance = Math.floor(Math.random() * lineLength / counter) + 5;
       distance -= distance % strokeWidth;
-      newDirection =  direction + Math.floor(Math.random() * 4) + 6;
-      newDirection %= 8;
-      switch (newDirection) {
+      switch (direction) {
         case 0:
           x1 = x;
           y1 = y - distance;
@@ -104,37 +117,42 @@ const Background = React.forwardRef((props, ref) => {
         default:
       }
     }
-    return { x: x1, y: y1, direction: newDirection };
+    return { x: x1, y: y1 };
   }
   
   const pattern = [];
-  for (let i=0; i < lineCount; i += 1) {
-    const coords = [];
+  // for (let i=0; i < lineCount; i += 1) {
+  for (let i=0; i < 4; i += 1) {
+      const stalks = [];
     let x0 = Math.random() * width;
-    x0 -= x0 % strokeWidth;
-    let y0 = Math.random() * height;
-    y0 -= y0 % strokeWidth;
-    let direction0 = Math.floor(Math.random() * 8);
-    for (let i=0; i < 8; i += 1) {
-      const { x, y, direction } = getRandomCoord({ x: x0, y: y0, direction: direction0 });
-      coords.push(`${x},${y}`);
-      x0 = x;
-      y0 = y;
-      direction0 = direction;
+    // x0 -= x0 % strokeWidth;
+    // let y0 = Math.min((Math.random() * (height / 10)) - (height * 0.3), height);
+    let y0 = Math.min((Math.random() * (height / 10)) + (height * 0.7), height);
+
+    
+    Math.min((Math.random() * (height / 10)) - (height * 0.3), height);
+    // y0 -= y0 % strokeWidth;
+    for (let i=0; i < 4; i += 1) {
+      // let { x: x1, y: y1, } = getRandomCoord({ x: x0, y: y0  });
+      let { x: x1, y: y1, } = { x: x0, y: y0 };
+      let { x: x2, y: y2, } = getRandomCoord({ x: x1, y: y1, direction: 0 });
+      let { x: x3, y: y3, } = getRandomCoord({ x: x2, y: y2, direction: Math.random() >= 0.5 ? 1 : 7 });
+      let direction = getRandomDirection()
+      let { x: x4, y: y4, } = getRandomCoord({ x: x3, y: y3, direction });
+      direction = getRandomDirection(direction)
+      let { x: x5, y: y5, } = getRandomCoord({ x: x4, y: y4, direction });
+      direction = getRandomDirection(direction)
+      let { x: x6, y: y6, } = getRandomCoord({ x: x5, y: y5, direction });
+//      stalks.push(`C ${x1} ${y1}, ${x2} ${y2}, ${x3} ${y3} S ${x4} ${y4}, ${x5} ${y5}`);
+      stalks.push(`M ${x1} ${y1} C ${x2} ${y2}, ${x3} ${y3}, ${x4} ${y4} S ${x5} ${y5} ${x6} ${y6}`);
+      const ran = Math.random();
+      x0 = ran < 0.35 ? x0 : x6;
+      y0 = ran < 0.35 ? y0 : (ran > 0.98 ? ((Math.random() * height * 0.2) + (height * 0.5)) : y6); // Either re-use y0 or a completely random one?
     }
-    const path = `M${coords.join('L')}`;
+    const path = stalks.join(' ');
     pattern.push(path);
   }
   const d = pattern.join(' ');
-
-  const rulerLines = [];
-  const adjust = strokeWidth / 2;
-  for (let i=0; i < width; i += strokeWidth) {
-    rulerLines.push(<line key={`v${i}`} x1={i + adjust} x2={i + adjust} y2={height + adjust} />);
-  }
-  for (let i=0; i < height; i += strokeWidth) {
-    rulerLines.push(<line key={`h${i}`} x2={width} y1={i + adjust} y2={i + adjust} />);
-  }
 
   const style = `
     line {
@@ -180,24 +198,19 @@ const Background = React.forwardRef((props, ref) => {
         <style>{style}</style>
       </defs>
       <g transform="translate(0.5, 0.5)">
-        {rulerLines}
-        <path
-          stroke="#010259"
-          strokeWidth={strokeWidth}
-          vectorEffect="non-scaling-stroke"
-          strokeLinecap="square"
-          d={d}
-        />
-        <path
-          stroke="white"
-          strokeWidth="1px"
-          vectorEffect="non-scaling-stroke"
-          shapeRendering="auto"
-          d={d}
-        />
+        {pattern.map((p, i) => (
+          <path
+            key={`path${i}`}
+            stroke="black"
+            strokeWidth={(Math.random() * 2) + 0.4}
+            vectorEffect="non-scaling-stroke"
+            d={p}
+          />
+
+        ))}
         { animated
         ? (
-          <circle fill="white" r="2">
+          <circle fill="red" r="3">
             <animateMotion dur={`${width * height / 50000}s`} repeatCount="indefinite" path={d} />
           </circle>
         )
