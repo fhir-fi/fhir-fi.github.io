@@ -10,7 +10,7 @@ import christoffer from '../images/ChristofferJonJensen.png';
 import anette from '../images/AnettePetersen.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Medicin.dk</title>;
+  const title = <title>FHIR Demo 2025: Medicin.dk</title>;
   return getHead({ title });
 };
 

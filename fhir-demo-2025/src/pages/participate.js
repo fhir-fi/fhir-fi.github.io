@@ -11,7 +11,7 @@ import zulipLogo from '../images/zulip.svg';
 
 
 export function Head() {
-  const title = <title>Take part in FHIR Demo 2024</title>;
+  const title = <title>Take part in FHIR Demo 2025</title>;
   return getHead({ title });
 };
 
@@ -20,7 +20,7 @@ export default function Participate({ location = {} }) {
   return (
     <Article id="participate">
       <section id="about">
-        <h1><small>Take part in</small><br />FHIR Demo 2024</h1>
+        <h1><small>Take part in</small><br />FHIR Demo 2025</h1>
         <img className="decoration" src={fhirLogo} alt="" />
       </section>
       <section
@@ -29,11 +29,12 @@ export default function Participate({ location = {} }) {
       >
         <h2>Be part of the <strong>Nordic FHIR Demo</strong> showcase!</h2>
         <p>
-          The <strong>FHIR Demo 2024</strong> showcase builds on the success of previous
+          The <strong>FHIR Demo 2025</strong> showcase builds on the success of previous
           installations in <a
           href="http://www.hl7.fi/wp-content/uploads/HL7-Finland-%23U0432%23U0402%23U201c-FHIR-demon-loppuraportti-20160527.pdf"
-          >2016</a>, <a href="https://fhir.fi/en/demo2022/index.html">2022</a>, and <a
-          href="https://fhir.fi/en/demo2023/index.html">2023</a>. This year it will be even
+          >2016</a>, <a href="https://fhir.fi/en/demo2022/index.html">2022</a>, <a
+          href="https://fhir.fi/en/demo2023/index.html">2023</a>, and <a
+          href="https://fhir.fi/en/demo2024/index.html">2024</a>. This year it will be even
           bigger, and more international.
         </p>
         <p>
@@ -50,20 +51,18 @@ export default function Participate({ location = {} }) {
           Participation costs you nothing, and gives you increased visibility within the FHIR
           community and in healthtech ecosystems overall.
         </p>
-        {/*
         <p>
           If this is not for you right now, please do consider whether there would be someone else
           you know that could be interested in this opportunity. Feel free to share this invitation
           as widely as you can.
         </p>
-        */}
         <p className="center">
           <a className="button" href="mailto:mikael@sensotrend.com">Announce your interest!</a>
         </p>
       </section>
       <section id="info" className={hash === '#info' ? 'callout' : undefined}>
         <h1>Apps and Systems, Consultancies and Institutions</h1>
-        <p>This year, we tag entries into four categories.</p>
+        <p>This year, like in 2024, we tag entries into four categories.</p>
         <p>
           <strong>Apps</strong> are FHIR clients utilizing data in FHIR format or integrated into
           an electronic health record system or patient portal through the SMART App Launch
@@ -120,7 +119,7 @@ export default function Participate({ location = {} }) {
             their app works seamlessly with a system, thanks to FHIR. HL7 country affiliates may
             advertise their work plan for this year. These are different kind of showcases, and
             there are many more. If you don't yet have a clear idea, you may draw inspiration
-            from <a href="https://fhir.fi/en/demo2023/#participants">last year's entries</a>.
+            from <a href="https://fhir.fi/en/demo2024/#participants">last year's entries</a>.
           </p>
         </section>
         <section id="how-to-submit">
@@ -129,7 +128,7 @@ export default function Participate({ location = {} }) {
             If you want to show off your technical competence to the showcase coordinators, please
             compile your demo page yourself and issue a pull request to the source code of the
             website. We're using the Gatsby framework, see <a
-            href="https://github.com/fhir-fi/fhir-fi.github.io/tree/fhir-demo-2024-gatsby/fhir-demo-2024">the
+            href="https://github.com/fhir-fi/fhir-fi.github.io/tree/fhir-demo-2025-gatsby/fhir-demo-2025">the
             instructions</a>.
           </p>
           <p>
@@ -152,15 +151,12 @@ export default function Participate({ location = {} }) {
           </p>
           <ul>
             <li>
-              13.-16.5.2024 <a href="https://vitalis.nu/">Vitalis</a>, Gothenburg, Sweden
+              May 5-7, 2025 <a
+              href="https://koulutus.fcg.fi/sosiaali-ja-terveydenhuollon-ATK-paivat">Sosiaali ja
+              terveydenhuollon ATK-päivät</a>, Jyväskylä, Finland.
             </li>
             <li>
-              21.-23.5.2024 <a href="https://radicalhealthfestival.messukeskus.com/">Radical
-              Health Festival</a>, Helsinki, Finland</li>
-            <li>
-              27.-29.5.2024 <a
-              href="https://koulutus.fcg.fi/sosiaali-ja-terveydenhuollon-ATK-paivat">Sosiaali- ja
-              terveydenhuollon ATK-päivät</a>, Tampere, Finland
+              May 19-22, 2025 <a href="https://vitalis.nu/">Vitalis</a>, Gothenburg, Sweden.
             </li>
          </ul>
           <p>
@@ -228,16 +224,18 @@ export default function Participate({ location = {} }) {
             <a href="tel:+358503855511">+358 50 385 5511</a>
           </address>
         </div>
+        {/*
         <p className="channel">
           <img className="inline decoration" src={slackLogo} alt="" /> You can also <a
           href="https://join.slack.com/t/fhirfinland/shared_invite/zt-2rzs5dgx2-3oJl04bk_25WQ0jcTC529A"
           >join the <strong>FHIR Finland Slack</strong></a> workspace and discuss on
-          the <strong>#fhir-demo-2024</strong> channel.
+          the <strong>#fhir-demo-2025</strong> channel.
         </p>
+        */}
         <p className="channel">
-          <img className="inline decoration" src={zulipLogo} alt="" /> Or reach out to participants
+          <img className="inline decoration" src={zulipLogo} alt="" /> Reach out to participants
           in the <strong>chat.fhir.org</strong> Zulip at the <a
-          href="https://chat.fhir.org/#narrow/stream/194447-nordics/topic/Nordic.20FHIR.20Demo.20Showcase.202024"
+          href="https://chat.fhir.org/#narrow/channel/194447-nordics/topic/FHIR.20Demo.202025/near/501388282"
           >#Nordics stream</a>.
         </p>
       </section>

@@ -9,7 +9,7 @@ import bcbOmavointi from '../images/bcb-medical-omavointi.png';
 import bcbSuite from '../images/bcb-medical-suite.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: BCB Medical</title>;
+  const title = <title>FHIR Demo 2025: BCB Medical</title>;
   return getHead({ title });
 };
 

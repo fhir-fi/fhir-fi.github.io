@@ -10,7 +10,7 @@ import '../styles/index.css';
 const type = 'image/svg+xml;charset=utf-8'
 
 export function Head() {
-  const title = <title>Create dynamic FHIR Demo 2024 Backgrounds</title>;
+  const title = <title>Create dynamic FHIR Demo 2025 Backgrounds</title>;
   return getHead({ title });
 };
 
@@ -27,7 +27,7 @@ export default function CreateBackground() {
 
   return (
     <article id="playground">
-      <h1>Create FHIR Demo 2024 Backgrounds!</h1>
+      <h1>Create FHIR Demo 2025 Backgrounds!</h1>
       <form>
         <label>
           Width: <input type="number" name="width" value={width} onChange={(e) => setWidth(e.target.value)} />

@@ -8,7 +8,7 @@ import logo from '../images/cambio.svg'
 import martin from '../images/MartinGrundberg.jpeg'
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Cambio</title>;
+  const title = <title>FHIR Demo 2025: Cambio</title>;
   return getHead({ title });
 };
 

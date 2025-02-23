@@ -8,7 +8,7 @@ import wellmoLogo from '../images/wellmo.png';
 import wellmoSolution from '../images/wellmo.webp';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Wellmo</title>;
+  const title = <title>FHIR Demo 2025: Wellmo</title>;
   return getHead({ title });
 };
 

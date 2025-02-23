@@ -10,7 +10,7 @@ import fkContactAk from '../images/felleskatalogen-ak.png';
 import fkContactBj from '../images/felleskatalogen-bj.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Felleskatalogen</title>;
+  const title = <title>FHIR Demo 2025: Felleskatalogen</title>;
   return getHead({ title });
 };
 

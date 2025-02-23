@@ -10,7 +10,7 @@ import unaYdin from '../images/una-ydin.png';
 import unaBCB from '../images/una-bcb.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Una</title>;
+  const title = <title>FHIR Demo 2025: Una</title>;
   return getHead({ title });
 };
 

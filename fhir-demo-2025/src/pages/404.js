@@ -5,7 +5,7 @@ import Article, { getHead } from '../components/Article';
 import fhirLogo from '../images/fhir.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Page not found</title>;
+  const title = <title>FHIR Demo 2025: Page not found</title>;
   return getHead({ title });
 };
 
@@ -18,7 +18,7 @@ export default function NotFoundPage({ location }) {
         <h1>{`Page ${pathname.replaceAll('/', '')} does not exist!`}</h1>
         <img className="decoration" src={fhirLogo} alt="" />
         <p>
-          Sorry 😔, we couldn’t find what you were looking for.
+          Sorry 😔, we couldn't find what you were looking for.
         </p>
       </section>
       <section id="instructions">

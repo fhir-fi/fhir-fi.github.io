@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import w2eLogo from '../images/w2e.jpeg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: W2E</title>;
+  const title = <title>FHIR Demo 2025: W2E</title>;
   return getHead({ title });
 };
 

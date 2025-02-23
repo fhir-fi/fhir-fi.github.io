@@ -9,7 +9,7 @@ import logo from '../images/Vitec_Acute.png';
 import acute from '../images/vitec_acute_digiklinikka_3.jpg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Vitec Acute</title>;
+  const title = <title>FHIR Demo 2025: Vitec Acute</title>;
   return getHead({ title });
 };
 

@@ -10,7 +10,7 @@ import cdmsIllustration from '../images/ProWellness_CDMS.png';
 import prowellnessLogo from '../images/prowellness.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: ProWellness</title>;
+  const title = <title>FHIR Demo 2025: ProWellness</title>;
   return getHead({ title });
 };
 

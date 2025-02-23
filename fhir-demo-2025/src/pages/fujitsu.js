@@ -10,7 +10,7 @@ import emom from '../images/emom.png';
 import joni from '../images/joni_hirviniemi.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Fujitsu</title>;
+  const title = <title>FHIR Demo 2025: Fujitsu</title>;
   return getHead({ title });
 };
 

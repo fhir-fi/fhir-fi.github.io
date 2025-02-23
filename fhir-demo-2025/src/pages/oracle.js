@@ -8,7 +8,7 @@ import logo from '../images/oracle.svg';
 import marketplace from '../images/oh-code-marketplace.avif';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Oracle Health (Cerner)</title>;
+  const title = <title>FHIR Demo 2025: Oracle Health (Cerner)</title>;
   return getHead({ title });
 };
 

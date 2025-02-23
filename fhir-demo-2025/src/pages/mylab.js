@@ -10,7 +10,7 @@ import myplusCareLogo from '../images/mylab_plus_care_rgb.png';
 import myplusHubLogo from '../images/mylab_plus_hub_rgb.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Mylab</title>;
+  const title = <title>FHIR Demo 2025: Mylab</title>;
   return getHead({ title });
 };
 

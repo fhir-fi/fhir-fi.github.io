@@ -8,7 +8,7 @@ import mealloggerLogo from '../images/meallogger.jpeg';
 import mealloggerSolution from '../images/meallogger.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Meallogger</title>;
+  const title = <title>FHIR Demo 2025: Meallogger</title>;
   return getHead({ title });
 };
 

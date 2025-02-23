@@ -10,7 +10,7 @@ import mikaelx2 from '../images/MikaelRinnetmaki2x.jpg';
 import vitalisCapture from '../images/Vitalis2023-Nordic_harmonization_of_health_data.png'
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: HL7 Finland</title>;
+  const title = <title>FHIR Demo 2025: HL7 Finland</title>;
   return getHead({ title });
 };
 

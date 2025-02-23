@@ -12,7 +12,7 @@ import jussiKoskinen from '../images/jussi_koskinen.png';
 import tapioPelkonen from '../images/tapio_pelkonen.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Innokas / MedicubeX</title>;
+  const title = <title>FHIR Demo 2025: Innokas / MedicubeX</title>;
   return getHead({ title });
 };
 

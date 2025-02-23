@@ -73,7 +73,7 @@ export default function IndexPage({ location = {} }) {
             <li>
               May 5-7, 2025 <a
               href="https://koulutus.fcg.fi/sosiaali-ja-terveydenhuollon-ATK-paivat">Sosiaali ja
-              terveydenhuollon ATK-päivät</a>, Tampere, Finland.
+              terveydenhuollon ATK-päivät</a>, Jyväskylä, Finland.
             </li>
             <li>
               May 19-22, 2025 <a href="https://vitalis.nu/">Vitalis</a>, Gothenburg, Sweden.

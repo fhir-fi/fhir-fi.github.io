@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import kelaLogo from '../images/kela.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Kela</title>;
+  const title = <title>FHIR Demo 2025: Kela</title>;
   return getHead({ title });
 };
 

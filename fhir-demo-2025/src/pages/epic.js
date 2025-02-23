@@ -8,7 +8,7 @@ import epicLogo from '../images/epic.png';
 import epicOnFhir from '../images/EpicOnFHIR.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Epic</title>;
+  const title = <title>FHIR Demo 2025: Epic</title>;
   return getHead({ title });
 };
 

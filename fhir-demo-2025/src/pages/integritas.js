@@ -8,7 +8,7 @@ import integritasLogo from '../images/integritas.svg';
 import pirkko from '../images/Pirkko2_FHIR.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Integritas</title>;
+  const title = <title>FHIR Demo 2025: Integritas</title>;
   return getHead({ title });
 };
 
