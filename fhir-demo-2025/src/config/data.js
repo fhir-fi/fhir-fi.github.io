@@ -22,6 +22,15 @@ export const demos = {
       RoleList.App,
     ],
   },
+  */
+  bsa: {
+    name: 'BSA',
+    roles: [
+      RoleList.App,
+      RoleList.System,
+    ],
+  },
+  /*
   buddy: {
     name: 'Buddy Healthcare',
     roles: [
@@ -34,12 +43,32 @@ export const demos = {
       RoleList.System,
     ],
   },
+  */
+  capgemini: {
+    name: 'Capgemini',
+    roles: [
+      RoleList.App,
+      RoleList.System,
+    ],
+  },
+  /*
+
   cgi: {
     name: 'CGI',
     roles: [
       RoleList.System,
     ],
   },
+  */
+  dedalus: {
+    name: 'Dedalus',
+    roles: [
+      RoleList.App,
+      RoleList.System,
+    ],
+  },
+  /*
+
   duodecim: {
     name: 'Duodecim',
     roles: [
@@ -141,12 +170,30 @@ export const demos = {
       RoleList.System,
     ],
   },
+  */
+  kl: {
+    name: 'KLGateway',
+    roles: [
+      RoleList.Institution,
+      RoleList.System,
+    ],
+  },
+  /*
   meallogger: {
     name: 'Meallogger',
     roles: [
       RoleList.App,
     ],
   },
+  */
+  medcom: {
+    name: 'MedCom',
+    roles: [
+      RoleList.Institution,
+    ],
+
+  },
+  /*
   'medicin-dk': {
     name: 'Medicin.dk',
     roles: [
@@ -212,6 +259,14 @@ export const demos = {
       RoleList.System,
     ],
   },
+  */
+  systematic: {
+    name: 'Systematic',
+    roles: [
+      RoleList.System,
+    ],
+  },
+  /*
   tietoevry: {
     hidden: true,
     name: 'Tietoevry Care',
