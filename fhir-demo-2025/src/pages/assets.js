@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, withPrefix } from 'gatsby';
+import { withPrefix } from 'gatsby';
 
 import Article, { getHead } from '../components/Article';
 import fhirLogo2 from '../images/fhir-deco.svg';

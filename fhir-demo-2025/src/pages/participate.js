@@ -6,7 +6,6 @@ import fhirLogo from '../images/fhir.svg';
 import fhirLogo2 from '../images/fhir-deco.svg';
 import mikaelx1 from '../images/MikaelRinnetmaki.jpg';
 import mikaelx2 from '../images/MikaelRinnetmaki2x.jpg';
-import slackLogo from '../images/Slack_icon_2019.svg';
 import zulipLogo from '../images/zulip.svg';
 
 

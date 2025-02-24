@@ -34,7 +34,6 @@ export default function BSA({ location }) {
       <section id="contact">
         <h3>Contact</h3>
         <div className="business-card">
-          <h3></h3>
           <address>
             <a href="https://centerforsurgicalscience.dk/suh/">https://centerforsurgicalscience.dk/suh/</a>
             <br />

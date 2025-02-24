@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 
 import Article, { getHead } from '../components/Article';
 import fhirLogo from '../images/fhir-deco.svg';
