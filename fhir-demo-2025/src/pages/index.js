@@ -47,6 +47,7 @@ export default function IndexPage({ location = {} }) {
       >
         <h1>Participants</h1>
         <p>These are the confirmed participants at the moment. There will be many more!</p>
+        <RoleFilter />        
         <ul>
           {
             Object.keys(demos).filter((k) => (!demos[k].hidden) &&
