@@ -52,7 +52,6 @@ export const demos = {
     ],
   },
   cgi: {
-    hidden: true,
     name: 'CGI',
     roles: [
       RoleList.System,
