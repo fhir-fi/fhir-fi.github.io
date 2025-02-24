@@ -52,6 +52,7 @@ export default function Cgi({ location }) {
           <li><strong>Patient</strong></li>
           <li><strong>Practitioner</strong></li>
           <li><i>Procedure</i></li>
+          <li><i>Provenance</i></li>
           <li><strong>RelatedPerson</strong></li>
           <li><strong>Schedule</strong></li>
           <li><strong>ServiceRequest</strong></li>
