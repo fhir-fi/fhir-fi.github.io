@@ -26,11 +26,11 @@ export default function EskoSystems({ location }) {
       <section id="about">
         <p>
           Epic is a strong supporter of the HL7® FHIR® standard as the future of REST-based
-          interoperability. We support over 450 FHIR APIs across 55 resources in accordance with
+          interoperability. We support over 500 FHIR APIs across 57 resources in accordance with
           the HL7 FHIR standard. This spans the DSTU2, STU3, and R4 versions of the FHIR
-          specification. We continue to develop support for the latest versions of the FHIR
-          standard. Organizations can grant access to these resources via the search and read/write
-          RESTful APIs that are defined by FHIR.
+          specification. We continue to regularly grow our number of supported FHIR APIs.
+          Organizations can grant access to these resources via the search and read/write RESTful
+          APIs that are defined by FHIR.
         </p>
       </section>
       <section id="nordics">
@@ -39,6 +39,19 @@ export default function EskoSystems({ location }) {
           Sites live on Epic in Denmark, Finland, and Norway make use of Epic's integration
           capabilities - FHIR and beyond - every day. You can find out more at <a
           href="https://open.epic.com/CountrySpecific/">https://open.epic.com/CountrySpecific/</a>.
+        </p>
+      </section>
+      <section id="IPS">
+        <h2>International Patient Summary</h2>
+        <p>
+          Epic will be among the first organizations to support the International Patient Summary
+          (IPS) FHIR specification starting with our May 2025 release. IPS will improve care for
+          patients by making it simpler for healthcare organizations to exchange data securely
+          across international borders. IPS builds on Epic's existing Care Everywhere and CDA
+          workflows to help customers coordinate care with groups that exclusively use FHIR. Learn
+          more about <a
+          href="https://fhir.epic.com/Documentation?docId=internationalpatientsummary">Epic & IPS
+          at fhir.epic.com</a>.
         </p>
       </section>
       <section id="SMART">
@@ -56,25 +69,16 @@ export default function EskoSystems({ location }) {
           HL7's CDS Hooks enables real-time, remote, provider-facing clinical decision support.
           Within a variety of workflows, Epic supports displaying external CDS services' info
           cards, SMART app links and a limited number of discrete, actionable suggestions. See <a
-          href="https://fhir.epic.com">fhir.epic.com</a> for an up-to-date list of supported suggestions.
-        </p>
-      </section>
-      <section id="FHIRcast">
-        <h2>FHIRcast</h2>
-        <p>
-          FHIRcast is an emerging HL7 standard for context synchronization. Built on FHIR, it uses
-          modern communication methods such as HTTP and websockets. Epic's Hyperdrive browser
-          supports the role of a FHIRcast Hub, with the ability to synchronize patient, encounter,
-          and imaging study contexts. Through our leadership role in HL7, Epic continues to lead
-          the health IT industry in the support and development of this standard.
+          href="https://fhir.epic.com">fhir.epic.com</a> for an up-to-date list of supported
+          suggestions.
         </p>
       </section>
       <section id="FHIR">
         <strong>
           <p>
             To learn more about Epic's support for FHIR, please visit <a
-            href="https://fhir.epic.com">fhir.epic.com</a> for developer documentation and a testing
-            sandbox!
+            href="https://fhir.epic.com">fhir.epic.com</a> for developer documentation and a
+            testing sandbox!
           </p>
         </strong>
       </section>
