@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import duodecimLogo from '../images/duodecim.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Duodecim</title>;
+  const title = <title>FHIR Demo 2025: Duodecim</title>;
   return getHead({ title });
 };
 

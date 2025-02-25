@@ -11,7 +11,7 @@ import gunilla from '../images/AnnaWessling.png';
 
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Fass.se</title>;
+  const title = <title>FHIR Demo 2025: Fass.se</title>;
   return getHead({ title });
 };
 

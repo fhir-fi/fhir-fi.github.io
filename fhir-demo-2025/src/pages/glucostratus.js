@@ -8,7 +8,7 @@ import { demos } from '../config/data';
 import glucostratusLogo from '../images/glucostratus.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Glucostratus</title>;
+  const title = <title>FHIR Demo 2025: Glucostratus</title>;
   return getHead({ title });
 };
 

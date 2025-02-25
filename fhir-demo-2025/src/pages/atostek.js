@@ -9,7 +9,7 @@ import atostekFHIR from '../images/atostek-fhir-2024.jpg';
 import fhirLogo from '../images/fhir.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Atostek</title>;
+  const title = <title>FHIR Demo 2025: Atostek</title>;
   return getHead({ title });
 };
 

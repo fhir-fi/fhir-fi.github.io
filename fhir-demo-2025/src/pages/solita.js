@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import solitaLogo from '../images/solita.jpg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Solita</title>;
+  const title = <title>FHIR Demo 2025: Solita</title>;
   return getHead({ title });
 };
 

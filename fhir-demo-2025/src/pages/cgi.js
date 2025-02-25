@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import cgiLogo from '../images/cgi.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: CGI</title>;
+  const title = <title>FHIR Demo 2025: CGI</title>;
   return getHead({ title });
 };
 
@@ -52,6 +52,7 @@ export default function Cgi({ location }) {
           <li><strong>Patient</strong></li>
           <li><strong>Practitioner</strong></li>
           <li><i>Procedure</i></li>
+          <li><i>Provenance</i></li>
           <li><strong>RelatedPerson</strong></li>
           <li><strong>Schedule</strong></li>
           <li><strong>ServiceRequest</strong></li>

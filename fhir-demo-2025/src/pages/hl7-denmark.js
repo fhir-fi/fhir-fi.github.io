@@ -8,7 +8,7 @@ import logo from '../images/logo_hl7_dk.png'
 import thea from '../images/TheaMentzSorensen.jpg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: HL7 Denmark</title>;
+  const title = <title>FHIR Demo 2025: HL7 Denmark</title>;
   return getHead({ title });
 };
 

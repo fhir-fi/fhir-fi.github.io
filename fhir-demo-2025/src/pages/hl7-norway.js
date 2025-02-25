@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import logo from '../images/hl7-norway.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: HL7 Norway</title>;
+  const title = <title>FHIR Demo 2025: HL7 Norway</title>;
   return getHead({ title });
 };
 

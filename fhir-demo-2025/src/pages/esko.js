@@ -8,7 +8,7 @@ import { demos } from '../config/data';
 import eskoLogo from '../images/eskosystems.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Esko Systems</title>;
+  const title = <title>FHIR Demo 2025: Esko Systems</title>;
   return getHead({ title });
 };
 

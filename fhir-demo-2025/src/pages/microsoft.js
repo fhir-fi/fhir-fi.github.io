@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import microsoftLogo from '../images/microsoft.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Microsoft</title>;
+  const title = <title>FHIR Demo 2025: Microsoft</title>;
   return getHead({ title });
 };
 

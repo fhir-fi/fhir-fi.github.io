@@ -8,7 +8,7 @@ import { demos } from '../config/data';
 import triforkLogo from '../images/trifork.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Trifork</title>;
+  const title = <title>FHIR Demo 2025: Trifork</title>;
   return getHead({ title });
 };
 

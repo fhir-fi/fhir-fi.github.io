@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
 
 import { getHead } from '../components/Article';
 import Demo from '../components/Demo';
@@ -10,7 +11,7 @@ import mikaelx2 from '../images/MikaelRinnetmaki2x.jpg';
 import vitalisCapture from '../images/Vitalis2023-Nordic_harmonization_of_health_data.png'
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: HL7 Finland</title>;
+  const title = <title>FHIR Demo 2025: HL7 Finland</title>;
   return getHead({ title });
 };
 
@@ -25,15 +26,34 @@ export default function Hl7Finland({ location }) {
         </a>
       </h1>
       <Roles list={roles} />
+      <section id="nav">
+        <p>This page describes the FHIR related actions of HL7 Finland in two sections:</p>
+        <nav>
+          <li><Link to="#fhir-profiling">FHIR Implementation Guides</Link></li>
+          <li><Link to="#workgroups">Working Groups</Link></li>
+        </nav>
+      </section>
       <section id="fhir-profiling">
         <h2>FHIR Implementation Guides</h2>
         <p>
-          HL7 Finland has published several FHIR implementation guides. Recently published ones are
-          the <a href="https://hl7.fi/fhir/finnish-base-profiles/">Finnish Base Profiles
-          implementation guide</a> that specifies the Finnish base profiles for FHIR, and the <a
-          href="https://hl7.fi/fhir/finnish-smart/">Finnish Implementation Guide for SMART App
-          Launch</a> that specifies guidelines for and examples of using the SMART App Launch
+          The latest advancements on FHIR profiling in Finland have been on <a
+          href="https://hl7.fi/fhir/finnish-scheduling/">Scheduling</a>. HL7 Finland has
+          consolidated two previously published scheduling related implementation guides into one
+          guide, based on implementer feedback and also including the recent input from Kanta
+          implementation guide for appointment record stored to Kanta.
+        </p>
+        <p>
+          HL7 Finland has previously published several FHIR implementation guides. Recently
+          published ones are the <a href="https://hl7.fi/fhir/finnish-base-profiles/">Finnish Base
+          Profiles</a> implementation guide that specifies the Finnish base profiles for FHIR, and
+          the <a href="https://hl7.fi/fhir/finnish-smart/">Finnish Implementation Guide for SMART
+          App Launch</a> that specifies guidelines for and examples of using the SMART App Launch
           mechanism in Finland.
+        </p>
+        <p>
+          These implementation guides have also been changed. Profiles related to International
+          Patient Access specification have been extracted from the Base profiles and included into
+          the SMART App Launch guide.
         </p>
         <p>
           HL7 Finland has also done some early mapping of Nordic FHIR Base Profiles. See the <a
@@ -43,9 +63,7 @@ export default function Hl7Finland({ location }) {
           harmonization of health data</a>, given in
           the <a href="https://vitalis.nu/">Vitalis</a> conference in May, 2023. They include an
           initial comparison of the Danish, Finnish, Norwegian, and Swedish base profile
-          specifications. There will be a <a
-          href="https://invitepeople.com/public/events/ae499c7a48/seminars/da00c15a72"
-          >session on the topic</a> this year too, with other Nordic HL7 affiliates.
+          specifications.
         </p>
         <figure>
           <a href={vitalisCapture}>
@@ -60,11 +78,6 @@ export default function Hl7Finland({ location }) {
             were profiled by all countries.
           </figcaption>
         </figure>
-        <p>
-          This year one of the main activities is to consolidate the previously published
-          scheduling related implementation guides into one guide, also including the recent input
-          from Kanta implementation guide for appointment record stored to Kanta.
-        </p>
         <p>
           More information is available at <a href="https://hl7.fi/fhir/">hl7.fi/fhir</a>.
         </p>

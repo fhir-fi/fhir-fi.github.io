@@ -5,7 +5,7 @@ import Article, { getHead } from '../components/Article';
 
 
 export function Head() {
-  const title = <title>FHIR Demo 2024 by HL7 Finland - WELCOME!</title>;
+  const title = <title>FHIR Demo 2025 by HL7 Finland - WELCOME!</title>;
   return getHead({ title });
 };
 
@@ -17,7 +17,7 @@ export default function Intro() {
       <Link to="/">
         <img src={logoSrc} alt="HL7 Finland" />
         <p>presents</p>
-        <h1>FHIR Demo 2024</h1>
+        <h1>FHIR Demo 2025</h1>
       </Link>
     </Article>
   )

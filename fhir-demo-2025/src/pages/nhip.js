@@ -12,7 +12,7 @@ import fkLogo from '../images/felleskatalogen.png';
 import '../styles/nhip.css';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Nordic Health Information Partnership</title>;
+  const title = <title>FHIR Demo 2025: Nordic Health Information Partnership</title>;
   return getHead({ title });
 };
 

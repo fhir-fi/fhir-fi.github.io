@@ -8,7 +8,7 @@ import apottiLogo from '../images/apotti.png';
 import ecosystemImage from '../images/apotti-ecosystem.jpg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Apotti</title>;
+  const title = <title>FHIR Demo 2025: Apotti</title>;
   return getHead({ title });
 };
 

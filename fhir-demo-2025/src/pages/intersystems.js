@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import intersystemsLogo from '../images/intersystems.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: InterSystems</title>;
+  const title = <title>FHIR Demo 2025: InterSystems</title>;
   return getHead({ title });
 };
 

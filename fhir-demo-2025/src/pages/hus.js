@@ -8,7 +8,7 @@ import { demos } from '../config/data';
 import logo from '../images/hus.svg'
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: HUS</title>;
+  const title = <title>FHIR Demo 2025: HUS</title>;
   return getHead({ title });
 };
 

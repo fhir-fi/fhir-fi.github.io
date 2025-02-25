@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import omaoloLogo from '../images/omaolo.svg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Omaolo (DigiFinland)</title>;
+  const title = <title>FHIR Demo 2025: Omaolo (DigiFinland)</title>;
   return getHead({ title });
 };
 

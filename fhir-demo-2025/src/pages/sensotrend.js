@@ -13,7 +13,7 @@ import sensotrendCareplanImage from '../images/sensotrend-careplan.png';
 import sensotrendConnectImage from '../images/sensotrend-connect.jpg';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Sensotrend</title>;
+  const title = <title>FHIR Demo 2025: Sensotrend</title>;
   return getHead({ title });
 };
 

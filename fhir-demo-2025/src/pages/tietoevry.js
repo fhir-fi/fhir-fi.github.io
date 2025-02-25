@@ -8,7 +8,7 @@ import { demos } from '../config/data';
 import tietoevryLogo from '../images/tietoevry.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: TietoEVRY</title>;
+  const title = <title>FHIR Demo 2025: TietoEVRY</title>;
   return getHead({ title });
 };
 

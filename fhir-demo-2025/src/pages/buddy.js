@@ -7,7 +7,7 @@ import { demos } from '../config/data';
 import buddyLogo from '../images/buddy.png';
 
 export function Head() {
-  const title = <title>FHIR Demo 2024: Buddy Healthcare</title>;
+  const title = <title>FHIR Demo 2025: Buddy Healthcare</title>;
   return getHead({ title });
 };
 
