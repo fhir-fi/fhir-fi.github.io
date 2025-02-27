@@ -52,6 +52,9 @@ const Background = React.forwardRef((props, ref) => {
   // const lineCount = width * height / 1000 / lineLength;
   const lineCount = 17;
 
+  // const animationDuration = width * height / 350000;
+  const animationDuration = 1;
+
   function getRandomDirection(oldDirection = 0, wild = false) {
     function getOppositeDirection(d) {
       if (d >= 4) {
@@ -270,7 +273,6 @@ const Background = React.forwardRef((props, ref) => {
           x9} ${y9} S ${x10} ${y10} ${x11} ${y11}`,
       }
       );
-
     }
 
     // To animate each plant sequentially,
@@ -284,9 +286,9 @@ const Background = React.forwardRef((props, ref) => {
       />
       {branches}
       {animated && dotPaths.map((p, i) => (
-        <circle key={`pulse-${i}`} fill="red" r="1" onAnimationIteration={(e) => {console.log('Iterating', e)}} onAnimationEnd={(e) => {console.log('end', e)}}>
+        <circle key={`pulse-${i}`} fill="red" r="1" >
           <animateMotion
-            dur={`${width * height / 350000}s`}
+            dur={`${animationDuration}s`}
             repeatCount="indefinite"
             data-leaf={p.leaf}
             path={p.path}
@@ -361,35 +363,5 @@ const Background = React.forwardRef((props, ref) => {
     </svg>
   )
 });
-
-/*
-
-      <g transform={`translate(${width / 2},${height/2})`}>
-        <use href="#leaf" x="-50" y="0" transform="scale(0.4)" />
-        <use href="#leaf" x="50" y="50" transform="rotate(110)" />
-        <use href="#leaf" x="50" y="-50" transform="rotate(210)" />
-      </g>
-
-      <g transform="translate(0.5, 0.5)">
-        {pattern.map((p, i) => (
-          <path
-            key={`path${i}`}
-            stroke="black"
-            strokeWidth={(Math.random() * 2) + 0.4}
-            vectorEffect="non-scaling-stroke"
-            d={p}
-          />
-
-        ))}
-        { animated
-        ? (
-          <circle fill="red" r="3">
-            <animateMotion dur={`${width * height / 50000}s`} repeatCount="indefinite" path={d} />
-          </circle>
-        )
-        : null
-        }
-      </g>
-*/
 
 export default Background;
