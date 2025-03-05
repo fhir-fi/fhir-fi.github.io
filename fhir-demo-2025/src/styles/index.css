@@ -71,9 +71,11 @@ body {
   overflow: hidden;
 }
 
+/*
 svg.background {
   opacity: 0.15;
 }
+*/
 
 #headerNav {
   z-index: 10;
