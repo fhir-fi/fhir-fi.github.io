@@ -31,7 +31,6 @@ export const demos = {
     ],
   },
   buddy: {
-    hidden: true,
     name: 'Buddy Healthcare',
     roles: [
       RoleList.App,
@@ -101,7 +100,6 @@ export const demos = {
     ],
   },
   fujitsu: {
-    hidden: true,
     name: 'Fujitsu',
     roles: [
       RoleList.App,
@@ -151,7 +149,6 @@ export const demos = {
     ],
   },
   integritas: {
-    hidden: true,
     name: 'Integritas',
     roles: [
       RoleList.App,
@@ -165,7 +162,6 @@ export const demos = {
     ],
   },
   kela: {
-    hidden: true,
     name: 'Kela',
     roles: [
       RoleList.Institution,
@@ -180,7 +176,6 @@ export const demos = {
     ],
   },
   meallogger: {
-    hidden: true,
     name: 'Meallogger',
     roles: [
       RoleList.App,
@@ -238,7 +233,6 @@ export const demos = {
     ],
   },
   prowellness: {
-    hidden: true,
     name: 'ProWellness',
     roles: [
       RoleList.App,
@@ -296,7 +290,6 @@ export const demos = {
     ],
   },
   wellmo: {
-    hidden: true,
     name: 'Wellmo',
     roles: [
       RoleList.App,
