@@ -9,7 +9,6 @@ export const demos = {
     ],
   },
   atostek: {
-    hidden: true,
     name: 'Atostek',
     roles: [
       RoleList.Consultancy,
@@ -37,7 +36,6 @@ export const demos = {
     ],
   },
   cambio: {
-    hidden: true,
     name: 'Cambio',
     roles: [
       RoleList.System,
@@ -64,7 +62,6 @@ export const demos = {
     ],
   },
   duodecim: {
-    hidden: true,
     name: 'Duodecim',
     roles: [
       RoleList.App,
@@ -84,7 +81,6 @@ export const demos = {
     ],
   },
   fass: {
-    hidden: true,
     name: 'Fass.se',
     roles: [
       RoleList.Institution,
@@ -92,7 +88,6 @@ export const demos = {
     ],
   },
   felleskatalogen: {
-    hidden: true,
     name: 'Felleskatalogen',
     roles: [
       RoleList.Institution,
@@ -141,7 +136,6 @@ export const demos = {
     ],
   },
   innokas: {
-    hidden: true,
     name: 'Innokas',
     roles: [
       RoleList.App,
@@ -155,7 +149,6 @@ export const demos = {
     ],
   },
   intersystems: {
-    hidden: true,
     name: 'InterSystems',
     roles: [
       RoleList.System,
@@ -189,7 +182,6 @@ export const demos = {
 
   },
   'medicin-dk': {
-    hidden: true,
     name: 'Medicin.dk',
     roles: [
       RoleList.Institution,
@@ -211,7 +203,6 @@ export const demos = {
     ],
   },
   nhip: {
-    hidden: true,
     name: 'Nordic Health Information Partnership',
     roles: [
       RoleList.Institution,
@@ -226,7 +217,6 @@ export const demos = {
     ],
   },
   oracle: {
-    hidden: true,
     name: 'Oracle Health (Cerner)',
     roles: [
       RoleList.System,
@@ -283,7 +273,6 @@ export const demos = {
     ],
   },
   vitec: {
-    hidden: true,
     name: 'Vitec Acute',
     roles: [
       RoleList.System,
