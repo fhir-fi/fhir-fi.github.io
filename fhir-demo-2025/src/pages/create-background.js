@@ -20,7 +20,7 @@ export default function CreateBackground() {
   const [height, setHeight] = React.useState(1080);
   const [animated, setAnimated] = React.useState(true);
   const [dimmed, setDimmed] = React.useState(false);
-  const [, refresh] = React.useState(undefined);
+  const [key, setKey] = React.useState(undefined);
 
   const svgRef = React.useRef(null);
   const filename = `fhir-demo-background-${Date.now()}.svg`;
@@ -41,7 +41,7 @@ export default function CreateBackground() {
         <label>
           Dimmed: <input type="checkbox" name="dimmed" checked={dimmed} onChange={(e) => setDimmed(e.target.checked)} />
         </label>
-        <button type="button" onClick={() => { console.log(svgRef.current); refresh({}); }}>Redraw!</button>
+        <button type="button" onClick={() => { console.log(key); setKey(Date.now()); }}>Redraw!</button>
         <a
           href={svgRef.current
             ? `${type},${encodeURIComponent(svgRef.current.outerHTML)}`
@@ -59,7 +59,7 @@ export default function CreateBackground() {
         </a>
       </form>
       <Background
-        key={`${width}x${height}-${animated}`}
+        key={`${key}-${width}x${height}`}
         ref={svgRef}
         width={width}
         height={height}

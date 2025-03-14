@@ -26,8 +26,35 @@ export default function Assets() {
       </section>
       <section id="info">
         <h2>Graphical Assets</h2>
+        <section id="fonts">
+          <h3>Typography</h3>
+          <ul>
+            <li>
+              <a
+                href="https://fonts.google.com/specimen/Playfair+Display?selection.family=Playfair+Display"
+              >
+                Playfair Display
+              </a> (Google Fonts) used for large headings
+            </li>
+            <li>
+              <a
+                href="https://fonts.google.com/share?selection.family=Commissioner:wght@100..900"
+              >
+                Commissioner font
+              </a> (Google Fonts) used for body text
+            </li>
+          </ul>
+          <p>
+            Playfair is a transitional design. We are in a transitional phase.
+          </p>
+          <p>
+            The body text font is Commissioner, as we need to affect the European Union and the
+            regulation for the European Health Data Space (EHDS) and get the FHIR standard
+            acknowledged more widely there. ;-)
+          </p>
+        </section>
         <section id="fhir-logo">
-        <h3>The FHIR Logo</h3>
+          <h3>The FHIR Logo</h3>
           <ul>
             <li>
               <a
