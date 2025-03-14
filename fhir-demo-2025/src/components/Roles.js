@@ -60,7 +60,7 @@ export function RolesContextProvider({
 
 export function RoleFilter() {
   return (
-    <small>
+    <>
       <hr />
       <h3>Filter demos by roles:</h3>
       <ul className="roles">
@@ -69,7 +69,7 @@ export function RoleFilter() {
         ))}
       </ul>
       <hr />
-    </small>
+    </>
   );
 }
 

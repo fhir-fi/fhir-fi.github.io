@@ -74,6 +74,7 @@ export default function Demo({ children, location }) {
 
   return (
     <Article id="demo">
+      {prevNextNav}
       <header>
         <h1>FHIR Demo 2025 <img className="inline" src={fhirLogo} alt="" /></h1>
         {roles.length
@@ -81,7 +82,6 @@ export default function Demo({ children, location }) {
           <>
             <hr />
             <h3>
-              
               {myIndex >= 0
               ? <>{`Participant #${
                   myIndex + 1
@@ -102,7 +102,6 @@ export default function Demo({ children, location }) {
         : <p>{`Participant #${myIndex + 1} / ${selectedDemos.length}`}</p>
         }
       </header>
-      {prevNextNav}
       <main className="demo">
         { children }
       </main>

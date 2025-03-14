@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import hl7finland from '../images/hl7-finland.svg';
 import Background from '../pages/background';
 import '@fontsource-variable/commissioner';
-import '@fontsource-variable/tourney';
+import '@fontsource/playfair-display';
 import '../styles/index.css';
 
 export function getHead({ title }) {

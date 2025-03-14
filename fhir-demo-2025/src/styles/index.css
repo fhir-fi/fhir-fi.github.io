@@ -1,22 +1,22 @@
 :root {
-  --color-body-background: #f0f0f4;
+  --color-body-background: #fcfaf2;
   --color-body-text: black;
-  --color-nav-background: #010259;
+  --color-nav-background: #003300;
   --color-nav-border: #010259;
-  --color-nav-link: #010259;
-  --color-nav-link-active: #05C7F2;
-  --color-nav-link-hover: #2D1BA6;
+  --color-nav-link: darkgreen;
+  --color-nav-link-active: lightgreen;
+  --color-nav-link-hover: green;
   --color-nav-link-invert: #fefefe;
   --color-nav-link-invert-active: #2D1BA6;
   --color-nav-link-invert-hover: #05C7F2;
-  --color-heading-text: #010259;
+  --color-heading-text: #004400;
   --color-demo-background: white;
   --color-demo-text: black;
   --color-offset-white: #f1f1f1;
-  --color-section-border: #010259;
+  --color-section-border: darkgreen;
   --color-business-card-shadow: lightgray;
   --color-callout-background: white;
-  --content-width: 60rem;
+  --content-width: 80rem;
   --prev-next-nav-width: 10rem;
   --prev-next-nav-min-width: calc(var(--content-width) + var(--prev-next-nav-width) *2);
 }
@@ -71,11 +71,9 @@ body {
   overflow: hidden;
 }
 
-/*
 svg.background {
-  opacity: 0.15;
+  opacity: 0.22;
 }
-*/
 
 #headerNav {
   z-index: 10;
@@ -86,8 +84,8 @@ main.demo {
   box-sizing: border-box;
   background: var(--color-demo-background);
   color: var(--color-demo-text);
-  padding: 5em 1em;
-  margin-top: 3em;
+  padding: 5em 3em;
+  margin-top: 0;
 }
 
 a, a:visited {
@@ -218,7 +216,7 @@ blockquote footer::before {
 }
 
 h1 {
-  font-family: 'Tourney Variable', Tourney, sans-serif;
+  font-family: 'Playfair Display', serif;
   color: var(--color-heading-text);
   font-weight: 400;
 }
@@ -245,7 +243,7 @@ article#intro h1 {
 #mainPage h2,
 article#assets h2,
 article.event h2 {
-  font-family: 'Tourney Variable', Tourney, sans-serif;
+  font-family: 'Playfair Display', serif;
   color: var(--color-heading-text);
   font-size: 2em;
 }
@@ -255,8 +253,8 @@ article#assets h2 {
 }
 
 #participants li a {
-  font-family: 'Tourney Variable', Tourney, sans-serif;
-  font-size: 2em;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
   font-weight: 650;
 }
 
@@ -321,16 +319,41 @@ article {
   position: relative;
 }
 
+article > header {
+  margin-top: 2em;
+  background-color: var(--color-demo-background);
+  border-bottom-width: 0;
+}
+
+/*
 article > * {
   margin-top: 2em;
   margin-bottom: 2em;
 }
+*/
+
+article > section:first-of-type {
+  margin-top: 3em;
+  border-radius: 6px 6px 0 0;
+  border-top-style: solid;
+}
+
+article > section {
+  border-bottom-width: 0;
+  border-top-style: dotted;
+}
+
+article > section:last-of-type {
+  margin-bottom: 3em;
+  border-radius: 0 0 6px 6px;
+  border-bottom-width: 2px;
+}
+
 
 article > *,
 nav.prevNext > div a div {
   background-color: var(--color-body-background);
-  border: 2px dotted var(--color-section-border);
-  border-radius: 6px;
+  border: 2px solid var(--color-section-border);
 }
 
 article > img {
@@ -441,16 +464,19 @@ article > header > h3 {
 
 ul.roles {
   padding: 0;
+  font-size: 150%;
 }
 
 a.role {
-  font-family: 'Tourney Variable', Tourney, sans-serif;
-  font-weight: 100;
+  /*
+  font-family: 'Playfair Display', serif;
+  */
+  font-weight: 200;
   text-decoration: none;
 }
 
 a.selected.role {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 a.button {
@@ -512,6 +538,12 @@ main.demo img.decoration {
   max-height: 50vh;
   max-width: 80vw;
 }
+
+#demo img.decoration:last-child {
+  max-height: 120px;
+  max-width: 120px;
+}
+
 
 main.demo img.decoration {
   margin-top: 0;
@@ -854,13 +886,13 @@ footer a:first-of-type {
 }
 
 nav.prevNext {
-  font-family: 'Tourney Variable', Tourney, sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 200%;
   font-weight: 100;
   background-color: transparent;
   border: none;
   margin-top: 0;
-  margin-bottom: 3em;
+  margin-bottom: 1.35em;
   padding-left: 0;
   padding-right: 0;
 }
@@ -903,10 +935,9 @@ nav.prevNext > div:last-child {
   background: var(--color-offset-white);
 }
 
-@media (min-width: 100rem) {
+@media (min-width: 110rem) {
   main.demo {
-    margin-top: 0;
-    padding: 5em 3em;
+    padding: 5em 12em;
   }
   article > * {
     padding: 1em 3em 4em;
@@ -931,6 +962,13 @@ nav.prevNext > div:last-child {
     border-radius: 6px;
     padding: 1em;
   }
+  nav.prevNext > div:first-child a div {
+    border-radius: 32px 6px 6px 32px;
+  }
+  nav.prevNext > div:last-child a div {
+    border-radius: 6px 32px 32px 6px;
+  }
+
   nav.prevNext > div:first-child a div {
     padding-left: 2em;
   }

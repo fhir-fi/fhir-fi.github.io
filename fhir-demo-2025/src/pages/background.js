@@ -227,7 +227,7 @@ const Plant = ({ animated, height, width }) => {
       />
       {branches}
       {animated && dotPaths.map((p, i) => (
-        <circle key={`pulse-${i}`} fill="red" r="2" >
+        <circle key={`pulse-${i}`} fill="red" r="1" >
           <animateMotion
             dur={`${animationDuration}s`}
             repeatCount="indefinite"
