@@ -3,6 +3,7 @@ import { saveAs } from 'file-saver';
 
 import Background from './background';
 import { getHead } from '../components/Article';
+import { Header } from '../components/Header';
 import '@fontsource-variable/commissioner';
 import '@fontsource-variable/tourney';
 import '../styles/index.css';
@@ -19,6 +20,8 @@ export default function CreateBackground() {
   const [width, setWidth] = React.useState(1920);
   const [height, setHeight] = React.useState(1080);
   const [animated, setAnimated] = React.useState(true);
+  const [speed, setSpeed] = React.useState(1);
+  const [plantCount, setPlantCount] = React.useState(17);
   const [dimmed, setDimmed] = React.useState(false);
   const [key, setKey] = React.useState(undefined);
 
@@ -26,6 +29,8 @@ export default function CreateBackground() {
   const filename = `fhir-demo-background-${Date.now()}.svg`;
 
   return (
+    <>
+      <Header />
     <article id="playground">
       <h1>Create FHIR Demo 2025 Backgrounds!</h1>
       <form>
@@ -36,7 +41,13 @@ export default function CreateBackground() {
           Height: <input type="number" name="height" value={height} onChange={(e) => setHeight(e.target.value)} />
         </label>
         <label>
+          Plants: <input type="number" name="count" value={plantCount} onChange={(e) => setPlantCount(e.target.value)} />
+        </label>
+        <label>
           Animated: <input type="checkbox" name="animated" checked={animated} onChange={(e) => setAnimated(e.target.checked)} />
+        </label>
+        <label>
+          Speed: <input type="number" name="speed" value={speed} onChange={(e) => setSpeed(e.target.value)} />
         </label>
         <label>
           Dimmed: <input type="checkbox" name="dimmed" checked={dimmed} onChange={(e) => setDimmed(e.target.checked)} />
@@ -63,9 +74,12 @@ export default function CreateBackground() {
         ref={svgRef}
         width={width}
         height={height}
+        plantCount={plantCount}
         animated={animated}
+        speed={speed}
         dimmed={dimmed}
       />
     </article>
+    </>
   )
 };

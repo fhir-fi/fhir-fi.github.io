@@ -1,9 +1,5 @@
 import * as React from 'react';
 
-const plantCount = 17;
-const animationDuration = 10;
-const fadeDuration = animationDuration * 2;
-
 const Leaf = ({ fading = false, rotate, scale, x, y }) => {
   return (
     <g transform={`translate(${x},${y})`}>
@@ -28,7 +24,7 @@ const Flower = ({fading = false, rotate, scale, x, y }) => {
   );
 };
 
-const Plant = ({ animated, height, width }) => {
+const Plant = ({ animated, animationDuration, height, width }) => {
   const lineLength = height / 5;
   const strokeWidth = 3;
 
@@ -37,7 +33,7 @@ const Plant = ({ animated, height, width }) => {
 
   const [rootStalkPath, setRootStalkPath] = React.useState(<path />);
   const [flower, setFlower] = React.useState(undefined);
-  const [clonedFlower, setClonedFlower] = React.useState([]);
+  const [clonedFlower, setClonedFlower] = React.useState(undefined);
   const [branches, setBranches] = React.useState([]);
   const [leaves, setLeaves] = React.useState([]);
   const [clonedLeaves, setClonedLeaves] = React.useState([]);
@@ -227,7 +223,7 @@ const Plant = ({ animated, height, width }) => {
       />
       {branches}
       {animated && dotPaths.map((p, i) => (
-        <circle key={`pulse-${i}`} fill="red" r="1" >
+        <circle key={`pulse-${i}`} fill="red" r="2" >
           <animateMotion
             dur={`${animationDuration}s`}
             repeatCount="indefinite"
@@ -251,13 +247,15 @@ const Background = React.forwardRef((props, ref) => {
     animated: animatedParam = true,
     children,
     dimmed,
-    height: heightParam = 1200,
+    height: heightParam,
     location = {},
     pageContext,
     pageResources,
     params,
     path,
+    plantCount: plantCountParam = 17,
     serverData,
+    speed: speedParam = 1,
     uri,
     width: widthParam,
     ...rest // This is what we really want...
@@ -266,27 +264,40 @@ const Background = React.forwardRef((props, ref) => {
 
   const [width, setWidth] = React.useState(widthParam);
   const [height, setHeight] = React.useState(heightParam);
+  const [plantCount, setplantCount] = React.useState(plantCountParam);
   const [animated, setAnimated] = React.useState(animatedParam);
+  const [speed, setSpeed] = React.useState(speedParam);
+
+  const animationDuration = 10 / speed;
+  const fadeDuration = animationDuration * 2;
 
   React.useEffect(() => {
-    if (width) {
-      // already set through a parameter
-      return;
-    }
     const searchParams = new URLSearchParams(search);
-    if (searchParams.has('width')) {
-      setWidth(+searchParams.get('width'));
+    if (!width) {
+      if (searchParams.has('width')) {
+        setWidth(+searchParams.get('width'));
+      } else {
+        setWidth(typeof window !== `undefined` ? window.innerWidth : 2560);
+      }
+    }
+    if (!height) {
       if (searchParams.has('height')) {
         setHeight(+searchParams.get('height'));
+      } else {
+        setHeight(typeof window !== `undefined` ? window.innerHeight : 1440);
       }
-    } else {
-      setWidth(typeof window !== `undefined` ? window.innerWidth : 2500);
+    }
+    if (searchParams.has('plants')) {
+      setplantCount(+searchParams.get('plants'));
     }
     if (searchParams.has('animated')) {
       const animatedParam = searchParams.get('animated').toLowerCase();
       setAnimated(!['false', 'no', 'not'].some(v => v === animatedParam));
     }
-  }, [search, width]);
+    if (searchParams.has('speed')) {
+      setSpeed(+searchParams.get('speed'));
+    }
+  }, [search, setAnimated, setHeight, setplantCount, setSpeed, setWidth]);
 
   if (width === undefined) {
     return null;
@@ -298,6 +309,7 @@ const Background = React.forwardRef((props, ref) => {
       <Plant
         key={`plant-${i}`}
         animated={animated}
+        animationDuration={animationDuration}
         height={height}
         width={width}
       />
@@ -325,14 +337,12 @@ const Background = React.forwardRef((props, ref) => {
       transition: fill-opacity ${fadeDuration}s ease;
       fill: yellow;
       fill-opacity: 0.2;
-    }
-
-    ${ dimmed
+    }${ dimmed
       ? `
-      #plantBackground g {
-        opacity: 0.65;
-      }
-      `
+    #plantBackground g {
+      opacity: 0.65;
+    }
+    `
       : ''
     }
     @media screen and (prefers-reduced-motion: reduce) {
@@ -370,78 +380,3 @@ const Background = React.forwardRef((props, ref) => {
 });
 
 export default Background;
-
-/*
-
-  function handleMotionRef(node) {
-    // node?.onend = () => {} or
-    node?.addEventListener(
-      'beginEvent',
-      (e) => {
-        console.log('Starting...', e);
-      },
-      false,
-    );
-    node?.addEventListener(
-      'endEvent',
-      (e) => {
-        console.log('Finished!', e);
-      },
-      false,
-    );
-    node?.addEventListener(
-      'repeatEvent',
-      (e) => {
-        const leafId = e.target.dataset.leaf;
-        // const transforms = document.getElementById(leaf).getAttribute('transform');
-        const leaf = document.getElementById(leafId);
-        const transforms = leaf.transform.baseVal;
-        for (let ti = 0; ti < transforms.numberOfItems; ti += 1) {
-          const transform = transforms.getItem(ti);
-          switch (transform.type) {
-            case SVGTransform.SVG_TRANSFORM_SCALE:
-              const matrix = transform.matrix;
-              let newScale = (matrix?.a || 1) * 1.1;
-              // console.log('Scale!', transform, newScale, { leaf });
-              if (newScale > 5) {
-                // fade this one out, create a new one
-                const g = leaf.parentElement;
-                const fadingElement = document.getElementById('fade');
-                const clone = fadingElement.cloneNode(true);
-
-                console.log('cloning...', { leaf }, document.getElementById(leaf.href.baseVal.substring(1)));
-
-                clone.setAttribute('d', document.getElementById(leaf.href.baseVal.substring(1)).getAttribute('d'));
-                clone.setAttribute('transform', leaf.getAttribute('transform'));
-                clone.id = `${leafId}-clone`;
-
-                // clone.id += 'clone';
-                // clone.classList.add('fading');
-                /*
-                const animation = document.createElement('animation');
-                animation.setAttribute('attributeName', 'fill');
-                animation.setAttribute('values', 'yellow');
-                animation.setAttribute('dur', '3s');
-                clone.appendChild(animation);
-                *
-                g.appendChild(clone);
-                // clone.setAttribute('fill-opacity', '0.25');
-                newScale = 0.4;
-              }
-              transforms.getItem(ti).setScale(newScale, newScale);
-              break;
-            case SVGTransform.SVG_TRANSFORM_ROTATE:
-              const angle = transform.angle || 0;
-              const newAngle = Math.min(Math.max(angle + (Math.random() * 30) - 15, 0), 360);
-              transforms.getItem(ti).setRotate(newAngle, 0, 0);
-              break;
-            default:
-          }
-        }
-      },
-      false,
-    );
-  }
-
-
-*/ 

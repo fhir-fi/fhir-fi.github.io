@@ -67,7 +67,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -136,9 +136,14 @@ article#playground > * {
   padding: 1em;
 }
 
+article#playground > h1:first-child {
+  margin-top: 0;
+}
+
 article#playground svg {
   display: block;
   max-width: none;
+  padding: 0;
 }
 
 article#playground label {

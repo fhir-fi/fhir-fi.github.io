@@ -6,6 +6,7 @@ import Background from '../pages/background';
 import '@fontsource-variable/commissioner';
 import '@fontsource/playfair-display';
 import '../styles/index.css';
+import { Header } from './Header';
 
 export function getHead({ title }) {
   return (
@@ -18,35 +19,7 @@ export function getHead({ title }) {
 const Article = ({ children, ...rest }) => {
   return (
     <>
-      <nav id="headerNav">
-        <ul>
-          <li>
-            <Link to="/">
-              FHIR Demo 2025
-            </Link>
-          </li>
-          <li>
-            <Link to="/#participate">
-              Get Listed!
-            </Link>
-          </li>
-          <li>
-            <Link to="/#participants">
-              Participants
-            </Link>
-          </li>
-          <li>
-            <Link to="/#events">
-              Events
-            </Link>
-          </li>
-          <li>
-            <Link to="/#contact">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Header />
       <div id="bgContainer">
         <Background className="decorative background" />
       </div>

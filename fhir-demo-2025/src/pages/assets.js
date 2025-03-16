@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { withPrefix } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 
 import Article, { getHead } from '../components/Article';
 import fhirLogo2 from '../images/fhir-deco.svg';
@@ -26,6 +26,15 @@ export default function Assets() {
       </section>
       <section id="info">
         <h2>Graphical Assets</h2>
+        <section id="backgrounds">
+          <h3>Background images</h3>
+          <p>
+            You can generate background images with the FHIR Demo theme, with a click of a button,
+            for any dimensions you wish, using the <Link to="/create-background">background
+            generator</Link>. Just keep hitting the Redraw! button until you get the shape that
+            appeals to you or suits your needs. 
+          </p>
+        </section>
         <section id="fonts">
           <h3>Typography</h3>
           <ul>
@@ -45,12 +54,13 @@ export default function Assets() {
             </li>
           </ul>
           <p>
-            Playfair is a transitional design. We are in a transitional phase.
+            Playfair is a transitional design. We are in a transitional phase. Also, it's nice to
+            play fair.
           </p>
           <p>
-            The body text font is Commissioner, as we need to affect the European Union and the
-            regulation for the European Health Data Space (EHDS) and get the FHIR standard
-            acknowledged more widely there. ;-)
+            The body text font is Commissioner, as we still need to affect the European Union and
+            the regulation for the European Health Data Space (EHDS) and get the FHIR standard
+            acknowledged more widely there.
           </p>
         </section>
         <section id="fhir-logo">
