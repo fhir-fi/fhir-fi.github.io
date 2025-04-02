@@ -40,6 +40,59 @@ const Plant = ({ animated, animationDuration, height, width }) => {
   const [dotPaths, setDotPaths] = React.useState([]);
 
   React.useEffect(() => {
+    function getRandomCoord({ x, y, direction, short }) {
+      let distance = lineLength * (short ? 0.5 : 1) * ((Math.random() * 0.5) + 0.4);
+      let x1 = -1;
+      let y1 = -1;
+      let counter = 0;
+      while (x1 <= strokeWidth
+        || x1 >= (width - strokeWidth)
+        || y1 <= strokeWidth
+        || y1 >= (height - strokeWidth)) {
+        if (counter++ > 10) {
+          // Too difficult, we're in a tough corner...
+          return { x, y, direction};
+        }
+        // distance = distance / counter;
+        switch (direction) {
+          case 0:
+            x1 = x;
+            y1 = y - distance;
+            break;
+          case 1:
+            x1 = x + distance;
+            y1 = y - distance;
+            break;
+          case 2:
+            x1 = x + distance;
+            y1 = y;
+            break;
+          case 3:
+            x1 = x + distance;
+            y1 = y + distance;
+            break;
+          case 4:
+            x1 = x;
+            y1 = y + distance;
+            break;
+          case 5:
+            x1 = x - distance;
+            y1 = y + distance;
+            break;
+          case 6:
+            x1 = x - distance;
+            y1 = y;
+            break;
+          case 7:
+            x1 = x - distance;
+            y1 = y - distance;
+            break;
+          default:
+        }
+      }
+      return { x: x1, y: y1 };
+    }
+
     let x0 = Math.random() * width;
     let y0 = (Math.random() * (height * 0.3)) + (height * 0.7);
     let { x: x1, y: y1 } = { x: x0, y: y0 };
@@ -110,7 +163,7 @@ const Plant = ({ animated, animationDuration, height, width }) => {
       });
       setDotPaths(dots);
     }
-  }, []);
+  }, [height, lineLength, width]);
 
   function getRandomDirection(oldDirection = 0, wild = false) {
     function getOppositeDirection(d) {
@@ -125,60 +178,6 @@ const Plant = ({ animated, animationDuration, height, width }) => {
     }
     return direction;
   }
-  
-  function getRandomCoord({ x, y, direction, short }) {
-    let distance = lineLength * (short ? 0.5 : 1) * ((Math.random() * 0.5) + 0.4);
-    let x1 = -1;
-    let y1 = -1;
-    let counter = 0;
-    while (x1 <= strokeWidth
-      || x1 >= (width - strokeWidth)
-      || y1 <= strokeWidth
-      || y1 >= (height - strokeWidth)) {
-      if (counter++ > 10) {
-        // Too difficult, we're in a tough corner...
-        return { x, y, direction};
-      }
-      // distance = distance / counter;
-      switch (direction) {
-        case 0:
-          x1 = x;
-          y1 = y - distance;
-          break;
-        case 1:
-          x1 = x + distance;
-          y1 = y - distance;
-          break;
-        case 2:
-          x1 = x + distance;
-          y1 = y;
-          break;
-        case 3:
-          x1 = x + distance;
-          y1 = y + distance;
-          break;
-        case 4:
-          x1 = x;
-          y1 = y + distance;
-          break;
-        case 5:
-          x1 = x - distance;
-          y1 = y + distance;
-          break;
-        case 6:
-          x1 = x - distance;
-          y1 = y;
-          break;
-        case 7:
-          x1 = x - distance;
-          y1 = y - distance;
-          break;
-        default:
-      }
-    }
-    return { x: x1, y: y1 };
-  }
-
 
   function grow(node) {
     node?.addEventListener(
@@ -297,7 +296,7 @@ const Background = React.forwardRef((props, ref) => {
     if (searchParams.has('speed')) {
       setSpeed(+searchParams.get('speed'));
     }
-  }, [search, setAnimated, setHeight, setplantCount, setSpeed, setWidth]);
+  }, [height, search, setAnimated, setHeight, setplantCount, setSpeed, setWidth, width]);
 
   if (width === undefined) {
     return null;
