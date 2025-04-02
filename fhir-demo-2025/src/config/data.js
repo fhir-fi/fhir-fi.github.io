@@ -168,12 +168,6 @@ export const demos = {
       RoleList.System,
     ],
   },
-  meallogger: {
-    name: 'Meallogger',
-    roles: [
-      RoleList.App,
-    ],
-  },
   medcom: {
     name: 'MedCom',
     roles: [
@@ -186,6 +180,12 @@ export const demos = {
     roles: [
       RoleList.Institution,
       RoleList.System
+    ],
+  },
+  metabite: {
+    name: 'Metabite',
+    roles: [
+      RoleList.App,
     ],
   },
   microsoft: {
