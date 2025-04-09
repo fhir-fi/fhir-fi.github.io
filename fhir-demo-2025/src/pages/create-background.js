@@ -5,7 +5,7 @@ import Background from './background';
 import { getHead } from '../components/Article';
 import { Header } from '../components/Header';
 import '@fontsource-variable/commissioner';
-import '@fontsource-variable/tourney';
+import '@fontsource/playfair-display';
 import '../styles/index.css';
 
 const type = 'image/svg+xml;charset=utf-8'
@@ -31,55 +31,63 @@ export default function CreateBackground() {
   return (
     <>
       <Header />
-    <article id="playground">
-      <h1>Create FHIR Demo 2025 Backgrounds!</h1>
-      <form>
-        <label>
-          Width: <input type="number" name="width" value={width} onChange={(e) => setWidth(e.target.value)} />
-        </label>
-        <label>
-          Height: <input type="number" name="height" value={height} onChange={(e) => setHeight(e.target.value)} />
-        </label>
-        <label>
-          Plants: <input type="number" name="count" value={plantCount} onChange={(e) => setPlantCount(e.target.value)} />
-        </label>
-        <label>
-          Animated: <input type="checkbox" name="animated" checked={animated} onChange={(e) => setAnimated(e.target.checked)} />
-        </label>
-        <label>
-          Speed: <input type="number" name="speed" value={speed} onChange={(e) => setSpeed(e.target.value)} />
-        </label>
-        <label>
-          Dimmed: <input type="checkbox" name="dimmed" checked={dimmed} onChange={(e) => setDimmed(e.target.checked)} />
-        </label>
-        <button type="button" onClick={() => { console.log(key); setKey(Date.now()); }}>Redraw!</button>
-        <a
-          href={svgRef.current
-            ? `${type},${encodeURIComponent(svgRef.current.outerHTML)}`
-            : undefined
-          }
-          download={filename}
-          type={type}
-          onClick={(event) => {
-            event.preventDefault();
-            const blob = new Blob([svgRef.current?.outerHTML], { type });
-            saveAs(blob, filename);
-          }}
-        >
-          <button>Save!</button>
-        </a>
-      </form>
-      <Background
-        key={`${key}-${width}x${height}`}
-        ref={svgRef}
-        width={width}
-        height={height}
-        plantCount={plantCount}
-        animated={animated}
-        speed={speed}
-        dimmed={dimmed}
-      />
-    </article>
+      <article id="playground">
+        <h1>Create FHIR Demo 2025 Backgrounds!</h1>
+        <form>
+          <label>
+            Width: <input type="number" name="width" value={width}
+            onChange={(e) => setWidth(e.target.value)} />
+          </label>
+          <label>
+            Height: <input type="number" name="height" value={height}
+            onChange={(e) => setHeight(e.target.value)} />
+          </label>
+          <label>
+            Plants: <input type="number" name="count" value={plantCount}
+            onChange={(e) => setPlantCount(e.target.value)} />
+          </label>
+          <label>
+            Animated: <input type="checkbox" name="animated" checked={animated}
+            onChange={(e) => setAnimated(e.target.checked)} />
+          </label>
+          <label>
+            Speed: <input type="number" name="speed" value={speed}
+            onChange={(e) => setSpeed(e.target.value)} />
+          </label>
+          <label>
+            Dimmed: <input type="checkbox" name="dimmed" checked={dimmed}
+            onChange={(e) => setDimmed(e.target.checked)} />
+          </label>
+          <button type="button" onClick={() => { console.log(key); setKey(Date.now()); }}>
+            Redraw!
+          </button>
+          <a
+            href={svgRef.current
+              ? `${type},${encodeURIComponent(svgRef.current.outerHTML)}`
+              : undefined
+            }
+            download={filename}
+              type={type}
+            onClick={(event) => {
+              event.preventDefault();
+              const blob = new Blob([svgRef.current?.outerHTML], { type });
+              saveAs(blob, filename);
+            }}
+          >
+            <button>Save!</button>
+          </a>
+        </form>
+        <Background
+          key={`${key}-${width}x${height}`}
+          ref={svgRef}
+          width={width}
+          height={height}
+          plantCount={plantCount}
+          animated={animated}
+          speed={speed}
+          dimmed={dimmed}
+        />
+      </article>
     </>
   )
 };
