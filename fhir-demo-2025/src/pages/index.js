@@ -43,7 +43,7 @@ export default function IndexPage({ location = {} }) {
       </section>
       <section
         id="participants"
-        className={hash === '#participants' ? 'callout' : undefined}
+        className={(!hash || (hash === '#participants')) ? 'callout' : undefined}
       >
         <h1>Participants</h1>
         <p>These are the confirmed participants at the moment. There will be many more!</p>
@@ -92,7 +92,7 @@ export default function IndexPage({ location = {} }) {
       </section>
       <section
         id="participate"
-        className={!hash || (hash === '#participate') ? 'callout' : undefined}
+        className={hash === '#participate' ? 'callout' : undefined}
       >
         <h1>Get Listed!</h1>
         <p>
