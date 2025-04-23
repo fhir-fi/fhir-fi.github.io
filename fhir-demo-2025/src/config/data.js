@@ -101,7 +101,6 @@ export const demos = {
     ],
   },
   'hl7-denmark': {
-    hidden: true,
     name: 'HL7 Denmark',
     roles: [
       RoleList.Institution,
@@ -114,14 +113,12 @@ export const demos = {
     ],
   },
   'hl7-norway': {
-    hidden: true,
     name: 'HL7 Norway',
     roles: [
       RoleList.Institution,
     ],
   },
   'hl7-sweden': {
-    hidden: true,
     name: 'HL7 Sweden',
     roles: [
       RoleList.Institution,
