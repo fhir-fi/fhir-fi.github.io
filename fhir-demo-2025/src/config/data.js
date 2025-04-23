@@ -16,7 +16,6 @@ export const demos = {
     ],
   },
   'bcb-medical': {
-    hidden: true,
     name: 'BCB Medical',
     roles: [
       RoleList.App,
