@@ -1,0 +1,101 @@
+<svg viewBox="0 0 250 250" version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+              #borders {
+                fill: none;
+                stroke-width: 0;
+                stroke: red;
+              }
+              #hand {
+                fill: black;
+                stroke-width: 5;
+              }
+              #heart {
+                fill: green;
+              }
+              #heart rect {
+                fill-opacity: 0.15;
+              }
+              #heart rect.darken {
+                fill: black;
+                mix-blend-mode: darken;
+              }
+              #heart rect.lighten {
+                fill: white;
+                mix-blend-mode: lighten;
+              }
+              #heart rect.brighten {
+                fill: white;
+                mix-blend-mode: plus-lighter;
+              }
+    </style>
+  </defs>
+  <rect id="borders" width="250" height="250"></rect>
+  <g transform="translate(42,73)">
+    <path id="hand" d="m 8.8253179,154.64573 c -1.8680523,-1.86801 -1.8680523,-43.9872 0,-45.85521 2.1204361,-2.12048 18.1127631,-1.76532 18.9516551,0.42082 0.872389,2.27346 0.872389,42.74011 0,45.01357 -0.838892,2.18613 -16.831219,2.54126 -18.9516551,0.42082 z m 52.1382801,-5.27316 c -5.456343,-1.16618 -14.260882,-2.4656 -19.565661,-2.88759 l -9.645015,-0.76723 v -14.14369 c 0,-14.14369 0,-14.14369 3.031279,-14.89397 1.667245,-0.41245 6.352311,-2.15818 10.411333,-3.879 9.210321,-3.90471 19.38948,-4.22913 28.995541,-0.92418 5.055728,1.73945 9.278479,2.2046 20.013771,2.2046 14.871394,0 18.015194,1.22051 18.015194,6.99402 0,5.511 -2.35457,6.15596 -23.666054,6.48267 -14.554178,0.2233 -19.812213,0.66145 -20.150919,1.67978 -0.355372,1.06891 4.079935,1.37787 19.780633,1.37787 21.86374,0 24.13829,-0.53218 26.2731,-6.14722 2.71502,-7.14096 33.77684,-19.15804 36.96051,-14.29912 3.07598,4.69448 1.18294,6.62386 -21.32039,21.72938 -30.342703,20.36781 -41.911512,23.29185 -69.133322,17.47368 z"></path>
+  </g>
+  <g id="heart" transform="rotate(-45) translate(-30, -30)">
+    <path d="M 0,250 h 100 a 50,50 0 0 0 0,-100 a 50,50 0 0 0 -100,0 Z"></path>
+    <rect class="brighten" y="150" width="100" height="100"></rect>
+    <rect class="brighten" y="150" x="50" width="50" height="50"></rect>
+    <rect class="darken" y="150" width="50" height="50"></rect>
+    <rect class="darken" y="200" width="50" height="50"></rect>
+    <rect class="darken" y="200" x="50" width="50" height="50"></rect>
+    <rect class="darken" y="200" width="50" height="50"></rect>
+    <rect class="darken" y="200" width="50" height="50"></rect>
+    <rect class="lighten" y="175" x="50" width="25" height="25"></rect>
+    <rect class="lighten" y="200" x="25" width="25" height="25"></rect>
+    <rect class="lighten" y="225" x="12.5" width="12.5" height="12.5"></rect>
+    <rect class="brighten" y="237.5" x="6.25" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="150" width="25" height="25"></rect>
+    <rect class="darken" y="175" x="25" width="25" height="25"></rect>
+    <rect class="darken" y="200" x="50" width="25" height="25"></rect>
+    <rect class="darken" y="225" x="75" width="25" height="25"></rect>
+    <rect class="darken" y="175" width="25" height="25"></rect>
+    <rect class="darken" y="175" width="25" height="25"></rect>
+    <rect class="darken" y="200" x="25" width="25" height="25"></rect>
+    <rect class="darken" y="225" x="50" width="25" height="25"></rect>
+    <rect class="darken" y="225" x="50" width="25" height="25"></rect>
+    <rect class="darken" y="200" width="25" height="25"></rect>
+    <rect class="darken" y="200" width="25" height="25"></rect>
+    <rect class="darken" y="225" x="25" width="25" height="25"></rect>
+    <rect class="darken" y="225" x="25" width="25" height="25"></rect>
+    <rect class="darken" y="225" width="25" height="25"></rect>
+    <rect class="darken" y="225" width="25" height="25"></rect>
+    <rect class="darken" y="225" width="25" height="25"></rect>
+    <rect class="darken" y="225" width="25" height="25"></rect>
+    <rect class="darken" y="200" x="25" width="12.5" height="12.5"></rect>
+    <rect class="darken" y="212.5" x="37.5" width="12.5" height="12.5"></rect>
+    <rect class="darken" y="200" width="12.5" height="12.5"></rect>
+    <rect class="darken" y="212.5" x="12.5" width="12.5" height="12.5"></rect>
+    <rect class="darken" y="225" x="25" width="12.5" height="12.5"></rect>
+    <rect class="darken" y="237.5" x="37.5" width="12.5" height="12.5"></rect>
+    <rect class="darken" y="225" width="12.5" height="12.5"></rect>
+    <rect class="darken" y="237.5" x="12.5" width="12.5" height="12.5"></rect>
+    <rect class="darken" y="225" x="12.5" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="231.25" x="18.75" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="225" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="231.25" x="6.25" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="237.5" x="12.5" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="243.75" x="18.75" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="237.5" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="243.75" x="6.25" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="237.5" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="243.75" x="6.25" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="243.75" x="6.25" width="6.25" height="6.25"></rect>
+    <rect class="darken" y="237.5" x="6.25" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="240.625" x="9.375" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="237.5" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="240.625" x="3.125" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="243.75" x="6.25" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="246.875" x="9.375" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="243.75" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="243.75" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="243.75" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="246.875" x="3.125" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="246.875" x="3.125" width="3.125" height="3.125"></rect>
+    <rect class="darken" y="246.875" x="3.125" width="3.125" height="3.125"></rect>
+  </g>
+</svg>

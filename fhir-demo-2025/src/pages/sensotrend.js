@@ -8,8 +8,7 @@ import { demos } from '../config/data';
 import mikaelx1 from '../images/MikaelRinnetmaki.jpg';
 import mikaelx2 from '../images/MikaelRinnetmaki2x.jpg';
 import logo from '../images/sensotrend.svg';
-import sensotrendAGPImage from '../images/sensotrend-agp.png';
-import sensotrendCareplanImage from '../images/sensotrend-careplan.png';
+import terveystiedotTalteenLogo from '../images/terveystiedot-talteen.svg';
 import sensotrendConnectImage from '../images/sensotrend-connect.jpg';
 
 export function Head() {
@@ -24,19 +23,46 @@ export default function Sensotrend({ location }) {
     <Demo location={location} >
       <h1><a href="https://www.sensotrend.com/"><img src={logo} alt="Sensotrend" /></a></h1>
       <Roles list={roles} targetPage="." targetFragment="" />
-
       <section id="intro">
         <p>
-          Sensotrend offers two apps, the <Link to="#sensotrend-connect">Sensotrend
-          Connect</Link> for remote monitoring and the <Link to="#careplan">Care Plan for
-          Diabetes</Link> for digitalized care paths.
+          Sensotrend empowers people with diabetes through smart apps, and also offers consultany.
+        </p>
+        <h3>Apps</h3>
+        <p>
+          As a fresh demo for this year's FHIR Demo showcase, we present <Link
+          to="#tervetstiedot-talteen">Terveystiedot talteen</Link>, a service that enables patients
+          to download their health data in structured format from the Finnish centralized health
+          data repository Kanta.
         </p>
         <p>
-          Sensotrend also offers <Link to="#consultancy">consultancy</Link> on EHR integrations,
-          FHIR implementations, and regulatory affairs.</p>
+          Also, together with <Link to="/epic">Epic</Link> we demonstrate <Link
+          to="#sensotrend-connect">Sensotrend Connect</Link>, a remote monitoring service with
+          tight integrations to EHR systems.
+        </p>
+        <h3>Consultancy</h3>
         <p>
-          See also our demos in <a href="https://fhir.fi/en/demo2023/sensotrend/">last year's
-          showcase</a>. They contain plenty of additional information.
+          Sensotrend also offers <Link to="#consultancy">consultancy</Link> on EHR integrations,
+          FHIR implementations, and regulatory affairs.
+        </p>
+      </section>
+      <section id="terveystiedot-talteen">
+        <h2>Patient Access to Structured Health Data</h2>
+        <p>
+          Together with <Link to="/kela">Kela</Link>, we present Terveystiedot talteen, a service
+          that enables an individual to download a copy of their health data from the Finnish
+          national health data repository <a
+          href="https://www.kanta.fi/en/system-developers/about-kanta-services">Kanta</a>, in
+          structured format.
+        </p>
+        <img className="logo" src={terveystiedotTalteenLogo} alt="" />
+        <p>
+          The data is downloaded in the format it is stored in Kanta, i.e., mainly CDA documents.
+          However, a FHIR API is used to query the data, and the data is transferred within FHIR
+          DocumentReference resources.
+        </p>
+        <p>
+          Read more about the data format and check out the service in <a
+          href="https://terveystiedot.talteen.fi">terveystiedot.talteen.fi</a>!
         </p>
       </section>
       <section id="sensotrend-connect">
@@ -60,55 +86,21 @@ export default function Sensotrend({ location }) {
           stores it in any specified FHIR server.
         </p>
         <p>
-          The solution also includes a dashboard view of the data that is integrated into
+          Sensotrend Connect also includes a dashboard view of the data that is integrated into
           electronic health record systems with the <strong>SMART App Launch</strong> specification.
           See an <a
           href="https://hl7.fi/fhir/finnish-smart/AuditEvent-apotti-ehr-launch-by-practitioner.html"
           >example launch flow</a> in the Finnish Implementation Guide for SMART App Launch.
         </p>
-        <figure>
-          <a href={sensotrendAGPImage}>
-            <img src={sensotrendAGPImage} alt="Screen capture of Sensotrend AGP Report" />
-          </a>
-          <figcaption>
-            The main view of Sensotrend Connect is based on the internationally harmonized <a
-            href="http://www.agpreport.org/agp/about">Ambulatory Glucose Profile</a> specification.
-          </figcaption>
-        </figure>
-        <blockquote>
-          <p>
-            The data provided by remote monitoring solutions in a standardized format is a key
-            enabler for digital care paths.
-          </p>
-        </blockquote>
         <p>
-          The data provided by remote monitoring solutions in a standardized format is a key
-          enabler for digital care paths. People with chronic conditions can live independently and
-          without support from healthcare personnel for long periods of times. But things change,
-          and sometimes these people need more support. Remote monitoring solutions are essential
-          in ensuring that nobody is left out of care they need.
+          Sensotrend has participated in creation of HL7 International's <a
+          href="https://build.fhir.org/ig/HL7/cgm/">Continuous Glucose Monitoring</a> specification
+          that harmonizes how data from continuous glucose monitors is shared between actors.
         </p>
-      </section>
-      <section id="careplan">
-        <h2>Care Plan for Diabetes</h2>
         <p>
-          The Care Plan for Diabetes formalizes established treatment protocols and best practices
-          for diabetes treatment into an app.
-        </p>
-        <figure>
-          <a href={sensotrendCareplanImage}>
-            <img
-              src={sensotrendCareplanImage}
-              alt="Screen captures of Sensotrend Careplan for Diabetes"
-            />
-          </a>
-          <figcaption>
-            The careplan keeps track and notifies the patient of appointments, lab tests, and other
-            actions relevant to care.
-          </figcaption>
-        </figure>
-        <p>
-          The data produced by the app also helps healthcare organizations identify treatment gaps.
+          Our FHIR Demos from <a href="https://fhir.fi/en/demo2024/sensotrend/">2024</a>, <a
+          href="https://fhir.fi/en/demo2023/sensotrend/">2023</a>, and <a
+          href="https://fhir.fi/en/demo2022/sensotrend.html">2022</a> provide additional details.
         </p>
       </section>
       <section id="consultancy">
@@ -120,23 +112,24 @@ export default function Sensotrend({ location }) {
         <p>
           We participate actively in the development of the FHIR standard. We are part of the core
           group working on the <a href="https://hl7.org/fhir/uv/ipa/">International Patient Access
-          (IPA)</a> specification.
+          (IPA)</a> specification, and also participate in FHIR profiling work of HL7 Europe.
         </p>
         <p>
-          We coordinate several working groups for HL7 Finland (the <a
-          href="https://www.hl7.fi/sig-toiminta/ihe-sig/">IHE Finland</a>, <a
-          href="https://www.hl7.fi/sig-toiminta/personal-health-sig/">Personal Health SIG</a>,
-          and <a
-          href="https://www.hl7.fi/sig-toiminta/personal-health-sig/omatietovarannon-tukiprojekti/">Kanta
-          PH (Personal Health)</a> groups). We had a big role in creation of the <a
-          href="https://hl7.fi/fhir/finnish-base-profiles/">Finnish FHIR Base profiles</a> and
-          the <a
-          href="https://hl7.fi/fhir/finnish-smart/">Finnish Implementation Guide for SMART App
-          Launch</a>. And, we coordinate this showcase too!
+          We have coordinated the <a href="https://www.hl7.fi/sig-toiminta/ihe-sig/">IHE
+          Finland</a>, <a href="https://www.hl7.fi/sig-toiminta/personal-health-sig/">Personal
+          Health SIG</a>, and <a
+          href="https://www.hl7.fi/sig-toiminta/personal-health-sig/omatietovarannon-tukiprojekti/"
+          >Kanta PH (Personal Health)</a> working groups for HL7 Finland for many years. We had a
+          big role in creation of the <a href="https://hl7.fi/fhir/finnish-base-profiles/">Finnish
+          FHIR Base profiles</a>, the <a href="https://hl7.fi/fhir/finnish-smart/">Finnish
+          Implementation Guide for SMART App Launch</a>, and the <a
+          href="https://hl7.fi/fhir/finnish-scheduling/">Finnish Scheduling</a> FHIR implementation
+          guides. And we coordinate this showcase too!
         </p>
         <p>
-          We're happy to help others too, and have already helped many startups with integrations
-          and consulted public organizations. Please don't hesitate to get in touch!
+          We're happy to help others succeed with HL7 FHIR, and have already helped many startups
+          with integrations and consulted public organizations. Please don't hesitate to get in
+          touch!
         </p>
       </section>
       <section id="contact">
