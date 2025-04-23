@@ -12,7 +12,7 @@ export function Head() {
   return getHead({ title });
 };
 
-export default function EskoSystems({ location }) {
+export default function Epic({ location }) {
   const roles = demos.epic.roles;
   
   return (
