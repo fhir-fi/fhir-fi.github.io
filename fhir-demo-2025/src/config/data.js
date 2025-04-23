@@ -134,6 +134,12 @@ export const demos = {
       RoleList.Institution,
     ],
   },
+  'ihe-finland': {
+    name: 'IHE Finland',
+    roles: [
+      RoleList.Institution,
+    ],
+  },
   innokas: {
     name: 'Innokas',
     roles: [
