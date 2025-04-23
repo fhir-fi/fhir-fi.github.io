@@ -79,6 +79,13 @@ export const demos = {
       RoleList.System,
     ],
   },
+  evondos: {
+    hidden: true,
+    name: 'Evondos',
+    roles: [
+      RoleList.App,
+    ],
+  },
   fass: {
     name: 'Fass.se',
     roles: [
