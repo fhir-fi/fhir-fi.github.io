@@ -30,9 +30,10 @@ export default function IheFinland({ location }) {
       </section>
       <section id="webinars">
         <h2>Webinar series on IHE profiles related to FHIR</h2>
-        <p>In 2024, IHE Finland organized a webinar series to cover IHE profiles related to the HL7
-          FHIR standard. The recordings of those webinars have been made available for anyone to
-          view, free of charge.
+        <p>
+          In 2024, IHE Finland organized a <a href="https://www.hl7.fi/ihe-fhir/">webinar
+          series</a> to cover IHE profiles related to the HL7 FHIR standard. The recordings of
+          those webinars have been made available for anyone to view, free of charge.
         </p>
         <p>The profiles are presented by John Moehrke, a co-chair of the HL7 Security workgroup, a
           member of the FHIR Management Group and the FHIR core team, and co-chair of IHE IT
