@@ -93,6 +93,10 @@ export default function Sensotrend({ location }) {
           >example launch flow</a> in the Finnish Implementation Guide for SMART App Launch.
         </p>
         <p>
+          This year, we demonstrate how both raw data and statistical summary data from continuous
+          glucose monitors are stored within electronic health record systems.
+        </p>
+        <p>
           Sensotrend has participated in creation of HL7 International's <a
           href="https://build.fhir.org/ig/HL7/cgm/">Continuous Glucose Monitoring</a> specification
           that harmonizes how data from continuous glucose monitors is shared between actors.
