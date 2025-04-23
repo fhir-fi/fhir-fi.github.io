@@ -20,7 +20,12 @@ export default function Hl7Sweden({ location }) {
         <a href="https://hl7.se/"><img src={logo} alt="HL7 Sweden" /></a>
       </h1>
       <Roles list={roles} />
-      <section className="work-in-progress">
+      <section className="about">
+        <p>
+          HL7 is an international organization dedicated to providing standards for exchange and
+          integration of electronic health information. HL7 Sweden is the national affiliate
+          representing Swedish interests and national standardization.
+        </p>
         <p>
           See the current activities on the <a href="https://hl7.se/">HL7 Sweden home page</a>.
         </p>
