@@ -256,10 +256,23 @@ const Plant = ({ animated, animationDuration, height, width }) => {
   React.useLayoutEffect(() => {
     const node = animationListener.current;
     if (node) {
-      node.addEventListener('repeatEvent', growListener);
-      return (() => {
-        node.removeEventListener('repeatEvent', growListener);
-      })
+      if (!animationListener.current?.onrepeat) {
+        // Safari, and perhaps other browsers that don't support events on animation repeat
+        const complexListener = (e) => {
+          growListener(e);
+          node.beginElement();
+        };
+        node.addEventListener('endEvent', complexListener);
+        node.beginElement();
+        return (() => {
+          node.removeEventListener('endEvent', complexListener);
+        });
+      } else {
+        node.addEventListener('repeatEvent', growListener);
+        return (() => {
+          node.removeEventListener('repeatEvent', growListener);
+        });
+      }
     }
   }, [animationListener, growListener]);
 
@@ -274,8 +287,9 @@ const Plant = ({ animated, animationDuration, height, width }) => {
       {animated && dotPaths.map((p, i) => (
         <circle key={`pulse-${i}`} fill="red" r="2" >
           <animateMotion
+            begin={!animationListener.current?.onrepeat ? 'indefinite' : 0}
             dur={`${animationDuration}s`}
-            repeatCount="indefinite"
+            repeatCount={!animationListener.current?.onrepeat ? 1 : 'indefinite'}
             data-leaf={p.leaf}
             path={p.path}
             ref={i === 0 ? animationListener : undefined}
