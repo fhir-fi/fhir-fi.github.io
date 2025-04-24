@@ -1,10 +1,21 @@
 import * as React from 'react';
 
-const Leaf = ({ fading = false, rotate, scale, x, y }) => {
+const Leaf = ({ fading = false, generation, rotate, scale, x, y }) => {
+  const [isFading, setFading] = React.useState(false);
+
+  React.useLayoutEffect(() => {
+    if (fading) {
+      setFading(false);
+      setTimeout(() => {
+        setFading(true);
+      }, 500);
+    }
+  }, [generation, fading]);
+
   return (
-    <g transform={`translate(${x},${y})`}>
+    <g key={`generation${generation}`} transform={`translate(${x},${y})`}>
       <path
-        className={`${fading ? 'fading ' : ''}leaf`}
+        className={`${(fading && !isFading) ? 'about-to-fade ' : (isFading ? 'fading ' : '')}leaf`}
         transform={`scale(${scale}) rotate(${rotate})`}
         d="M20,0 a10 10 0 0 1 0 20 a10 10 0 0 1 -20 0 v-20 Z"
       />
@@ -12,13 +23,28 @@ const Leaf = ({ fading = false, rotate, scale, x, y }) => {
   );
 };
 
-const Flower = ({fading = false, rotate, scale, x, y }) => {
+const Flower = ({fading = false, generation, remove = f => f, rotate, scale, x, y }) => {
+  const [isFading, setFading] = React.useState(false);
+
+  React.useEffect(() => {
+    if (fading) {
+      setTimeout(() => {
+        setFading(true);
+      }, 500);
+    }
+  });
+
   return (
-    <g transform={`translate(${x},${y})`}>
+    <g key={`generation${generation}`} transform={`translate(${x},${y})`}>
       <path
-        className={`${fading ? 'fading ' : ''}flower`}
+        className={`${isFading ? 'fading ' : ''}flower`}
         transform={`scale(${scale}) rotate(${rotate})`}        
         d="M0,0 a10 10 0 0 1 0 20 a10 10 0 0 1 -20 0 a10 10 0 0 1 0 -20 a10 10 0 0 1 20 0 Z"
+        onTransitionEnd={isFading ? (e) => {
+          if (e.propertyName === 'fill-opacity') {
+            remove();
+          }
+         } : f => f}
       />
     </g>
   );
@@ -28,10 +54,14 @@ const Plant = ({ animated, animationDuration, height, width }) => {
   const lineLength = height / 5;
   const strokeWidth = 3;
 
+  const flowerGeneration = React.useRef(0);
+  const leafGeneration = React.useRef(0);
+  const animationListener = React.useRef(null);
+
   const [flowerScale, setFlowerScale] = React.useState(1);
   const [leafScale, setLeafScale] = React.useState(0.4);
 
-  const [rootStalkPath, setRootStalkPath] = React.useState(<path />);
+  const [rootStalkPath, setRootStalkPath] = React.useState('M0,0');
   const [flower, setFlower] = React.useState(undefined);
   const [clonedFlower, setClonedFlower] = React.useState(undefined);
   const [branches, setBranches] = React.useState([]);
@@ -116,6 +146,7 @@ const Plant = ({ animated, animationDuration, height, width }) => {
     let i = 0; // TODO: a static counter...
     if (longerStalk) {
       setFlower({
+        flowerGeneration: flowerGeneration.current,
         rotate: Math.random() * 90,
         scale: 1,
         x: x6,
@@ -149,6 +180,7 @@ const Plant = ({ animated, animationDuration, height, width }) => {
       );
       setBranches(plantBranches);
       plantLeaves.push({
+        generation: leafGeneration.current,
         rotate: Math.random() * 360,
         scale: 0.4,
         x: x11,
@@ -179,39 +211,57 @@ const Plant = ({ animated, animationDuration, height, width }) => {
     return direction;
   }
 
-  function grow(node) {
-    node?.addEventListener(
-      'repeatEvent',
-      (e) => {
-        if (flower) {
-          if (flowerScale < 6) {
-            setFlowerScale(flowerScale * 1.1);
+  const growListener = React.useCallback((e) => {
+    if (flower) {
+      if (flowerScale < 6) {
+        setFlowerScale(flowerScale * 1.1);
 //            flower.rotate = Math.min(Math.max(flower.rotate + (Math.random() * 30) - 15, -90), 90);
-          } else {
-            // Let's just override the potential previous one
-            setClonedFlower({
-              ...flower,
-              scale: flowerScale,
-            });
-            setFlowerScale(1);
-          }
-        }
-        if (leafScale < 5) {
-          setLeafScale(leafScale * 1.1);
-          setLeaves([...leaves.map(l => ({
-            ...l,
-            rotate: Math.min(Math.max(l.rotate + (Math.random() * 30) - 15, -360), 360),
-          }))]);
-        } else {
-          setClonedLeaves([...leaves.map(l => ({
-            ...l,
-            scale: leafScale,
-          }))]);
-          setLeafScale(0.4);
-        }
+      } else {
+        // Let's just override the potential previous one
+        const currentScale = flowerScale;
+        setFlowerScale(1);
+        setClonedFlower({
+          ...flower,
+          remove: () => {setClonedFlower(undefined)},
+          scale: currentScale,
+        });
+        flowerGeneration.current += 1;
+        setFlower({
+          ...flower,
+          generation: flowerGeneration.current,
+        });
       }
-    );
-  }
+    }
+    if (leafScale < 5) {
+      setLeafScale(leafScale * 1.1);
+      setLeaves([...leaves.map(l => ({
+        ...l,
+        rotate: Math.min(Math.max(l.rotate + (Math.random() * 30) - 15, -360), 360),
+      }))]);
+    } else {
+      setClonedLeaves([...leaves.map(l => ({
+        ...l,
+        scale: leafScale,
+      }))]);
+      leafGeneration.current += 1;
+      setLeaves([...leaves.map(l => ({
+        ...l,
+        generation: leafGeneration.current,
+        rotate: Math.min(Math.max(l.rotate + (Math.random() * 30) - 15, -360), 360),
+      }))]);
+      setLeafScale(0.4);
+    }
+  }, [flower, flowerGeneration, flowerScale, leafGeneration, leafScale, leaves]);
+
+  React.useLayoutEffect(() => {
+    const node = animationListener.current;
+    if (node) {
+      node.addEventListener('repeatEvent', growListener);
+      return (() => {
+        node.removeEventListener('repeatEvent', growListener);
+      })
+    }
+  }, [animationListener, growListener]);
 
   return (
     <g className="plant">
@@ -228,15 +278,14 @@ const Plant = ({ animated, animationDuration, height, width }) => {
             repeatCount="indefinite"
             data-leaf={p.leaf}
             path={p.path}
-            ref={grow}
+            ref={i === 0 ? animationListener : undefined}
           />
         </circle>
      ))}
       {leaves.map((l, i) => <Leaf key={`leaf-${i}`} {...l} scale={leafScale} />)}
       {clonedLeaves.map((l, i) => (<Leaf key={`leaf-${i}-clone`} {...l} fading={true} />))}
       {flower && <Flower {...flower} scale={flowerScale} />}
-      {clonedFlower && <Flower {...clonedFlower} fading={true} className="fade" />
-      }
+      {clonedFlower && <Flower {...clonedFlower} fading={true} className="fade" />}
     </g>
   );
 };
@@ -302,22 +351,9 @@ const Background = React.forwardRef((props, ref) => {
     return null;
   }
 
-  const plants = [];
-  for (let i=0; i < plantCount; i += 1) {
-    plants.push(
-      <Plant
-        key={`plant-${i}`}
-        animated={animated}
-        animationDuration={animationDuration}
-        height={height}
-        width={width}
-      />
-    )
-  }
-
   const style = `
     #plantBackground * {
-      transition: all 0.4s ease, transition: fill ${fadeDuration}s ease, transition: fill-opacity ${fadeDuration}s ease;
+      transition: transform 0.6s ease-in-out, fill ${fadeDuration}s ease-in-out, fill-opacity ${fadeDuration * 3}s ease-in-out;
     }
     #plantBackground line {
       stroke-width: 0.5px;
@@ -328,14 +364,13 @@ const Background = React.forwardRef((props, ref) => {
       fill: none;
       stroke: green;
     }
-    #plantBackground .leaf, #plantBackground .flower {
+    #plantBackground .leaf, #plantBackground .flower, #plantBackground .about-to-fade {
       fill: green;
       fill-opacity: 1;
     }
     #plantBackground .fading {
-      transition: fill-opacity ${fadeDuration}s ease;
       fill: yellow;
-      fill-opacity: 0.2;
+      fill-opacity: 0;
     }${ dimmed
       ? `
     #plantBackground g {
@@ -344,9 +379,15 @@ const Background = React.forwardRef((props, ref) => {
     `
       : ''
     }
+    #plantBackground .about-to-fade {
+      transition: transform 0s ease-in-out, fill 0s ease-in-out, fill-opacity 0s ease-in-out
+    }
+
     @media screen and (prefers-reduced-motion: reduce) {
-      #plantBackground circle {
+      #plantBackground * {
         animation: none !important;
+      }
+      #plantBackground circle {
         display: none;
       }
     }
@@ -373,7 +414,15 @@ const Background = React.forwardRef((props, ref) => {
         <path id="leaf" className="leaf" d="M20,0 a10 10 0 0 1 0 20 a10 10 0 0 1 -20 0 v-20 Z" />
         <path id="flower" className="leaf" d="M0,0 a10 10 0 0 1 0 20 a10 10 0 0 1 -20 0 a10 10 0 0 1 0 -20 a10 10 0 0 1 20 0 Z" />
       </defs>
-      { plants }
+      {Array.from(Array(plantCount)).map((d, i) => (
+        <Plant
+          key={`plant-${i}`}
+          animated={animated}
+          animationDuration={animationDuration}
+          height={height}
+          width={width}
+        />
+      ))}
     </svg>
   )
 });
