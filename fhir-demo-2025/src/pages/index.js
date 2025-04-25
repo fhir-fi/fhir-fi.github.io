@@ -35,8 +35,8 @@ export default function IndexPage({ location = {} }) {
         </p>
         <p>
           The event continues the tradition of the FHIR Demo showcases organized in <a
-          href="http://www.hl7.fi/wp-content/uploads/HL7-Finland-%23U0432%23U0402%23U201c-FHIR-demon-loppuraportti-20160527.pdf">2016</a>,
-          {' '} <a href="https://fhir.fi/en/demo2022/index.html">2022</a>, <a
+          href="http://www.hl7.fi/wp-content/uploads/HL7-Finland-%23U0432%23U0402%23U201c-FHIR-demon-loppuraportti-20160527.pdf"
+          >2016</a>, <a href="https://fhir.fi/en/demo2022/index.html">2022</a>, <a
           href="https://fhir.fi/en/demo2023/index.html">2023</a>, and <a
           href="https://fhir.fi/en/demo2024/index.html">2024</a>.
         </p>
@@ -72,9 +72,8 @@ export default function IndexPage({ location = {} }) {
           <p>Some of the participants will be present in at least the following events:</p>
           <ul>
             <li>
-              May 5-7, 2025 <a
-              href="https://koulutus.fcg.fi/sosiaali-ja-terveydenhuollon-ATK-paivat">Sosiaali ja
-              terveydenhuollon ATK-päivät</a>, Jyväskylä, Finland.
+              May 5-7, 2025 <Link to="/atk-paivat">Sosiaali ja terveydenhuollon ATK-päivät</Link>,
+              Jyväskylä, Finland.
             </li>
             <li>
               May 19-22, 2025 <a href="https://vitalis.nu/">Vitalis</a>, Gothenburg, Sweden.
