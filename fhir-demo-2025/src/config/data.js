@@ -260,9 +260,9 @@ export const demos = {
     ],
   },
   tietoevry: {
-    hidden: true,
     name: 'Tietoevry Care',
     roles: [
+      RoleList.App,
       RoleList.System,
     ],
   },
