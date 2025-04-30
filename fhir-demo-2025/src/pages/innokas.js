@@ -8,8 +8,7 @@ import innokasLogo from '../images/innokas.png';
 import medicubexBoothOpen from '../images/medicubex_booth_open.png';
 import innokasFlowChart from '../images/innokas_flow_chart.png';
 import anttiKaltiainen from '../images/antti_kaltiainen.png';
-import jussiKoskinen from '../images/jussi_koskinen.png';
-import tapioPelkonen from '../images/tapio_pelkonen.png';
+import heikkiMiinalainen from '../images/heikki_miinalainen.png';
 
 export function Head() {
   const title = <title>FHIR Demo 2025: Innokas / MedicubeX</title>;
@@ -37,7 +36,7 @@ export default function Innokas({ location }) {
       <ul>
         <li><a href="#innokas-approach">Innokas Approach</a></li>
         <li><a href="#measurement-flow">Measurement Transfer Flow</a></li>
-        <li><a href="#fhir-exhibitions">FHIR Demo 2024 Exhibitions</a></li>
+        <li><a href="#fhir-exhibitions">FHIR Demo 2025 Exhibitions</a></li>
         <li><a href="#medicubex">MedicubeX™ eHealth Station</a></li>
         <li><a href="#innokas-software">Innokas Software Professionals</a></li>
         <li><a href="#innokas-company">Innokas as a Company</a></li>
@@ -100,15 +99,14 @@ export default function Innokas({ location }) {
       </section>
 
       <section id="fhir-exhibitions">
-        <h2>FHIR Demo 2024 Exhibitions</h2>
+        <h2>FHIR Demo 2025 Exhibitions</h2>
         <p>
-          In FHIR Demo 2024 we will demonstrate the sending of patient’s results (MedicubeX) and show
-          them on OmaKanta’s web app. The eHealth Station will also be available for the exhibition
-          guests to see and experience. 
+          In FHIR Demo 2025 Innokas and MedicubeX are together present at Vitalis.
+          The eHealth Station will also be available for the exhibition guests to see and experience. Innokas experts will tell more about different integration capabilities and experiences.
         </p>
         <p>Events we will be at</p>
         <ul>
-          <li>Radical Health Festival 21.-23.5.2024</li>
+          <li>May 19-22, 2025 <a href="https://en.vitalis.nu/">Vitalis</a>, Gothenburg, Sweden</li>
         </ul>
       </section>
 
@@ -195,25 +193,13 @@ export default function Innokas({ location }) {
         <br />
         <div className="business-card">
           <picture>
-            <source srcSet={jussiKoskinen} />
-            <img src={jussiKoskinen} alt="Jussi Koskinen" />
+            <source srcSet={heikkiMiinalainen} />
+            <img src={heikkiMiinalainen} alt="Heikki Miinalainen" />
           </picture>
-          <h3>Jussi Koskinen</h3>
-          <p>Software Engineer</p>
-          <address>
-            <a href="mailto:jussi.koskinen@innokas.eu">jussi.koskinen@innokas.eu</a>
-          </address>
-        </div>
-        <br />
-        <div className="business-card">
-          <picture>
-            <source srcSet={tapioPelkonen} />
-            <img src={tapioPelkonen} alt="Tapio Pelkonen" />
-          </picture>
-          <h3>Tapio Pelkonen</h3>
+          <h3>Heikki Miinalainen</h3>
           <p>Senior Software Engineer</p>
           <address>
-            <a href="mailto:tapio.pelkonen@innokas.eu">tapio.pelkonen@innokas.eu</a>
+            <a href="mailto:heikki.miinalainen@innokas.eu">heikki.miinalainen@innokas.eu</a>
           </address>
         </div>
       </section>
