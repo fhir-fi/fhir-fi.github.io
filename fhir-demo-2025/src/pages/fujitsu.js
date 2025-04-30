@@ -47,17 +47,7 @@ export default function Fujitsu({ location }) {
           to="/epic">Epic</Link> with <strong>SMART App Launch</strong> and using Epic’s <strong
           >FHIR resources</strong>.
         </p>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          <img src={fujitsuhomedialysis} alt="" style={{ maxWidth: '100%', height: 'auto' }} />
-        </div>
+        <img src={fujitsuhomedialysis} alt="" />
         <h3>Fujitsu Integration Platform as a Service (IPaaS)</h3>
         <p>
           With this part of the Fujitsu Remote Health, we offer customers a 24/7 monitored service
@@ -67,18 +57,9 @@ export default function Fujitsu({ location }) {
         </p>
         <p>
           If you need InterSystems IRIS based FHIR Server as a Service or some other technology to
-          save data from your health-focused devices and sensors, just contact us.</p>
-        <div 
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          <img src={hl7fhirlogo} alt="" style={{ maxWidth: '300px', height: 'auto' }} />
-        </div>
+          save data from your health-focused devices and sensors, just contact us.
+        </p>
+        <img className="logo" src={hl7fhirlogo} alt="" style={{ maxHeight: '12em' }} />
         <h3>FHIR Demo 2025</h3>
         <p>
           We will showcase the advanced capabilities of FHIR in the context of new remote,
@@ -94,30 +75,10 @@ export default function Fujitsu({ location }) {
           Newlife platform consists of hybrid architecture leveraging technologies such as <Link
           to="/intersystems">InterSystems</Link> and Azure's API management and data storage.
         </p>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
-            height: '100%',
-          }}
-        >
-          <img
-            src={newlifelogo}
-            alt=""
-            style={{ flex: 1, maxWidth: '150px', height: 'auto', margin: '0 10px' }}
-          />
-          <img
-            src={euflag}
-            alt=""
-            style={{ flex: 1, maxWidth: '100px', height: 'auto', margin: '0 10px' }}
-          />
-          <img
-            src={chipsjulogo}
-            alt=""
-            style={{ flex: 1, maxWidth: '150px', height: 'auto', margin: '0 10px' }}
-          />
+        <div className="logos">
+          <img className="small logo" src={newlifelogo} alt="" />
+          <img className="small logo" src={euflag} alt="" />
+          <img className="small logo" src={chipsjulogo} alt="" />
         </div>
       </section >
       <section id="contact">

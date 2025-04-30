@@ -581,6 +581,7 @@ figure img,
 
 img.no-scale {
   width: auto;
+  max-width: 100%;
 }
 
 img.inline {
@@ -610,11 +611,25 @@ img.logo {
   max-width: 100%;
 }
 
+img.logo.small {
+  max-height: 5em;
+}
+
 main > img.logo,
 section > img.logo {
   display: block;
   text-align: center;
   margin: 3em auto;
+}
+
+img.logo.small,
+img.logo.small {
+  display: inline-block;
+  margin: 2em;
+}
+
+div.logos {
+  text-align: center;
 }
 
 #mainPage section#description {
