@@ -11,6 +11,7 @@ import newlifelogo from '../images/newlife_logo.png';
 import euflag from '../images/eu_flag.png';
 import chipsjulogo from '../images/chips_ju_logo.jpg';
 import joni from '../images/joni_hirviniemi.png';
+import { Link } from 'gatsby';
 
 export function Head() {
   const title = <title>FHIR Demo 2025: Fujitsu</title>;
@@ -39,7 +40,7 @@ export default function Fujitsu({ location }) {
           services, offering capabilities for home care and monitoring, and at the same time saving
           resources for all parties.</p>
         <p>Fujitsu Remote Health solutions include <strong>Home Dialysis</strong> and <strong>eMOM</strong> solutions
-          that are using HL7 FHIR. We have integrated solutions to Epic with <strong>SMART App Launch</strong> and
+          that are using HL7 FHIR. We have integrated solutions to <Link to="/epic">Epic</Link> with <strong>SMART App Launch</strong> and
           using Epic’s <strong>FHIR resources</strong>.</p>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
           <img src={fujitsuhomedialysis} alt="" style={{ maxWidth: '100%', height: 'auto' }} />
