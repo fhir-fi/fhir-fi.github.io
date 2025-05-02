@@ -637,6 +637,11 @@ div.logos {
   font-size: 125%;
 }
 
+#mainPage section#atk-paivat p,
+#mainPage section#vitalis p {
+  font-size: 150%;
+}
+
 .demo h2,
 li h2 {
   font-size: larger;
@@ -683,7 +688,8 @@ section.event h2 {
   color: white;
 }
 
-section.event.atk-paivat h2 {
+section.event.atk-paivat h3 {
+  font-size: 150%;
   color: #EB5B19;
 }
 
@@ -779,18 +785,34 @@ table.schedule tr.highlight td:last-child {
 }
 
 table.participants {
+  font-size: 125%;
+}
+
+table.participants a {
   font-weight: bold;
+}
+
+table.participants th a {
+  text-transform: uppercase;
+  font-size: 85%;
+}
+
+table.participants th a {
+  color: #EB5B19;
 }
 
 table.participants td {
   vertical-align: top;
 }
 
+table.participants th:first-child,
 table.participants td:first-child {
+  font-weight: bold;
   text-align: right;
   padding-right: 1em;
 }
 
+table.participants th:last-child,
 table.participants td:last-child {
   text-align: left;
 }
