@@ -44,15 +44,14 @@ export default function AtkPaivat({ location }) {
       clarification: ' & AWS',
     },
     {
-      name: 'ProWellness',
-      id: 'prowellness',
-      stand: 'C101',
-      clarification: ' (Business Oulu)',
-    },
-    {
       name: 'CGI',
       id: 'cgi',
       stand: 'B41',
+    },
+    {
+      name: 'Duodecim',
+      id: 'duodecim',
+      stand: 'C124',
     },
     {
       name: 'Epic',
@@ -77,7 +76,7 @@ export default function AtkPaivat({ location }) {
     {
       name: 'InterSystems',
       id: 'intersystems',
-      stand: 'C120',
+      stand: 'B55',
     },
     {
       name: 'Kela Kantapalvelut ',
@@ -85,14 +84,15 @@ export default function AtkPaivat({ location }) {
       stand: 'B05',
     },
     {
-      name: 'Kustannus Oy Duodecim',
-      id: 'duodecim',
-      stand: 'C124',
-    },
-    {
       name: 'Oracle',
       id: 'oracle',
       stand: 'C331',
+    },
+    {
+      name: 'ProWellness',
+      id: 'prowellness',
+      stand: 'C101',
+      clarification: ' (Business Oulu)',
     },
     {
       name: 'Tietoevry',
@@ -112,8 +112,8 @@ export default function AtkPaivat({ location }) {
   ];
 
   return (
-    <Article id="atk-paivat" className="event">
-      <section id="intro">
+    <Article id="atk-paivat" className="atk-paivat event">
+      <section id="intro" className="atk-paivat event">
         <h1>FHIR Demo 2025 ATK-päivillä</h1>
         <p>
           FHIR Demo 2025 esittelee FHIR-standardin käytön nykytilan Suomessa <a
@@ -125,7 +125,45 @@ export default function AtkPaivat({ location }) {
           kootusti tiistaina klo 16.45 alkaen.
         </p>
       </section>
-      <section id="esittely" className="callout">
+      <section id="nayttely" className="atk-paivat event">
+      <h2>Näytteille&shy;asettajat</h2>
+      <table id="naytteilleasettajat" className="participants">
+        <thead>
+          <tr>
+            <th><Link to href="?lajittelu=paikka" partiallyActive={true}>Ständi</Link></th>
+            <th><Link to href="?lajittelu=nimi" partiallyActive={true}>Nimi</Link></th>
+          </tr>
+        </thead>
+        <tbody>
+          {exhibitors.sort((a,b) => a[sort] > b[sort] ? 1 : -1).map(e =>
+            <tr><td>{e.stand}</td><td><Link to={`/${e.id}`}>{e.name}</Link>{e.clarification || ''}</td></tr>
+          )}
+        </tbody>
+      </table>
+      </section>
+      <section id="osallistujat" className="atk-paivat event">
+      <h2>Osallistujat ohjelmassa</h2>
+      <table id="ohjelma" className="schedule">
+        {/*
+        <thead>
+          <tr>
+            <th><Link to href="?lajittelu=paikka" partiallyActive={true}>Ständi</Link></th>
+            <th><Link to href="?lajittelu=nimi" partiallyActive={true}>Nimi</Link></th>
+          </tr>
+        </thead>
+        */}
+        <tbody>
+          <tr><td>Ti 14.00 - 15.15</td><td>Sessio 3: Asiakas- ja potilastieto&shy;järjestelmien kehittäminen</td><td>Encore (pääsali)</td></tr>
+          <tr><td>Ti 14.30 - 15.00</td><td><Link to="/cgi">CGI</Link>: OMNI360</td><td>Agenda (3.krs)</td></tr>
+          <tr><td>Ti 16.00 - 16.30</td><td><Link to="/atostek">Atostek</Link>: ERA - Tiedosta jatkuvuus</td><td>Agenda (3.krs)</td></tr>
+          <tr className="highlight"><td>Ti 16.45 - 17.45</td><td>FHIR Demo 2025 -esittely</td><td>D310-311 (Dynamo)</td></tr>
+          <tr><td>Ke 9.00 - 9.30</td><td><Link to="/oracle">Oracle Health</Link>: Tekoäly tulevaisuuden potilastieto&shy;järjestelmissä ja ennakoivassa väestön&shy;terveydessä</td><td>Agenda (3.krs)</td></tr>
+          <tr><td>Ke 10.15 - 11.30</td><td>Sessio 6: <Link to="/sensotrend">Sensotrend</Link>: Kannan asiakas- ja potilastiedot hyvinvointi&shy;sovelluksiin</td><td>Kabinetti (3.krs)</td></tr>
+          <tr><td>Ke 11.00 - 11.30</td><td><Link to="/fujitsu">Fujitsu</Link>: Vauhtia muutokseen! </td><td>Agenda (3.krs)</td></tr>
+        </tbody>
+      </table>
+      </section>
+      <section id="esittely" className="atk-paivat event">
         <h2>Demon koottu esittely</h2>
         <p>
           FHIR Demo 2025 esitellään kootusti tiistaina. Esittelytilaisuudessa käydään läpi
@@ -150,39 +188,7 @@ export default function AtkPaivat({ location }) {
           Ks. <a href="https://maps.app.goo.gl/HwV8WPYRVHh2judD9">kävelyohjeet Google Mapsissä</a>!
         </p>
       </section>
-      <section id="osallistujat" className="atk-paivat event">
-      <h2>FHIR Demo 2025 näyttelyhallissa ja ohjelmassa</h2>
-      <h3>Näytteilleasettajat</h3>
-      <table id="naytteilleasettajat" className="participants">
-        <thead>
-          <tr>
-            <th><Link to href="?lajittelu=paikka" partiallyActive={true}>Ständi</Link></th>
-            <th><Link to href="?lajittelu=nimi" partiallyActive={true}>Nimi</Link></th>
-          </tr>
-        </thead>
-        <tbody>
-          {exhibitors.sort((a,b) => a[sort] > b[sort] ? 1 : -1).map(e =>
-            <tr><td>{e.stand}</td><td><Link to={`/${e.id}`}>{e.name}</Link>{e.clarification || ''}</td></tr>
-          )}
-        </tbody>
-      </table>
-      {/*
-      <h3>Aikataulu</h3>
-      <table id="naytteilleasettajat" className="schedule">
-        <thead>
-          <tr>
-            <th><Link to href="?lajittelu=paikka" partiallyActive={true}>Ständi</Link></th>
-            <th><Link to href="?lajittelu=nimi" partiallyActive={true}>Nimi</Link></th>
-          </tr>
-        </thead>
-        <tbody>
-          {exhibitors.sort((a,b) => a[sort] > b[sort] ? 1 : -1).map(e =>
-            <tr><td>{e.stand}</td><td><Link to={`/${e.id}`}>{e.name}</Link>{e.clarification || ''}</td></tr>
-          )}
-        </tbody>
-      </table>
-      */}
-      </section>
+
       <img className="decoration" src={fhirLogo} alt="" />
     </Article>
   )

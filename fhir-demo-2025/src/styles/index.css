@@ -666,6 +666,7 @@ section.event {
   background-color: black;
   color: white;
   padding: 1.5em;
+  border: none;
 }
 
 main.demo aside.event,
@@ -684,6 +685,7 @@ section.event a {
   text-decoration: underline;
 }
 
+section.event h1,
 section.event h2 {
   color: white;
 }
@@ -737,6 +739,7 @@ table.schedule td {
   border-color: transparent;
   border-width: 0 0 5px;
   border-style: solid;
+  vertical-align: top;
 }
 
 table.schedule th {
@@ -745,21 +748,33 @@ table.schedule th {
   padding-bottom: 0.25em;
 }
 
+/*
 table.schedule td a {
-  font-weight: normal;
+  font-weight: bold;
 }
+*/
 
 table.schedule td:first-of-type {
   border-left-width: 5px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  white-space: nowrap;
 }
+
+/*
+table.schedule td:first-of-type {
+  min-width: 10em;
+  white-space: preserve nowrap;
+  border: 1px solid red;
+}
+*/
 
 table.schedule td:last-of-type {
   text-align: right;
   border-right-width: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  white-space: nowrap;
 }
 
 table.schedule tr.highlight + tr td {
@@ -1077,6 +1092,23 @@ nav.prevNext > div:last-child {
   main.demo > h1 {
     font-size: 300%;
   }
+  table.schedule tr {
+    margin-top: 1em;
+    display: block;
+  }
+  table.schedule td:first-of-type,
+  table.schedule td:last-of-type {
+    display: block;
+    text-align: left;
+  }
+  table.schedule tr.highlight {
+    border: 5px solid #EB5C18;
+  }
+
+  table.schedule td,
+  table.schedule tr.highlight td {
+    border: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1150,5 +1182,8 @@ nav.prevNext > div:last-child {
   .business-card > img {
     margin-top: 0;
     margin-bottom: 0.25cm;
+  }
+  table.participants {
+    font-size: 100%;
   }
 }
