@@ -571,6 +571,7 @@ div.media {
 
 figure img,
 main > section > img,
+article > section > a > img,
 main > img,
 figure img,
 .demo > section > a > img {
