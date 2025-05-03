@@ -1,0 +1,85 @@
+#ehds figcaption {
+  text-align: center;
+}
+
+#ehds figure:first-of-type section {
+  text-align: center;
+}
+
+#ehds figure:last-of-type p:last-child {
+  margin-bottom: 0;
+}
+
+#ehds figure section {
+  background-color: #00649e;
+  color: white;
+  margin-top: 0.75em;
+  padding-bottom: 1em;
+  text-align: center;
+}
+
+#ehds h3 {
+  margin-top: 0;
+}
+
+#ehds ul {
+  margin: 0 auto;
+  padding: 0.5em;
+}
+
+#ehds ul li {
+  display: block;
+  width: 14em;
+  height: 3em;
+  margin: 0.5em auto;
+  padding: 0.1em;
+  background-color: #ccdee4;
+  color: black;
+}
+
+@media (min-width: 600px) {
+  #ehds ul {
+    padding: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    max-height: 33em;
+    margin-bottom: 0;
+    margin: 0 auto;
+  }
+  #ehds ul li {
+    align-self: center;
+    margin: 0.3em 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  #ehds div {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    max-height: 50em;
+  }
+  #ehds figure {
+    flex: 1;
+    margin-bottom: 0;
+    flex-grow: 4;
+  }
+  #ehds figure:first-of-type {
+    flex: 2;
+    margin-right: 1em;
+    max-width: 55%;
+    flex-grow: 7;
+  
+  }
+  #ehds figure:last-of-type {
+    max-width: 40%;
+    justify-content: flex-end;
+    vertical-align: bottom;
+    flex-grow: 0;
+  }
+  #ehds ul {
+    justify-content: space-between;
+    align-items: center
+  }
+}

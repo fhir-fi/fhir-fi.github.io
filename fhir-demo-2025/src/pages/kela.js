@@ -5,6 +5,7 @@ import Demo from '../components/Demo';
 import Roles from '../components/Roles';
 import { demos } from '../config/data';
 import kelaLogo from '../images/kela.png';
+import '../styles/kela.css';
 
 export function Head() {
   const title = <title>FHIR Demo 2025: Kela</title>;
@@ -15,133 +16,150 @@ export default function Kela({ location }) {
   const roles = demos.kela.roles;
   
   return (
-    <Demo roles={roles} location={location}>
+    <Demo id="kela" roles={roles} location={location} lang="fi">
       <h1 className="white">
         <a href="https://www.kela.fi/">
           <img src={kelaLogo} alt="Kela" />
         </a>
       </h1>
       <Roles list={roles} />
-      <section id="kanta-phr">
-        <h2>Kanta Personal Health Record (Omatietovaranto)</h2>
+      <section id="in-english" lang="en">
         <p>
-          Kanta Personal Health Record (Kanta PHR) is a national Kanta service in which users can
-          save their wellbeing data. The service was deployed for the first-phase production use in
-          spring 2018. Currently, citizens can record their wellbeing data in Kanta PHR with
-          accepted wellbeing applications developed for this purpose. Entering data from My Kanta
-          Pages (<i>OmaKanta</i>) was published in early 2024.
-        </p>
-        <p>
-          Anyone can develop a new wellbeing application that utilises Kanta PHR. The applications
-          can be server-based or mobile applications. Their users may consist of citizens,
-          professionals, or both. For wellbeing application suppliers, Kanta PHR offers the
-          interfaces and the open national accepted data content based on the HL7 FHIR standard.
-          The FHIR Rest API interfaces are specified in the Capability Statement description. The
-          data content is developed in cooperation with various actors.
-        </p>
-        <p>
-          Currently under development is sharing data from Kanta PHR with healthcare professionals.
-          Users may give their consent to healthcare and social welfare professionals to use the
-          data in support of their patient care or service relationship.
-        </p>
-        <p>
-          Application developers can integrate their own application in the sandbox environments of
-          Kanta PHR for independent testing. Further information: <a
-          href="https://www.kanta.fi/en/system-developers/sandbox-environments">Sandbox
-          environments</a>.</p>
-        <p>
-          Further information about the service and the latest updates are available on the <a
-          href="https://www.kanta.fi/en/system-developers/kanta-phr">Kanta PHR page</a>.
-        </p>
-        <p>
-          Demo: The Sandbox can be used in the demo as is. Kela will also demonstrate in the
-          MyKanta how users can browse their wellbeing data and store results from their
-          measurements.
+          For information in English, please see the <a href="https://fhir.fi/en/demo2024/kela/">
+          entry in FHIR Demo 2024</a>.
         </p>
       </section>
-      <section id="kanta-prescription-api">
-        <h2>Kanta Prescription Centre FHIR Interface</h2>
-        <p>
-          Prescription centre is a national Kanta service in which citizens' electronic
-          prescriptions and electronic dispensations are saved. Main interfaces in production are
-          based on HL7 V3 Medical Records messaging and HL7 V3 CDA R2 documents. For metadata
-          search of the prescriptions has been implemented search operation based on FHIR custom
-          operations and FHIR Medication*-resources. FHIR interface includes only metadata of the
-          prescription although the data content of the metadata includes a large amount of
-          information of the actual prescription.
-        </p>
-        <p>
-          Currently under development are new FHIR interfaces for fetching medication list of
-          citizen, the <a
-          href="https://simplifier.net/guide/finnish-kanta-medication-list-r4?version=current"
-          >draft for implementation guide</a> is available in Finnish.
-        </p>
-        <p>
-          <a href="https://simplifier.net/guide/finnishkantamedicationr4/home?version=current">For
-          this interface</a> there is no open Sandbox environment available. The interface can be
-          used only through the Kanta <a
-          href="https://www.kanta.fi/en/system-developers/test-environments#Client%20test%20environment"
-          >Client testing environment</a> and needs joining to this environment (<a
-          href="https://www.kanta.fi/documents/20143/91498/Kanta-asiakastestipalvelun+liittymisohje.pdf/e254b933-1d7f-04fd-d982-6ea0360aab37"
-          >instructions</a> in Finnish).
-        </p>
-        <p>
-          Demo: The Kanta services can produce examples of FHIR MedicationRequest resource
-          instances for demo purpose and these instances can be made available through a server of
-          another party participating in the demo or through public FHIR servers.
-        </p>
+      <section id="tiekartta">
+        <h2>FHIR Kanta-palvelujen tiekartassa</h2>
+        <p>Olemassa olevat:</p>
+        <ul>
+          <li>
+            <strong>Lääkemääräyksen yksilöintitietojen haku</strong>. FHIR soveltamisopas: <a
+            href="https://simplifier.net/guide/FinnishKantaMedicationR4/Home?version=current"
+            >Lääkemääräyksen yksilöintitietojen haku</a>
+          </li>
+          <li>
+            <strong>Hyvinvointisovellusten Kanta-rajapinta</strong> (potilastiedot). FHIR
+            soveltamisopas: <a
+            href="https://simplifier.net/guide/hyvinvointisovellusten-rajapinta-potilastietoihin-r4/Etusivu?version=1.1.0"
+            >Hyvinvointisovellusten rajapinta potilastietoihin</a>
+          </li>
+        </ul>
+        <p>Kehitteillä parhaillaan:</p>
+        <ul>
+          <li>
+            <strong>Lääkityslista vaihe 2</strong> lääkitystiedot haetaan lääkityslistan muodossa,
+            ei erillisinä lääkemääräys- ja toimitusasiakirjoina. FHIR soveltamisopas: <a
+            href="https://simplifier.net/guide/finnish-kanta-medication-list-r4?version=current"
+            >Kanta-lääkityslistan haku Release Candidate</a>
+          </li>
+          <li>
+            <strong>Terveydenhuollon ajanvaraus</strong>. FHIR
+            soveltamisopas: <a
+            href="https://simplifier.net/guide/kanta-potilastietovaranto-ajanvaraus-r4?version=current"
+            >Kanta Potilastietovaranto Ajanvaraus</a>
+          </li>
+          <li>
+            <strong>Sosiaalihuollon luovutusilmoitus</strong>. FHIR
+            soveltamisopas: <a
+            href="https://simplifier.net/guide/kanta-sosiaalihuolto-r4-versio-1.0.0?version=current"
+            >Sosiaalihuollon luovutusilmoitus</a>
+          </li>
+          <li>
+            <strong>Toimintakyky, sosiaalihuolto</strong>. FHIR soveltamisopas tulossa kommenteille
+            5.5.
+          </li>
+          <li>
+            <strong>Hyvinvointisovellusten Kanta-rajapinta</strong> (potilastiedot, puolesta-asiointi). FHIR
+            soveltamisopas: <a
+            href="https://simplifier.net/guide/hyvinvointisovellusten-rajapinta-potilastietoihin-r4?version=1.2.0-RC1"
+            >intisovellusten rajapinta potilastietoihin</a> (RC v1.2.0)
+          </li>
+          <li>+
+            <strong>Tietojen luovuttaminen soten ulkopuolelle </strong> (Kysely- ja
+            välityspalvelu). FHIR soveltamisopas: <a
+            href="https://simplifier.net/guide/kvp?version=current">Kysely- ja välityspalvelun FHIR
+            rajapintojen soveltamisopas</a>
+          </li>
+        </ul>
+        <p>Tulevat:</p>
+        <ul>
+          <li>Lääkityslista vaihe 3: Uusia tietosisältöjä: lääkityksen tarkistus- ja huomiomerkinnät sekä itsehoitolääkkeet</li>
+          <li>Lääkityslista vaihe 4: Uusia tietosisältöjä: osastolääkemääräys ja lääkkeen antomerkinnät</li>
+          <li>Hyvinvointisovellusten Kanta-rajapinta (reseptitietojen luovutus)</li>
+          <li>Sosiaalihuollon ajanvaraus</li>
+          <li>Toimintakyky, terveydenhuolto</li>
+          <li>Kansalaisen tuottamat tiedot potilaskertomukseen</li>
+          <li>EHDS prioriteettiluokkien mukaiset tietosisällöt</li>
+        </ul>
       </section>
-      <section id="appointments">
-        <h2>Kanta Patient Data Repository Appointments</h2>
-        <p>
-          Currently under development in Kanta Patient Data Repository is national solution to
-          store healthcare appointments. This will utilise FHIR Appointment resources. This
-          solution is the first FHIR interface in Kanta Patient Data Repository that both stores
-          and returns FHIR resources. Documentation (in Finnish) and example are available <a
-          href="https://simplifier.net/kanta-potilastiedon-arkiston-fhir-r4">on Simplifier</a>, but
-          no open sandbox is provided.
-        </p>
-        <p>
-          Demo: The Kanta services can produce examples of FHIR Appointment resource instances for
-          demo purpose and these instances can be made available through a server of another party
-          participating in the demo or through public FHIR servers.
-        </p>
-      </section>
-      <section id="social-service-audit-logs">
-        <h2>Kanta Client Data Repository for Social Welfare Services Audit Logs</h2>
-        <p>
-          For Kanta Client Data Repository for Social Welfare Services new solution for storing
-          Audit Logs for sharing documents across registrars is being developed. The solution
-          focuses on receiving and storing such logs. Documentation and examples are also available
-          {' '}<a href="https://simplifier.net/kanta-sosiaalihuolto-r4">on Simplifier</a>. This
-          solution focuses on the auditing side of national infrastructure and not so much in
-          patient and care provider focus. More information in Finnish on development on Kanta
-          Social Welfare Data Repository can be read on <a
-          href="https://www.kanta.fi/jarjestelmakehittajat/sosiaalihuollon-asiakastiedon-arkisto"
-          >Kanta website</a>.
-        </p>
-      </section>
-      <section id="future">
-        <h2>Other Kanta FHIR Interfaces in the Future</h2>
-        <p>
-          Kanta Patient Data Repository Citizen Access is new Kanta interface to enable Wellbeing
-          applications and Citizen portals to fetch Kanta Patient data repository content and show
-          it to citizen themselves. The interface is under development and the requirements will be
-          published for comments in 2024.
-        </p>
-        <p>
-          In the future there is a plan to offer data of the Kanta services in FHIR format. This
-          data can be for example diagnoses (problems), lab results, vital sign from Patient data
-          repository service. The future development in Kanta services will take the new EU
-          regulations into account.
-        </p>
+      <section id="ehds">
+        <h2>EHDS:n vaatimat tietosisällöt ja niiden siirtymäajat</h2>
+        <div>
+        <figure id="4v">
+          <figcaption>
+            4 vuotta voimaantulosta<sup aria-describedby="aikaselite">*</sup>
+          </figcaption>
+          <section>
+            <h3>Potilastiedon yhteenveto</h3>
+            <ul>
+              <li><strong>Henkilötiedot</strong>, vakuutustiedot ja <strong>yhteystiedot</strong></li>
+              <li><strong>Allergiat</strong></li>
+              <li><strong>Lääketieteelliset riskitiedot</strong></li>
+              <li>Rokotukset</li>
+              <li><strong>Ongelmalista</strong><br /><small>(menneet, nykyiset, ei-aktiiviset)</small></li>
+              <li><strong>Nykyinen ja aiempi lääkitys</strong></li>
+              <li><strong>Lääkinnälliset laitteet ja implantit</strong></li>
+              <li><strong>Toimenpiteet tai hoitomenettelyt</strong></li>
+              <li>Toimintakykytiedot</li>
+              <li>Hoitohistoriaan liittyvät tekstimuotoiset tiedot</li>
+              <li>Terveyteen liittyvä sosiaalinen terveyshistoria (havainnot)</li>
+              <li>Raskaushistoria</li>
+              <li>Potilaan itse toimittamat tiedot</li>
+              <li>Terveydentilan havainnoinnin tulokset</li>
+              <li>Hoitosuunnitelma</li>
+              <li>Harvinaissairauksia koskevat tiedot</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Sähköinen resepti ja lääketoimitus</h3>
+          </section>
+        </figure>
+        <figure id="6v">
+          <figcaption>
+            6 vuotta voimaantulosta<sup aria-describedby="aikaselite">*</sup>
+          </figcaption>
+          <section>
+            <h3>Lääketieteellinen kuva ja lausunto</h3>
+          </section>
+          <section>
+            <h3>Laboratoriotutkimukset ( + medical tests)</h3>
+          </section>
+          <section>
+            <h3>Hoidon loppulausunnot</h3>
+          </section>
+        </figure>
+        <figure>
+          <p>
+            <strong>Lihavoitu</strong> tietosisältö on jo nykyisessä Potilastiedon yhteenvedossa.
+          </p>
+          <p>
+            Nykyistä tietosisältöä tulee kehittää yhdenmukaisemmaksi uusien EHDS:n tietosisältöjen
+            kanssa.
+          </p>
+          <p id="aikaselite" role="note">
+            *EU tasolla vaatimukset tietojen kattavuudesta ja rakenteisuuden asteesta tulee
+            kasvamaan ajan myötä. Sisältövaatimukset julkaistaan EHDS täytäntöönpanoasetuksessa.
+          </p>
+        </figure>
+        </div>
       </section>
       <section id="contact">
         <h3>Contact</h3>
         <div className="business-card">
-          <h3>Tatu Heinonen</h3>
+          <h3>Mari Peltola-Nykyri</h3>
           <address>
-            <a href="mailto:tatu.heinonen@kela.fi">tatu.heinonen@kela.fi</a>
+            <a href="mailto:mari.peltola-nykyri@kela.fi">mari.peltola-nykyri@kela.fi</a>
           </address>
         </div>
       </section>

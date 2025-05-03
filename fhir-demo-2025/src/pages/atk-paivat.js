@@ -79,9 +79,10 @@ export default function AtkPaivat({ location }) {
       stand: 'B55',
     },
     {
-      name: 'Kela Kantapalvelut ',
+      name: 'Kela',
       id: 'kela',
       stand: 'B05',
+      clarification: ' Kantapalvelut',
     },
     {
       name: 'Oracle',
@@ -112,7 +113,7 @@ export default function AtkPaivat({ location }) {
   ];
 
   return (
-    <Article id="atk-paivat" className="atk-paivat event">
+    <Article id="atk-paivat" className="atk-paivat event" lang="fi">
       <section id="intro" className="atk-paivat event">
         <h1>FHIR Demo 2025 ATK-päivillä</h1>
         <p>
