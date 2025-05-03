@@ -50,13 +50,52 @@ const Flower = ({fading = false, generation, remove = f => f, rotate, scale, x, 
   );
 };
 
+const Animator = ({ animationDuration, growListener, p, repeatSupported = false }) => {
+  const ref = React.useRef(null);
+
+  React.useLayoutEffect(() => {
+    const node = ref.current;
+    if (node) {
+      if (!repeatSupported) {
+        // Safari, and perhaps other browsers that don't support events on animation repeat
+        // There is no really good way of verifying whether the event is fully supported
+        // (Safari has partial support). So let's use this method for all browsers...
+        const complexListener = (e) => {
+          growListener(e);
+          node.beginElement();
+        };
+        node.addEventListener('endEvent', complexListener);
+        node.beginElement();
+        return (() => {
+          node.removeEventListener('endEvent', complexListener);
+        });
+      } else {
+        node.addEventListener('repeatEvent', growListener);
+        return (() => {
+          node.removeEventListener('repeatEvent', growListener);
+        });
+      }
+    }
+  }, [ref, growListener, repeatSupported]);
+
+  return (
+    <animateMotion
+      begin={!repeatSupported ? 'indefinite' : 0}
+      dur={`${animationDuration}s`}
+      repeatCount={!repeatSupported ? 1 : 'indefinite'}
+      data-leaf={p.leaf}
+      path={p.path}
+      ref={growListener ? ref : undefined}
+    />
+  );
+};
+
 const Plant = ({ animated, animationDuration, height, width }) => {
   const lineLength = height / 5;
   const strokeWidth = 3;
 
   const flowerGeneration = React.useRef(0);
   const leafGeneration = React.useRef(0);
-  const animationListener = React.useRef(null);
 
   const [flowerScale, setFlowerScale] = React.useState(1);
   const [leafScale, setLeafScale] = React.useState(0.4);
@@ -215,7 +254,7 @@ const Plant = ({ animated, animationDuration, height, width }) => {
     if (flower) {
       if (flowerScale < 6) {
         setFlowerScale(flowerScale * 1.1);
-//            flower.rotate = Math.min(Math.max(flower.rotate + (Math.random() * 30) - 15, -90), 90);
+        // flower.rotate = Math.min(Math.max(flower.rotate + (Math.random() * 30) - 15, -90), 90);
       } else {
         // Let's just override the potential previous one
         const currentScale = flowerScale;
@@ -253,29 +292,6 @@ const Plant = ({ animated, animationDuration, height, width }) => {
     }
   }, [flower, flowerGeneration, flowerScale, leafGeneration, leafScale, leaves]);
 
-  React.useLayoutEffect(() => {
-    const node = animationListener.current;
-    if (node) {
-      if (!animationListener.current?.onrepeat) {
-        // Safari, and perhaps other browsers that don't support events on animation repeat
-        const complexListener = (e) => {
-          growListener(e);
-          node.beginElement();
-        };
-        node.addEventListener('endEvent', complexListener);
-        node.beginElement();
-        return (() => {
-          node.removeEventListener('endEvent', complexListener);
-        });
-      } else {
-        node.addEventListener('repeatEvent', growListener);
-        return (() => {
-          node.removeEventListener('repeatEvent', growListener);
-        });
-      }
-    }
-  }, [animationListener, growListener]);
-
   return (
     <g className="plant">
       <path
@@ -286,13 +302,10 @@ const Plant = ({ animated, animationDuration, height, width }) => {
       {branches}
       {animated && dotPaths.map((p, i) => (
         <circle key={`pulse-${i}`} fill="red" r="2" >
-          <animateMotion
-            begin={!animationListener.current?.onrepeat ? 'indefinite' : 0}
-            dur={`${animationDuration}s`}
-            repeatCount={!animationListener.current?.onrepeat ? 1 : 'indefinite'}
-            data-leaf={p.leaf}
-            path={p.path}
-            ref={i === 0 ? animationListener : undefined}
+          <Animator
+            animationDuration={animationDuration}
+            growListener={i === 0 ? growListener : undefined}
+            p={p}
           />
         </circle>
      ))}
