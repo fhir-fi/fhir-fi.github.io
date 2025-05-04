@@ -203,6 +203,13 @@ blockquote p:last-child {
   margin-bottom: 0;
 }
 
+blockquote em {
+  /*
+  font-style: normal;
+  */
+  font-weight: 500;
+}
+
 blockquote footer {
   font-size: smaller;
   border: none;

@@ -47,6 +47,13 @@ export default function Sensotrend({ location }) {
       </section>
       <section id="terveystiedot-talteen">
         <h2>Patient Access to Structured Health Data</h2>
+        <blockquote>
+          <p>
+            In all Nordic countries we have web portals where patients can <em >view</em> their
+            data - but not touch it.
+          </p>
+          <p>Now you can download your health data in structured format and use it as you wish!</p>
+        </blockquote>
         <p>
           Together with <Link to="/kela">Kela</Link>, we present Terveystiedot talteen, a service
           that enables an individual to download a copy of their health data from the Finnish
@@ -92,6 +99,20 @@ export default function Sensotrend({ location }) {
           href="https://hl7.fi/fhir/finnish-smart/AuditEvent-apotti-ehr-launch-by-practitioner.html"
           >example launch flow</a> in the Finnish Implementation Guide for SMART App Launch.
         </p>
+        <blockquote>
+          <p>
+            In <a href="https://fhir.fi/en/demo2023/sensotrend/">2023</a>, we demonstrated how the
+            app can be launched from Apotti EHR with a click of a button.
+          </p>
+          <p>
+            In <a href="https://fhir.fi/en/demo2024/sensotrend/">2024</a>, we embedded the app into
+            the workflow so that the default view opens automagically, without any clicks.
+          </p>
+          <p>
+            Now we are writing diabetes data from patients' devices into the EHR, to make it even
+            more actionable in healthcare organization's processes.
+          </p>
+        </blockquote>
         <p>
           This year, we demonstrate how both raw data and statistical summary data from continuous
           glucose monitors are stored within electronic health record systems.
@@ -130,11 +151,14 @@ export default function Sensotrend({ location }) {
           href="https://hl7.fi/fhir/finnish-scheduling/">Finnish Scheduling</a> FHIR implementation
           guides. And we coordinate this showcase too!
         </p>
-        <p>
-          We're happy to help others succeed with HL7 FHIR, and have already helped many startups
-          with integrations and consulted public organizations. Please don't hesitate to get in
-          touch!
-        </p>
+        <blockquote>
+          <p>
+            We're happy to help others succeed with HL7 FHIR, and have already helped many startups
+            with integrations and consulted public organizations.
+          </p>
+
+        </blockquote>
+        <p>Please don't hesitate to get in touch!</p>
       </section>
       <section id="contact">
         <h3>Contact</h3>
