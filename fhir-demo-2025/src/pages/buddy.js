@@ -24,17 +24,18 @@ export default function Buddy({ location }) {
       </h1>
       <Roles list={roles} />
       <section id="democase">
-        <h2>FHIR Appointment Indication and Demo Presentation</h2>
+        <h2>FHIR Appointment Demo</h2>
         <p>
-          In our FHIR demo, we showcase how professionals can manage patient appointments through
-          our system. The system supports smooth scheduling of various procedure and outpatient
-          appointments.
+          In the demo video, you will see how appointment information can be managed both by
+          healthcare professionals and patients through the Buddy Healthcare platform. It
+          enables smooth scheduling of various procedure and outpatient appointments.
         </p>
         <h3>Creating an Appointment: First Example - Chat Appointment</h3>
         <ol>
           <li>
             <strong>Patient Information</strong><br/>
-            Enter the patient's ID and the organizational unit ID where the service is provided.
+            Enter the patient's ID and the organizational unit ID i.e., where the service is
+            provided.
           </li>
           <li>
             <strong>Defining the Appointment</strong><br/>
@@ -46,32 +47,30 @@ export default function Buddy({ location }) {
             Create the appointment data in the system.<br />
             Once saved, the information is automatically transferred to:
             <ul>
-              <li>Our system's professional interface</li>
-              <li>The patient's app, where it becomes visible</li>
+              <li>Buddy Healthcare's platform's professional interface</li>
+              <li>To the Buddy Healtcare's patient app</li>
             </ul>
           </li>
           <li>
             <strong>Tasks</strong><br/>
-            Tasks in care pathways (e.g., video consultations) are automatically aligned with the
-            correct time based on the appointment.
+            Tasks for the healthcare professionals and for the patient in care pathway are
+            automatically aligned with the appointment time.
           </li>
         </ol>
-        <h3>Second Example - Surgery Time</h3>
+        <h3>Creating an Appointment: Second Example - Surgery Time</h3>
         <ol>
-          <li>Create a new appointment for the patient, such as a surgery time.</li>
+          <li>Create a surgery appointment for the patient</li>
+          <li>Select the resources and date and time for the surger</li>
           <li>
-            Select the resources and schedule the time a few days after the chat appointment.
-          </li>
-          <li>
-            The appointment immediately appears in:
+            The appointment information immediately appears in:
             <ul>
-              <li>Our professional interface</li>
-              <li>The patient's app</li>
+              <li>Buddy Healthcare's platform's professional interface</li>
+              <li>In the patient app</li>
             </ul>
           </li>
           <li>
-            The care pathway adapts automatically to the new appointment—for example, instructions
-            for fasting and medication pauses are updated accordingly.
+            The care pathway adapts automatically to the new appointment — for example,
+            instructions for fasting and medication pauses are updated accordingly.
           </li>
         </ol>
         <h3>Modifying and Deleting Appointments</h3>
@@ -98,6 +97,7 @@ export default function Buddy({ location }) {
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
       </section>
+      {/* 
       <section id="integrations">
         <h3>Practical Integrations</h3>
         <p>This FHIR appointment integration is in use:</p>
@@ -112,6 +112,7 @@ export default function Buddy({ location }) {
           </li>
         </ol>
       </section>
+      */}
       <section id="contact">
         <h3>Contact</h3>
         <div className="business-card">
