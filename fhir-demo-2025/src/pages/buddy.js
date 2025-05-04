@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 
 import { getHead } from '../components/Article';
 import Demo from '../components/Demo';
@@ -23,6 +22,59 @@ export default function Buddy({ location }) {
         </a>
       </h1>
       <Roles list={roles} />
+      <section id="intro">
+        <h2>Buddy Healthcare Care Coordination Platform</h2>
+        <p>
+          Buddy Healthcare is a Finnish digital health company that automates patient care
+          coordination, especially for surgeries and hospital treatments. Its platform enhances
+          efficiency and the patient experience through structured digital pathways. The company
+          serves customers in 8 European countries.
+        </p>
+        <h3>Platform Overview</h3>
+        <ol>
+          <li>
+            <p>Patient Engagment App</p>
+            <ul>
+              <li>Delivers step-by-step guidance, reminders, forms, and secure messaging.</li>
+              <li>
+                Integrates with other providers' digital health solutions for a seamless
+                experience.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <p>Care Pathway Management Dashboard</p>
+            <ul>
+              <li>
+                Allows care teams to track progress, reduce manual work, and collect PROMs/PREMs.
+              </li>
+              <li>Supports risk identification and patient communication</li>
+            </ul>
+          </li>
+          <li>
+            <p>Care Analytics</p>
+            <ul>
+              <li>Care processes analytics</li>
+              <li>PROM's</li>
+              <li>PREM's</li>
+              <li>Other metrics</li>
+            </ul>
+          </li>
+        </ol>
+        <h3>The platform has been integrated with</h3>
+        <ul>
+          <li>EHRs and surgery scheduling systems</li>
+          <li>Laboratory information systems</li>
+          <li>Other third-party clinical tools</li>
+        </ul>
+        <h3>Key Benefits</h3>
+        <ul>
+          <li>Lowers cancellation rates and administrative burden.</li>
+          <li>Improves patient adherence and safety.</li>
+          <li>Enables digital and remote care pathways.</li>
+          <li>Supports efficient data and outcome tracking.</li>
+        </ul>
+      </section>
       <section id="democase">
         <h2>FHIR Appointment Demo</h2>
         <p>
