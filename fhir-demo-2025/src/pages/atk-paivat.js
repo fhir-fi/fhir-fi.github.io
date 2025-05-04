@@ -106,7 +106,7 @@ export default function AtkPaivat({ location }) {
       stand: 'C280',
     },
     {
-      name: 'Vitec Acute Oy',
+      name: 'Vitec Acute',
       id: 'vitec',
       stand: 'C282',
     },
