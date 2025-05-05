@@ -79,12 +79,6 @@ export default function AtkPaivat({ location }) {
       stand: 'B55',
     },
     {
-      name: 'Innokas',
-      id: 'innokas',
-      stand: 'B09',
-      clarification: ' & Medicubex',
-    },
-    {
       name: 'Kela',
       id: 'kela',
       stand: 'B05',
