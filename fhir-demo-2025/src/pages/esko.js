@@ -24,20 +24,22 @@ export default function EskoSystems({ location }) {
       </h1>
       <Roles list={roles} />
       <section id="about">
-        <p>Esko Systems Oy on rakentanut standardin, avoimiin rajapintaluvauksiin pohjautuvan
-        integraatioratkaisun, jonka kautta koko Esko potilastietojärjestelmän liikenne muihin
-        APTJ-ekosysteemin ratkaisuihin hoidetaan.</p>
-        <p>Esko-potilastietojärjestelmän arkkitehtuuri pohjautuu IRIS for Health
-        -integraatioalustan päälle rakennettuihin integraatioihin, jotka perustuvat standardeihin
-        kuten laajennettavissa olevaan FHIR-tietovarastoon sekä HL7 ja OpenAPI.</p>
-        <p>Ratkaisusta on taloudellisia hyötyjä. Uusien APTJ-ekosysteemissä tarvittavien
-        rajapintojen toteutus on nopeampaa ja helpompaa ja ennen kaikkea integraatioiden
-        ylläpitokustannukset ovat merkittävästi pienemmät standardin rajapinnan avulla verrattuna
-        tilanteeseen, jossa jokainen integraatio muodostetaan 3. osapuolen tarpeiden
-        mukaisesti.</p>
-        <p>Ratkaisusta on myös hyötyä tulevaisuuteen, sillä standardit rajapinnat mahdollistavat
-        hyvinvointialueiden tai kolmansien osapuolten innovointitoimintoja, jotka voidaan toteuttaa
-        (puoli)avoimia rajapintoja vasten.</p>
+        <p>
+          Esko-potilastietojärjestelmän arkkitehtuuri pohjautuu IRIS for Health -integraatioalustan
+          päälle rakennettuihin integraatioihin, jotka perustuvat standardeihin kuten
+          laajennettavissa olevaan FHIR-tietovarastoon sekä HL7v2 ja OpenAPI.
+        </p>
+        <p> 
+          Ratkaisusta on taloudellisia hyötyjä. Uusien APTJ-ekosysteemissä tarvittavien
+          rajapintojen toteutus on nopeampaa ja helpompaa ja ennen kaikkea integraatioiden
+          ylläpitokustannukset ovat merkittävästi pienemmät standardin rajapinnan avulla verrattuna
+          tilanteeseen, jossa jokainen integraatio muodostetaan 3. osapuolen tarpeiden mukaisesti.
+        </p>
+        <p>
+          Ratkaisusta on myös hyötyä tulevaisuuteen, sillä standardit rajapinnat mahdollistavat
+          hyvinvointialueiden tai kolmansien osapuolten innovointitoimintoja, jotka voidaan
+          toteuttaa (puoli)avoimia rajapintoja vasten.
+        </p>
       </section>
       <section id="FHIR">
         <h2>Eskon FHIR-kyvykkyyksien nykytila</h2>
@@ -48,25 +50,49 @@ export default function EskoSystems({ location }) {
             href="../una">Una Lomake</a>. Myös Eskon oma moduuli käynnistetään Smart App
             Launchilla!
           </li>
-        </ul>
-        <h3>Odottaa tuotantoon menoa</h3>
-        <ul>
           <li>
             <strong>Terveyskylä</strong>: Esko hakee digihoitopolut FHIR muodossa terveyskylästä
-            (<strong>CarePlan</strong>).
+            (<strong>CarePlan</strong>, <strong>PlanDefinition</strong>, <strong>Patient</strong>
+            , <strong>CareTeams</strong>).
+          </li>
+          <li>
+            Eskon tällä hetkellä tuottamat ja jo käytössä olevat FHIR resurssit: <strong
+            >Patient</strong> ja <strong>Organization</strong>. Käytössä mm HL7v2 sanomien
+            muodostamisessa.
           </li>
         </ul>
         <h3>Aktiivisessa kehityksessä</h3>
         <ul>
-          <li>OmaOYS-portaalin ja Esko välinen integraatioratkaisu (<strong>Patient</strong>).</li>
-          <li>Masterdata (<strong>Location</strong>, <strong>Organization</strong>)</li>
           <li>
-            Eskon sisäinen kommunikaatio (<strong>Condition</strong>, <strong>Encounter</strong>
-            , <strong>Patient</strong>, <strong>Practitioner</strong>, <strong>Procedure</strong>
-            , <strong>ServiceRequest</strong>). Lähtökohtana <a
-            href="https://www.hl7.fi/fhir/finnish-base-profiles/">Fi Base profiilit</a>. Käytetään
-            HL7 V2 viestien muodostamiseen (ADT, SIU, REF). Diagnoosien, käyntisyiden ja
-            toimenpiteiden sisäinen välitys moduulien välillä.
+            Eskon sisäinen kommunikaatio (<strong>Appointment</strong>, <strong>Condition</strong>
+            , <strong>Device</strong>, <strong>Encounter</strong>, <strong>Patient</strong>
+            , <strong>Practitioner</strong>, <strong>Procedure</strong>, <strong
+            >Organization</strong>, <strong>Location</strong>). Lähtökohtana <a
+            href="https://www.hl7.fi/fhir/finnish-base-profiles/">Fi Base -profiilit</a>. Käytetään
+            HL7 V2 viestien muodostamiseen (ADT, SIU).
+          </li>
+          <li>
+            AxelHealth ja Esko välinen Itseilmoittautumisen integraatio (<strong
+            >Appointment</strong>, <strong>Encounter</strong>, <strong>Location</strong>, <strong
+            >Practitioner</strong>).
+          </li>
+          <li>
+            Ravintohuollon integraatio (<strong>Encounter</strong>, <strong>Patient</strong>
+            , <strong>Location</strong>, <strong>Organization</strong>).
+          </li>
+          <li>
+            Kansalaisen ajanvaraus (<strong>Appointment</strong>, <strong>Patient</strong>).
+          </li>
+          <li>
+            Masterdata (<strong>Location</strong>, <strong>Organization</strong>).
+          </li>
+          <li>
+            Laskutus (<strong>ChargeItem</strong>, <strong>Patient</strong>, <strong
+            >Organization</strong>, <strong>Practitioner</strong>).
+          </li>
+          <li>
+            Unto-lääkerobotti (<strong>Location</strong>, <strong>Encounter</strong>, <strong
+            >Patient</strong>, <strong>Organization</strong>).            
           </li>
         </ul>
         <h3>Tulossa</h3>
@@ -78,11 +104,6 @@ export default function EskoSystems({ location }) {
           <li>
             Leikkaushoidon kokonaisuuden integroituminen FHIR:llä itsenäinä osiona
             (<strong>Encounter</strong>, <strong>Patient</strong>, <strong>Procedure</strong>)
-          </li>
-          <li>
-            Kansalaisen ajanvaraus (<strong>Appointment</strong>, <strong>Location</strong>
-            , <strong>Organization</strong>, <strong>Patient</strong>
-            , <strong>Practitioner</strong>).
           </li>
         </ul>
       </section>
