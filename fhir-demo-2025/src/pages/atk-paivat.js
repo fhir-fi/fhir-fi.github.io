@@ -131,13 +131,13 @@ export default function AtkPaivat({ location }) {
       <table id="naytteilleasettajat" className="participants">
         <thead>
           <tr>
-            <th><Link to href="?lajittelu=paikka" partiallyActive={true}>Ständi</Link></th>
-            <th><Link to href="?lajittelu=nimi" partiallyActive={true}>Nimi</Link></th>
+            <th><Link to="?lajittelu=paikka" partiallyActive={true}>Ständi</Link></th>
+            <th><Link to="?lajittelu=nimi" partiallyActive={true}>Nimi</Link></th>
           </tr>
         </thead>
         <tbody>
           {exhibitors.sort((a,b) => a[sort] > b[sort] ? 1 : -1).map(e =>
-            <tr>
+            <tr key={`exhibitor${e.id}`}>
               <td>
                 {e.stand}</td><td><Link to={`/${e.id}`}>{e.name}</Link>{e.clarification || ''}
               </td>
@@ -233,7 +233,6 @@ export default function AtkPaivat({ location }) {
           Ks. <a href="https://maps.app.goo.gl/HwV8WPYRVHh2judD9">kävelyohjeet Google Mapsissä</a>!
         </p>
       </section>
-
       <img className="decoration" src={fhirLogo} alt="" />
     </Article>
   )
