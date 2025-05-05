@@ -61,7 +61,9 @@ const Animator = ({ animationDuration, growListener, p, repeatSupported = false 
         // There is no really good way of verifying whether the event is fully supported
         // (Safari has partial support). So let's use this method for all browsers...
         const complexListener = (e) => {
-          growListener(e);
+          if (growListener) {
+            growListener(e);
+          }
           node.beginElement();
         };
         node.addEventListener('endEvent', complexListener);
@@ -69,7 +71,7 @@ const Animator = ({ animationDuration, growListener, p, repeatSupported = false 
         return (() => {
           node.removeEventListener('endEvent', complexListener);
         });
-      } else {
+      } else if (growListener) {
         node.addEventListener('repeatEvent', growListener);
         return (() => {
           node.removeEventListener('repeatEvent', growListener);
@@ -85,7 +87,7 @@ const Animator = ({ animationDuration, growListener, p, repeatSupported = false 
       repeatCount={!repeatSupported ? 1 : 'indefinite'}
       data-leaf={p.leaf}
       path={p.path}
-      ref={growListener ? ref : undefined}
+      ref={ref}
     />
   );
 };
