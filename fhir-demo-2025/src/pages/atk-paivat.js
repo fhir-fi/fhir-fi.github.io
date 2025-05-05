@@ -137,7 +137,11 @@ export default function AtkPaivat({ location }) {
         </thead>
         <tbody>
           {exhibitors.sort((a,b) => a[sort] > b[sort] ? 1 : -1).map(e =>
-            <tr><td>{e.stand}</td><td><Link to={`/${e.id}`}>{e.name}</Link>{e.clarification || ''}</td></tr>
+            <tr>
+              <td>
+                {e.stand}</td><td><Link to={`/${e.id}`}>{e.name}</Link>{e.clarification || ''}
+              </td>
+            </tr>
           )}
         </tbody>
       </table>
@@ -145,22 +149,62 @@ export default function AtkPaivat({ location }) {
       <section id="osallistujat" className="atk-paivat event">
       <h2>Osallistujat ohjelmassa</h2>
       <table id="ohjelma" className="schedule">
-        {/*
-        <thead>
-          <tr>
-            <th><Link to href="?lajittelu=paikka" partiallyActive={true}>Ständi</Link></th>
-            <th><Link to href="?lajittelu=nimi" partiallyActive={true}>Nimi</Link></th>
-          </tr>
-        </thead>
-        */}
         <tbody>
-          <tr><td>Ti 14.00 - 15.15</td><td>Sessio 3: Asiakas- ja potilastieto&shy;järjestelmien kehittäminen</td><td>Encore (pääsali)</td></tr>
-          <tr><td>Ti 14.30 - 15.00</td><td><Link to="/cgi">CGI</Link>: OMNI360</td><td>Agenda (3.krs)</td></tr>
-          <tr><td>Ti 16.00 - 16.30</td><td><Link to="/atostek">Atostek</Link>: ERA - Tiedosta jatkuvuus</td><td>Agenda (3.krs)</td></tr>
-          <tr className="highlight"><td>Ti 16.45 - 17.45</td><td>FHIR Demo 2025 -esittely</td><td>D310-311 (Dynamo)</td></tr>
-          <tr><td>Ke 9.00 - 9.30</td><td><Link to="/oracle">Oracle Health</Link>: Tekoäly tulevaisuuden potilastieto&shy;järjestelmissä ja ennakoivassa väestön&shy;terveydessä</td><td>Agenda (3.krs)</td></tr>
-          <tr><td>Ke 10.15 - 11.30</td><td>Sessio 6: <Link to="/sensotrend">Sensotrend</Link>: Kannan asiakas- ja potilastiedot hyvinvointi&shy;sovelluksiin</td><td>Kabinetti (3.krs)</td></tr>
-          <tr><td>Ke 11.00 - 11.30</td><td><Link to="/fujitsu">Fujitsu</Link>: Vauhtia muutokseen! </td><td>Agenda (3.krs)</td></tr>
+          <tr>
+            <td><time dateTime="2025-05-06T12:10:00+03:00">Ti 12.10 - 12.30</time></td>
+            <td>
+              Apotin ekosysteemin FHIR-integraatiot (<Link to="/duodecim">Duodecim</Link>, <Link
+              to="/fujitsu">Fujitsu</Link>, <Link to="/sensotrend">Sensotrend</Link>)
+            </td>
+            <td><Link to="/epic">Epic</Link>, C310</td>
+          </tr>
+          <tr>
+            <td><time dateTime="2025-05-06T14:00:00+03:00">Ti 14.00 - 15.15</time></td>
+            <td>Sessio 3: Asiakas- ja potilastieto&shy;järjestelmien kehittäminen</td>
+            <td>Encore (pääsali)</td></tr>
+          <tr>
+            <td><time dateTime="2025-05-06T14:30:00+03:00">Ti 14.30 - 15.00</time></td>
+            <td><Link to="/cgi">CGI</Link>: OMNI360</td>
+            <td>Agenda (3.krs)</td>
+          </tr>
+          <tr>
+            <td><time dateTime="2025-05-06T16:00:00+03:00">Ti 16.00 - 16.30</time></td>
+            <td><Link to="/atostek">Atostek</Link>: ERA - Tiedosta jatkuvuus</td>
+            <td>Agenda (3.krs)</td>
+          </tr>
+          <tr className="highlight">
+            <td><time dateTime="2025-05-06T16:45:00+03:00">Ti 16.45 - 17.45</time></td>
+            <td>FHIR Demo 2025 -esittely</td>
+            <td>D310-311 (Dynamo)</td>
+          </tr>
+          <tr>
+            <td><time dateTime="2025-05-07T09:00:00+03:00">Ke 9.00 - 9.30</time></td>
+            <td>
+              <Link to="/oracle">Oracle Health</Link>: Tekoäly tulevaisuuden
+              potilastieto&shy;järjestelmissä ja ennakoivassa väestön&shy;terveydessä
+            </td>
+            <td>Agenda (3.krs)</td>
+          </tr>
+          <tr>
+            <td><time dateTime="2025-05-07T10:15:00+03:00">Ke 10.15 - 11.30</time></td>
+            <td>
+              Sessio 6: <Link to="/sensotrend">Sensotrend</Link>: Kannan asiakas- ja
+              potilastiedot hyvinvointi&shy;sovelluksiin</td>
+              <td>Kabinetti (3.krs)</td>
+            </tr>
+          <tr>
+            <td><time dateTime="2025-05-07T11:00:00+03:00">Ke 11.00 - 11.30</time></td>
+            <td><Link to="/fujitsu">Fujitsu</Link>: Vauhtia muutokseen! </td>
+            <td>Agenda (3.krs)</td>
+          </tr>
+          <tr>
+            <td><time dateTime="2025-05-07T12:10:00+03:00">Ti 12.10 - 12.30</time></td>
+            <td>
+              Apotin ekosysteemin FHIR-integraatiot (<Link to="/duodecim">Duodecim</Link>, <Link
+              to="/fujitsu">Fujitsu</Link>, <Link to="/sensotrend">Sensotrend</Link>)
+            </td>
+            <td><Link to="/epic">Epic</Link>, C310</td>
+          </tr>
         </tbody>
       </table>
       </section>
