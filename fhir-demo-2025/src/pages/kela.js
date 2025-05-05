@@ -153,6 +153,24 @@ export default function Kela({ location }) {
           </p>
         </figure>
         </div>
+        </section>
+      <section id="priority">
+        <h2>EHDS: prioriteettiluokkien mukaiset tietosisällöt</h2>
+        <ul>
+          <li>Potilastiedon yhteenveto jatkokehittäminen</li>
+          <li>Rajat ylittävän reseptin jatkokehittäminen</li>
+          <li>Hoidon loppulausunnot</li>
+          <li>Laboratoriotutkimukset (+ medical tests)</li>
+          <li>Lääketieteelliset kuvat ja lausunnot</li>
+        </ul>
+        <p>
+          Näille on EU tasolla määrittelyn alla yhteentoimivuusformaatti EEHRxF (European
+          Electronic Health Record Exchange Format), tulee pohjautumaan FHIR standardiin.
+        </p>
+        <p>
+          EEHRxF yhteentoimivuusformaatti on työstettävänä Xt-EHR hankkeessa, jossa Kela ja THL
+          ovat mukana.
+        </p>
       </section>
       <section id="contact">
         <h3>Contact</h3>
