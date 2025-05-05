@@ -73,7 +73,6 @@ export const demos = {
     ],
   },
   esko: {
-    hidden: true,
     name: 'Esko Systems',
     roles: [
       RoleList.System,
