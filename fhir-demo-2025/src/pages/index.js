@@ -41,15 +41,6 @@ export default function IndexPage({ location = {} }) {
           href="https://fhir.fi/en/demo2024/index.html">2024</a>.
         </p>
       </section>
-      <section
-        id="atk-paivat"
-        className={(!hash || (hash === '#participants')) ? 'callout' : undefined}
-      >
-        <h2>FHIR Demoa esitellään Sosiaali- ja terveyden&shy;huollon ATK-päivillä!</h2>
-        <p>
-          Katso näytteilleasettajat ja aikataulu <Link to="/atk-paivat">esittelysivulta</Link>!
-        </p>
-        </section>
       <section id="participants" className={hash === '#participants' ? 'callout' : undefined}>
         <h1>Participants</h1>
         <p>These are the confirmed participants at the moment. There will be many more!</p>
