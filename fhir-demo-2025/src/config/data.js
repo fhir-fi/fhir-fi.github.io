@@ -79,7 +79,6 @@ export const demos = {
     ],
   },
   evondos: {
-    hidden: true,
     name: 'Evondos',
     roles: [
       RoleList.App,
