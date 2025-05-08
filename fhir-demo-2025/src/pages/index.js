@@ -41,6 +41,15 @@ export default function IndexPage({ location = {} }) {
           href="https://fhir.fi/en/demo2024/index.html">2024</a>.
         </p>
       </section>
+      <section
+        id="vitalis"
+        className={(!hash || (hash === '#vitalis')) ? 'callout' : undefined}
+      >
+        <h2>See the FHIR Demo 2025 at Vitalis!</h2>
+        <p>
+          Check the exhibitors and schedule on the <Link to="/vitalis">event page</Link>!
+        </p>
+      </section>      
       <section id="participants" className={hash === '#participants' ? 'callout' : undefined}>
         <h1>Participants</h1>
         <p>These are the confirmed participants at the moment. There will be many more!</p>
@@ -73,7 +82,7 @@ export default function IndexPage({ location = {} }) {
               Jyväskylä, Finland.
             </li>
             <li>
-              May 19-22, 2025 <a href="https://vitalis.nu/">Vitalis</a>, Gothenburg, Sweden.
+              May 19-22, 2025 <Link to="/vitalis">Vitalis</Link>, Gothenburg, Sweden.
             </li>
           </ul>
         </strong>

@@ -11,11 +11,6 @@ export const Header = ({ children, ...rest }) => {
             </Link>
           </li>
           <li>
-            <Link to="/#participate">
-              Get Listed!
-            </Link>
-          </li>
-          <li>
             <Link to="/#participants">
               Participants
             </Link>
@@ -23,6 +18,11 @@ export const Header = ({ children, ...rest }) => {
           <li>
             <Link to="/#events">
               Events
+            </Link>
+          </li>
+          <li>
+            <Link to="/#participate">
+              Get Listed!
             </Link>
           </li>
           <li>

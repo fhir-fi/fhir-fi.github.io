@@ -17,8 +17,8 @@ export default function AtkPaivat({ location }) {
   // Init roles from the URL...
   React.useEffect(() => {
     const { search } = location;
-    const rolesUrlParam = search.match(/[?&]lajittelu=([^&]+)/) || [];
-    const decoded = decodeURIComponent(rolesUrlParam[1] || '');
+    const sortUrlParam = search.match(/[?&]lajittelu=([^&]+)/) || [];
+    const decoded = decodeURIComponent(sortUrlParam[1] || '');
     if (decoded === 'paikka') {
       setSort('stand');
     } else if (decoded === 'nimi') {

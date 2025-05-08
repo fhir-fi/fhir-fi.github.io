@@ -152,17 +152,16 @@ export default function Participate({ location = {} }) {
             <li>
               May 5-7, 2025 <a
               href="https://koulutus.fcg.fi/sosiaali-ja-terveydenhuollon-ATK-paivat">Sosiaali ja
-              terveydenhuollon ATK-päivät</a>, Jyväskylä, Finland.
+              terveydenhuollon ATK-päivät</a>, Jyväskylä, Finland. FHIR Demo presentation is a part
+              of the official program.
             </li>
             <li>
-              May 19-22, 2025 <a href="https://vitalis.nu/">Vitalis</a>, Gothenburg, Sweden.
+              May 19-22, 2025 <a href="https://vitalis.nu/">Vitalis</a>, Gothenburg, Sweden. FHIR
+              Demo is part of the <a
+              href="https://invitepeople.com/public/events/bd0a6002b4/seminars?seminar_filter_categories%5B%5D=14505"
+              >Nordics on FHIR Track</a>. 
             </li>
-         </ul>
-          <p>
-            The Vitalis conference has a <a
-            href="https://invitepeople.com/public/events/ae499c7a48/seminars/ae2dc6387c">specific
-            session</a> on the program to present the showcase.
-          </p>
+          </ul>
           <p>
             You can also inform us about any other events you're planning to attend, and we can
             list them on this site.
