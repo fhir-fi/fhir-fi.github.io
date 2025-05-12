@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+section.event.vitalis h1,
+section.event.vitalis h2 {
+  font-family: "Overpass", serif;
+}
+
+section.event.vitalis h2 {
+  font-style: italic;
+}
+
+#vitalis section:last-of-type {
+  padding-bottom: 3em;
+}

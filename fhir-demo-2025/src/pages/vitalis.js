@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 
 import Article, { getHead } from '../components/Article';
 import fhirLogo from '../images/fhir-deco.svg';
+import '../styles/vitalis.css';
 
 export function Head() {
   const title = <title>FHIR Demo 2025 at Vitalis</title>;
@@ -71,7 +72,7 @@ export default function Vitalis({ location }) {
 
   return (
     <Article id="vitalis" className="event">
-      <section id="intro">
+      <section id="intro" className="event vitalis">
         <h1>FHIR Demo 2025 in Vitalis</h1>
         <p>
           Several FHIR Demo 2025 participants will be at <a
@@ -83,13 +84,17 @@ export default function Vitalis({ location }) {
       </section>
       <section id="schedule" className="event vitalis">
         <h2>FHIR Demo on FHIR Track</h2>
-        <h3>Nordic FHIR Showcase 2025</h3>
-        <p>The FHIR Demo is part of the <a
-          href="https://invitepeople.com/public/events/bd0a6002b4/seminars?seminar_filter_categories%5B%5D=14505"
-          >Nordics on FHIR Track</a> in Vitalis program.</p>
         <p>
-          Time: <time dateTime="2025-05-22T14:30:00+02:00">Thursday at 14:30-15:00</time><br/>
-          Location: A1
+          The FHIR Demo is part of the <a
+          href="https://invitepeople.com/public/events/bd0a6002b4/seminars?seminar_filter_categories%5B%5D=14505"
+          >Nordics on FHIR Track</a> in Vitalis program.
+        </p>
+        <h3>Nordic FHIR Showcase 2025</h3>
+        <p>
+          <strong>
+            Time: <time dateTime="2025-05-22T14:30:00+02:00">Thursday at 14:30-15:00</time><br/>
+            Location: A1
+          </strong>
         </p>
         <p>
           During the last ten years, electronic health record systems have increasingly developed
@@ -101,8 +106,9 @@ export default function Vitalis({ location }) {
         </p>
         <p>
           This session will present the Nordic FHIR Showcase 2025, a continuation of the Nordic
-          FHIR Showcases 2023 and 2024, and the FHIR Demo 2022. The session presents some of the
-          highlights and learnings from the showcase participants.
+          FHIR Showcases <a href="https://fhir.fi/en/demo2023/vitalis/">2023</a> and <a
+          href="https://fhir.fi/en/demo2024/vitalis/">2024</a>, and the FHIR Demo 2022. The session
+          presents some of the highlights and learnings from the showcase participants.
         </p>
         <p>
           See more details at the <a
@@ -111,7 +117,7 @@ export default function Vitalis({ location }) {
         </p>
       </section>
       <section id="exhibitors" className="event vitalis">
-        <h2>FHIR Demo particinpants at Vitalis</h2>
+        <h2>FHIR Demo participants at Vitalis</h2>
         <p>
           Several FHIR Demo participants will be in Vitalis. We'll keep updating a list here up
           until the event starts.
@@ -133,7 +139,24 @@ export default function Vitalis({ location }) {
           )}
         </tbody>
       </table>
-
+      <p>
+        Also, at least <Link to="/duodecim">Duodecim</Link>, <Link to="/sensotrend"
+        >Sensotrend</Link> will be present in Vitalis, but not exhibiting, as well as the country
+        affiliates <Link to="/hl7-denmark">HL7 Denmark</Link>, <Link to="/hl7-finland">HL7
+        Finland</Link>, <Link to="/hl7-norway">HL7 Norway</Link>, and <Link to="/hl7-sweden">HL7
+        Sweden</Link>.
+      </p>
+      </section>
+      <section id="side-events" className="event vitalis">
+        <h2>Side Events</h2>
+        <p>
+          In addition to the <a
+          href="https://invitepeople.com/public/events/bd0a6002b4/seminars?seminar_filter_categories%5B%5D=14505"
+          >Nordics on FHIR Track</a> on the official conference program, there are also some FHIR
+          related side events. Please see the details on the <a
+          href="https://chat.fhir.org/#narrow/channel/194447-nordics">nordics</a> stream in the
+          FHIR Chat on the Zulip platform.
+        </p>
       </section>
       <img className="decoration" src={fhirLogo} alt="" />
     </Article>
