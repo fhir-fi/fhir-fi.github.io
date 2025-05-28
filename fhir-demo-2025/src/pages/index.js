@@ -42,15 +42,9 @@ export default function IndexPage({ location = {} }) {
         </p>
       </section>
       <section
-        id="vitalis"
-        className={(!hash || (hash === '#vitalis')) ? 'callout' : undefined}
+        id="participants"
+        className={(!hash || (hash === '#participants')) ? 'callout' : undefined}
       >
-        <h2>See the FHIR Demo 2025 at Vitalis!</h2>
-        <p>
-          Check the exhibitors and schedule on the <Link to="/vitalis">event page</Link>!
-        </p>
-      </section>      
-      <section id="participants" className={hash === '#participants' ? 'callout' : undefined}>
         <h1>Participants</h1>
         <p>These are the confirmed participants at the moment. There will be many more!</p>
         <RoleFilter />        
