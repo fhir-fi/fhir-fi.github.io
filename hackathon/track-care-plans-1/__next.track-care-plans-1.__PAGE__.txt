@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[97367,["/hackathon/_next/static/chunks/ff1a16fafef87110.js","/hackathon/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"buildId":"L-YOFLOODpYh4bjDtCo0h","rsc":["$","$1","c",{"children":[["$","main",null,{"children":[["$","h1",null,{"children":"Care Plans and Computable Care Guidelines"}],["$","p",null,{"children":"The details are still being worked on..."}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"loading":null,"isPartial":false}
-4:null
