@@ -1,0 +1,2 @@
+:HL["/hackathon/_next/static/chunks/20e2576f45859234.css","style"]
+0:{"buildId":"hW5RiVgR7TefyBkSOVsBk","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"track-care-plans-1","paramType":null,"paramKey":"track-care-plans-1","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
