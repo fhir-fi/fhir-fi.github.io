@@ -1,2 +1,0 @@
-:HL["/hackathon/_next/static/chunks/ec01869164b6651c.css","style"]
-0:{"buildId":"3CAIfD27uGDsAyAbVLDrX","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"track-patient-access-1","paramType":null,"paramKey":"track-patient-access-1","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
