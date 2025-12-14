@@ -1,2 +1,0 @@
-:HL["/hackathon/_next/static/chunks/ec01869164b6651c.css","style"]
-0:{"buildId":"3CAIfD27uGDsAyAbVLDrX","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"q1-2026-finland","paramType":null,"paramKey":"q1-2026-finland","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
