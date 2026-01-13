@@ -1,2 +1,2 @@
-:HL["/hackathon/_next/static/chunks/7caad9b829e093cf.css","style"]
-0:{"buildId":"YX19pxqkmoPGB718rvbFO","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/hackathon/_next/static/chunks/d3fda8fad1069c38.css","style"]
+0:{"buildId":"Ty1ICwfp2bsaEmDmNySIj","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
