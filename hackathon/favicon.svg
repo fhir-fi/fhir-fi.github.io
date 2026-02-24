@@ -1,0 +1,35 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000">
+  <defs>
+    <style>
+      path {
+        shape-rendering: auto;
+      }
+      path.line {
+        stroke-width: 45;
+        fill: none;
+        stroke-linejoin: round;
+      }
+      path.heart {
+        fill: #c51a1b;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root { filter: none; }
+        path.line {
+          fill: black;
+          stroke: black;
+        }
+      }
+      @media (prefers-color-scheme: light) { :root { filter: none; } }
+    </style>
+    <mask id="lineMask">
+      <rect width="1000" height="1000" fill="white" />
+      <path class="line" d="M0,460h300l50,-150l150,450l125,-375l50,150l25,-75h300" stroke="black"/>
+    </mask>
+  </defs>
+  <g id="heart" mask="url(#lineMask)">
+    <path id="chamber" class="heart" 
+      d="M 500 950 C 500 945, 390 870, 100 500 S 400 -100, 500 270"/>
+    <use href="#chamber" transform="scale(-1,1) translate(-1000,0)" />
+  </g>
+</svg>
