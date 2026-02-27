@@ -1,0 +1,30 @@
+{
+  "name": "fhir-demo-2026",
+  "version": "1.0.0",
+  "private": true,
+  "description": "fhir-demo-2026",
+  "author": "Mikael Rinnetmäki",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "clear": "rimraf public/* ../en/demo2026/*",
+    "copy": "copyfiles -E -V -u 1 './public/**/*' ../en/demo2026/",
+    "deploy": "npm run clean && npm run clear && npm run build && npm run copy",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^5.16.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "file-saver": "^2.0.5",
+    "rimraf": "^6.1.3"
+  }
+}
