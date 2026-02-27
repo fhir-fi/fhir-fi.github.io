@@ -4,7 +4,6 @@ import Role from "./Role";
 import RoleList from "../components/RoleList";
 import { demos } from '../config/data';
 
-
 export const availableRoles = RoleList.filter(
   f => Object.values(demos).some(d => d.roles.some(s => s === f))
 );

@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 
 import hl7finland from '../images/hl7-finland.svg';
 import Background from '../pages/background';
+import { Header } from './Header';
 import '@fontsource-variable/commissioner';
 import '@fontsource/playfair-display';
 import '../styles/index.css';
-import { Header } from './Header';
 
 export function getHead({ title }) {
   return (
