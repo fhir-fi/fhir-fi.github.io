@@ -34,7 +34,7 @@ const Letter = ({ char, x0, y0, check }) => {
 const IndexPage = () => {
 
   const text = 'FHIR Demo 2026';
-  const chars = React.useRef(text.split('').map(((c, i) => ({ key: `${i}-${c}`, char: c, check: () => check(i), ...getPosition(i) }))));
+  const chars = React.useRef(text.split('').map(((c, i) => ({ key: `${i}-${c}`, char: c, check: () => check(i), x0: 0.01, y0: 0.01 }))));
 
   const [completed, setCompleted] = React.useState(false);
 
@@ -71,13 +71,18 @@ const IndexPage = () => {
         2025</Link>, remain available as a valuable catalog of FHIR implementations and
         implementers in the Nordics.
       </p>
+      <section id="norway-2025">
+        <h2>Norwegian Health Data Hackathon 2025</h2>
+        <p>
+        </p>
+      </section>
       <section id="finland">
-        <h2>Finnish Health Data Hackathon</h2>
+        <h2>Finnish Health Data Hackathon 2026</h2>
         <p>
         </p>
       </section>
       <section id="sweden">
-        <h2>Swedish Health Data Hackathon</h2>
+        <h2>Swedish Health Data Hackathon 2026</h2>
         <p>
         </p>
       </section>
