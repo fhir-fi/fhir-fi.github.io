@@ -80,45 +80,45 @@ const Main = () => {
       </p>
       <section id="hackathons">
         <a href="#hackathons"><h1>Nordic Health Data Hackathons</h1></a>
-      <section id="organizers">
-        <p>
-          The Nordic Health Data Hackathons is a series of events organized by Nordic HL7
-          affiliates
-        </p>
-        <ul>
-          <li>
-            <a href="https://hl7.dk/">
+        <section id="organizers">
+          <p>
+            The Nordic Health Data Hackathons is a series of events organized by Nordic HL7
+            affiliates
+          </p>
+          <ul>
+            <li>
+              <a href="https://hl7.dk/">
+                <picture>
+                  <img src={hl7DenmarkLogo} alt="HL7 Denmark" />
+                </picture>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.hl7.fi/">
+                <picture className="large">
+                  <img src={hl7FinlandLogo} alt="HL7 Finland" />
+                </picture>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.hl7.no/">
               <picture>
-                <img src={hl7DenmarkLogo} alt="HL7 Denmark" />
+                <img src={hl7NorwayLogo} alt="HL7 Norway" />
               </picture>
             </a>
-          </li>
-          <li>
-            <a href="https://www.hl7.fi/">
-            <picture className="large">
-              <img src={hl7FinlandLogo} alt="HL7 Finland" />
-            </picture>
-          </a>
-          </li>
-          <li>
-            <a href="https://www.hl7.no/">
-            <picture>
-              <img src={hl7NorwayLogo} alt="HL7 Norway" />
-            </picture>
-          </a>
-          </li>
-          <li>
-            <a href="https://hl7.se/">
-            <picture>
-              <img src={hl7SwedenLogo} alt="HL7 Sweden" />
-            </picture>
-          </a>
-          </li>
-        </ul>
-        <p>
-          and made possible by dozens of volunteers!
-        </p>
-      </section>        
+            </li>
+            <li>
+              <a href="https://hl7.se/">
+              <picture>
+                <img src={hl7SwedenLogo} alt="HL7 Sweden" />
+              </picture>
+            </a>
+            </li>
+          </ul>
+          <p>
+            and made possible by dozens of volunteers!
+          </p>
+        </section>
         <section id="norway-2025">
           <a href="#norway-2025"><h2>Norwegian FHIR Hackathon 2025</h2></a>
           <p>
@@ -132,7 +132,7 @@ const Main = () => {
           </p>
         </section>
         <section id="finland-2026">
-          <a href="#fniland-2026"><h2>Finnish Health Data Hackathon 2026</h2></a>
+          <a href="#finland-2026"><h2>Finnish Health Data Hackathon 2026</h2></a>
           <p>
             The second hackathon was connected to both the <a
             href="https://radicalhealthfestival.messukeskus.com/">Radical Health Festival</a> and
@@ -161,7 +161,7 @@ const Main = () => {
           </p>
         </section>
         <section id="denmark-2026">
-          <a href="#denmark-2026"><h2>Denmark</h2></a>
+          <a href="#denmark-2026"><h2>Denmark (to be confirmed)</h2></a>
           <p>
             The autumn hackathon will be in Denmark. Tentatively connected to the <a
             href="https://2025.e-sundhedsobservatoriet.dk/">Danish E-Health Observatory</a> event.
@@ -170,8 +170,8 @@ const Main = () => {
         <section id="norway-2026">
           <a href="#norway-2026"><h2>Norwegian FHIR Hackathon 2026</h2></a>
           <p>
-            On fourth quarter we return to Norway, where the hackathon will be organised as a side
-            event of the <a href="https://ehin.no/">EHiN conference</a>.
+            On fourth quarter we return to Norway, where the hackathon will again be organised as a
+            side event of the <a href="https://ehin.no/">EHiN conference</a>.
           </p>
         </section>
       </section>

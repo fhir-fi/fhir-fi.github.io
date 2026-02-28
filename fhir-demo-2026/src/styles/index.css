@@ -126,9 +126,14 @@ h1.puzzle {
 } 
 
 h2 {
+  margin-top: 2.5em;
   padding-bottom: 6px;
   border-bottom: 4.75px solid var(--color-blue);
   font-size: xx-large;
+}
+
+section > section > a:first-child {
+  text-decoration: none;
 }
 
 h3 {
