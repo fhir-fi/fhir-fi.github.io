@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "clear": "rimraf public/* ../en/demo2026/*",
     "copy": "copyfiles -E -V -u 1 './public/**/*' ../en/demo2026/",
     "deploy": "npm run clean && npm run clear && npm run build && npm run copy",
