@@ -82,6 +82,14 @@ h1 {
   font-size: xx-large;
 }
 
+main > section > a {
+  text-decoration: none;
+}
+
+main > section > a > h1 {
+  font-size: 300%;
+}
+
 h1.puzzle {
   font-size: 10rem;
   margin-bottom: 6rem;
@@ -136,6 +144,61 @@ p {
   margin: 1em 0;
 }
 
+#organizers ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#organizers li {
+  display: inline-block;
+  margin: 0 2.1em 0 0;
+  padding: 0;
+}
+
+#organizers li:last-of-type {
+  margin-right: 0;
+}
+
+#organizers img {
+  height: 2em;
+  margin: 0.5em 0;
+}
+
+a.call-to-action {
+  display: inline-block;
+  margin: 1.5em 0 2em;
+  padding: 1em 2em;
+  font-size: larger;
+  font-weight: 900;
+  font-family: "Epilogue";
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  background-color: var(--color-blue);
+  color: white;
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid var(--color-blue);
+  padding: 0.5em;
+}
+
+nav {
+  padding: 0.5em;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -155,6 +218,9 @@ p {
     padding: 0.14em 0 0;
     width: 19%;
   }
+  main > section > a > h1 {
+    font-size: 200%;
+  }
 }
 
 @media (max-width: 435px) {
@@ -167,5 +233,24 @@ p {
   .puzzle.char {
     padding: 0.14em 0 0;
     width: 17%;
+  }
+  main > section > a > h1 {
+    font-size: 100%;
+  }
+  #organizers li {
+    display: block;
+    margin: 0 0 1em;
+  }
+  #organizers img {
+    height: auto;
+    max-width: 100%;
+    max-height: 2em;
+  }
+  footer nav li {
+    display: inline-block;
+    margin: 0.5em 1em;
+  }
+  footer nav li:first-child {
+    margin-left: 0;
   }
 }
