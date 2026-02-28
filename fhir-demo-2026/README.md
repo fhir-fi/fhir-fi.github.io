@@ -4,31 +4,28 @@ This is the source code of the FHIR Demo 2026.
 
 It is based on the [Gatsby](https://www.gatsbyjs.com/) framework for single-page apps.
 
-## 🚀 Quick start
+## Develop
 
-1.  **Create a Gatsby site.**
+1.  **Install and start**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
-
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
+    In the `fhir-demo-2026` directory.
 
     ```shell
-    cd my-gatsby-site/
+    cd fhir-demo-2026/
+    npm install
     npm run develop
     ```
 
-3.  **Open the code and start customizing!**
+2.  **Open the code and start customizing!**
 
-    Your site is now running at http://localhost:8000!
+    The site is now running at http://localhost:8000!
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+    Edit `src/pages/index.js` to see the site update in real-time!
+
+3.  **Contribute**
+
+    Open a pull request to the repo in
+    https://github.com/fhir-fi/fhir-fi.github.io/tree/fhir-demo-2026-gatsby
 
 4.  **Learn more**
 
@@ -38,9 +35,3 @@ It is based on the [Gatsby](https://www.gatsbyjs.com/) framework for single-page
     - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
     - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
