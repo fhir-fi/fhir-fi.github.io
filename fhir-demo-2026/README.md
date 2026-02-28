@@ -8,7 +8,7 @@ It is based on the [Gatsby](https://www.gatsbyjs.com/) framework for single-page
 
 1.  **Install and start**
 
-    In the `fhir-demo-2026` directory.
+    Go to the `fhir-demo-2026` directory, install dependencies, and start the development mode.
 
     ```shell
     cd fhir-demo-2026/
