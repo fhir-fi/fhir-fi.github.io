@@ -149,6 +149,12 @@ p {
   margin: 1em 0;
 }
 
+#organizers {
+  margin-top: 5em;
+  margin-bottom: 5em;
+  font-style: italic;
+}
+
 #organizers ul {
   list-style: none;
   margin: 0;

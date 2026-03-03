@@ -74,15 +74,15 @@ const Main = () => {
         Nordic Health Data Hackathons.
       </p>
       <p>
-        The previous demos, especially the <Link to="../en/demo2025/index.html">FHIR Demo
+        <strong>The previous demos, especially the <Link to="../en/demo2025/index.html">FHIR Demo
         2025</Link>, remain available as a valuable catalog of FHIR implementations and
-        implementers in the Nordics.
+        implementers in the Nordics.</strong>
       </p>
       <section id="hackathons">
         <a href="#hackathons"><h1>Nordic Health Data Hackathons</h1></a>
         <section id="organizers">
           <p>
-            The Nordic Health Data Hackathons is a series of events organized by Nordic HL7
+            The Nordic Health Data Hackathons is a series of events organized by the Nordic HL7
             affiliates
           </p>
           <ul>
