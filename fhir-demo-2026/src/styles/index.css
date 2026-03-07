@@ -149,6 +149,10 @@ p {
   margin: 1em 0;
 }
 
+#introduction {
+  font-size: larger;
+}
+
 #organizers {
   margin-top: 5em;
   margin-bottom: 5em;
@@ -174,6 +178,24 @@ p {
 #organizers img {
   height: 2em;
   margin: 0.5em 0;
+}
+
+
+
+.highlight, .warning {
+  border: 10px dotted;
+  border-radius: 30px;
+  font-weight: bolder;
+}
+
+.highlight {
+  border-color: var(--color-blue);
+  padding: 2em;
+  margin: 2em 0;
+}
+
+article.highlight {
+  margin-top: 4em;
 }
 
 a.call-to-action {

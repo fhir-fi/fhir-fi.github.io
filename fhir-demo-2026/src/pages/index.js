@@ -68,16 +68,18 @@ const Main = () => {
       <h1 className={`${completed ? 'completed ' : ''}puzzle`}>
         {puzzle.map(ch => <Letter {...ch} />)}
       </h1>
-      <p>Welcome to the FHIR Demo 2026 website!</p>
-      <p>
-        This year, the Nordic FHIR Demo showcase concentrates on presenting the results of the
-        Nordic Health Data Hackathons.
-      </p>
-      <p>
-        <strong>The previous demos, especially the <Link to="../en/demo2025/index.html">FHIR Demo
-        2025</Link>, remain available as a valuable catalog of FHIR implementations and
-        implementers in the Nordics.</strong>
-      </p>
+      <section id="introduction">
+        <h2>Welcome to the FHIR Demo 2026 website!</h2>
+        <p>
+          This year, the Nordic FHIR Demo showcase concentrates on presenting the results of the
+          Nordic Health Data Hackathons.
+        </p>
+        <p className="highlight">
+          <strong>The previous demos, especially the <Link to="../en/demo2025/index.html">FHIR Demo
+          2025</Link>, remain available as a valuable catalog of FHIR implementations and
+          implementers in the Nordics.</strong>
+        </p>
+      </section>
       <section id="hackathons">
         <a href="#hackathons"><h1>Nordic Health Data Hackathons</h1></a>
         <section id="organizers">
@@ -148,7 +150,7 @@ const Main = () => {
           </p>
         </section>
         <section id="sweden-2026">
-          <a href="#sweden-2026"><h2>Swedish Health Data Hackathon 2026</h2></a>
+          <a href="#sweden-2026"><h2>Vitalis Hackathon 2026</h2></a>
           <p>
             The third hackathon takes place in Gothenburg, Sweden, connected to the <a
             href="https://vitalis.nu/">Vitalis</a> conference.
