@@ -155,6 +155,11 @@ const Main = () => {
           </p>
           <p>The date has been confirmed to be Friday, May 8. Mark your calendar!</p>
           <p>
+            There is a public <a
+            href="https://chat.fhir.org/#narrow/channel/194447-nordics/topic/Swedish.20Health.20Data.20Hackathon.20-.20Call.20For.20Proposals/with/575395533"
+            >Call for Proposals</a> for the tracks and topics.
+          </p>
+          <p>
             <a className="call-to-action" href="https://hl7.se/fhir/vitalis-hackathon-2026/">See
             the event page!</a>
           </p>
