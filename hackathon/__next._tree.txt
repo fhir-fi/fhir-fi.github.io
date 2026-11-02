@@ -1,2 +1,3 @@
 :HL["/hackathon/_next/static/chunks/2pd552xsny-ra.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"K2RK_iTzWsZpq1lndj12F"}
+1:[["children",{"s":"__PAGE__","h":160}]]
+0:{"b":"xKGet9W4XdiZSeJ3rzx3s","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
