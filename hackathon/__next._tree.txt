@@ -1,3 +1,3 @@
 :HL["/hackathon/_next/static/chunks/2pd552xsny-ra.css","style"]
 1:[["children",{"s":"__PAGE__","h":160}]]
-0:{"b":"xKGet9W4XdiZSeJ3rzx3s","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"Nih3fn8ZgKQUvSWcYj--I","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
